@@ -23,7 +23,7 @@
     'name': 'Colors for mail thread subtypes',
     'summary': 'Add colors for mail thread subtypes',
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
