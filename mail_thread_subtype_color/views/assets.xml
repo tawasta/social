@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_message_subtype_color" name="Message thread subtype color" inherit_id="website.assets_backend">
+        <xpath expr="." position="inside">
+            <link href="/mail_thread_subtype_color/static/src/less/style.less" rel="stylesheet" type="text/less"></link>
+        </xpath>
+    </template>
+
+</odoo>
