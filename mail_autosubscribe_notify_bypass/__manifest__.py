@@ -22,7 +22,7 @@
 {
     'name': 'Bypass Autosubscribe Notifications',
     'summary': 'Model-specific way to not send autosubscribe mails',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'category': 'Administration',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
