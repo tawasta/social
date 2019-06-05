@@ -24,12 +24,20 @@ class MailComposeMessage(models.TransientModel):
 
             product_ids = [line.product_id.id for line in order.order_line]
 
+            # Product attachments
             product_attachment_ids = IrAttachment.search([
                 ('res_model', '=', 'product.product'),
                 ('res_id', 'in', product_ids),
             ])
-
             attachment_ids += product_attachment_ids
+
+            # Product template attachments
+            template_ids = product_ids.mapped('product_tmpl_id')
+            template_attachment_ids = IrAttachment.search([
+                ('res_model', '=', 'product.template'),
+                ('res_id', 'in', template_ids),
+            ])
+            attachment_ids += template_attachment_ids
 
         return attachment_ids
 
@@ -39,6 +47,7 @@ class MailComposeMessage(models.TransientModel):
     # object_attachment_ids = fields.Many2many(
     #     default=_compute_object_attachment_ids,
     # )
+
     @api.model
     def _get_object_attachment_domain(self):
         domain = super(MailComposeMessage,
@@ -53,16 +62,23 @@ class MailComposeMessage(models.TransientModel):
 
             order = self.env[model].browse([res_id])
             product_ids = [line.product_id.id for line in order.order_line]
+            template_ids = [line.product_id.product_tmpl_id.id
+                            for line in order.order_line]
 
             # (model = res_model AND id = res_id) OR
-            # (model = product.product AND id in product_ids)
+            # (model = product.product AND id in product_ids) OR
+            # (model = product.template AND id in template_ids)
             domain = [
-                '|', '&',
+                '|', '|',
+                '&',
                 ('res_model', '=', model),
                 ('res_id', '=', res_id),
                 '&',
                 ('res_model', '=', 'product.product'),
                 ('res_id', 'in', product_ids),
+                '&',
+                ('res_model', '=', 'product.template'),
+                ('res_id', 'in', template_ids),
             ]
 
         return domain

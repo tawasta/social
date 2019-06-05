@@ -23,7 +23,7 @@
     'name': 'Add attachment from order line products',
     'summary': 'Use SO/PO line product attachments in mail compose',
     'category': 'Sale',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.1.0',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
