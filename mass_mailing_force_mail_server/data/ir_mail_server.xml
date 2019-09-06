@@ -3,7 +3,8 @@
 
     <record id="mail_server_bulk_mail" model="ir.mail_server">
         <field name="name">Bulk mail</field>
-        <field name="smtp_host">-</field>
+        <field name="smtp_host">False</field>
+        <field name="sequence">999</field>
     </record>
 
 </odoo>
