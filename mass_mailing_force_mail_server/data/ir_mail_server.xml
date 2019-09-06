@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <record id="mail_server_bulk_mail" model="ir.mail_server">
+        <field name="name">Bulk mail</field>
+        <field name="smtp_host">-</field>
+    </record>
+
+</odoo>
