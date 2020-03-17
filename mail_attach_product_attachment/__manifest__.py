@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -33,6 +32,7 @@
         'mail_attach_existing_attachment',
     ],
     'data': [
+        'wizards/mail_compose_message_view.xml',
     ],
     'qweb': [
     ],
