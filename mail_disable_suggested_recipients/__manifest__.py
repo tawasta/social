@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,20 +19,16 @@
 ##############################################################################
 
 {
-    'name': 'Mail: disable suggested recipients',
-    'summary': 'Disable suggested recipients from chatter',
-    'category': 'Social',
-    'version': '12.0.1.0.0',
-    'website': 'https://github.com/Tawasta/social',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': False,
-    'depends': [
-        'mail',
-    ],
-    'data': [
-    ],
-    'qweb': [
-    ],
+    "name": "Mail: disable suggested recipients",
+    "summary": "Disable suggested recipients from chatter",
+    "category": "Social",
+    "version": "12.0.1.0.0",
+    "website": "https://github.com/Tawasta/social",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": False,
+    "depends": ["mail"],
+    "data": [],
+    "qweb": [],
 }

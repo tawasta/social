@@ -19,21 +19,16 @@
 ##############################################################################
 
 {
-    'name': 'Add attachment from order line products',
-    'summary': 'Use SO/PO line product attachments in mail compose',
-    'category': 'Sale',
-    'version': '12.0.1.1.0',
-    'website': 'https://github.com/Tawasta/social',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'mail_attach_existing_attachment',
-    ],
-    'data': [
-        'wizards/mail_compose_message_view.xml',
-    ],
-    'qweb': [
-    ],
+    "name": "Add attachment from order line products",
+    "summary": "Use SO/PO line product attachments in mail compose",
+    "category": "Sale",
+    "version": "12.0.1.1.0",
+    "website": "https://github.com/Tawasta/social",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["mail_attach_existing_attachment"],
+    "data": ["wizards/mail_compose_message_view.xml"],
+    "qweb": [],
 }

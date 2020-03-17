@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,25 +19,17 @@
 ##############################################################################
 
 {
-    'name': 'Bypass Autosubscribe Notifications',
-    'summary': 'Model-specific way to not send autosubscribe mails',
-    'version': '12.0.1.0.1',
-    'category': 'Administration',
-    'website': 'https://github.com/Tawasta/social',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': False,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'mail',
-    ],
-    'data': [
-        'views/base_config_settings.xml',
-    ],
-    'demo': [
-    ],
+    "name": "Bypass Autosubscribe Notifications",
+    "summary": "Model-specific way to not send autosubscribe mails",
+    "version": "12.0.1.0.1",
+    "category": "Administration",
+    "website": "https://github.com/Tawasta/social",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": False,
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["mail"],
+    "data": ["views/base_config_settings.xml"],
+    "demo": [],
 }

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,22 +19,16 @@
 ##############################################################################
 
 {
-    'name': 'Colors for mail thread subtypes',
-    'summary': 'Add colors for mail thread subtypes',
-    'category': 'Sale',
-    'version': '12.0.1.0.1',
-    'website': 'https://github.com/Tawasta/social',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': False,
-    'depends': [
-        'mail',
-    ],
-    'data': [
-        'views/assets.xml',
-    ],
-    'qweb': [
-        'static/src/xml/message_subtype_color.xml',
-    ],
+    "name": "Colors for mail thread subtypes",
+    "summary": "Add colors for mail thread subtypes",
+    "category": "Sale",
+    "version": "12.0.1.0.1",
+    "website": "https://github.com/Tawasta/social",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": False,
+    "depends": ["mail"],
+    "data": ["views/assets.xml"],
+    "qweb": ["static/src/xml/message_subtype_color.xml"],
 }
