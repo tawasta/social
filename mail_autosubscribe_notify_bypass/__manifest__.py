@@ -22,13 +22,13 @@
 {
     'name': 'Bypass Autosubscribe Notifications',
     'summary': 'Model-specific way to not send autosubscribe mails',
-    'version': '10.0.1.0.1',
+    'version': '12.0.1.0.1',
     'category': 'Administration',
-    'website': 'http://www.tawasta.fi',
-    'author': 'Oy Tawasta Technologies Ltd.',
+    'website': 'https://github.com/Tawasta/social',
+    'author': 'Tawasta',
     'license': 'AGPL-3',
     'application': False,
-    'installable': True,
+    'installable': False,
     'external_dependencies': {
         'python': [],
         'bin': [],
