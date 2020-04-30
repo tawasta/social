@@ -27,7 +27,7 @@
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
-    "installable": False,
+    "installable": True,
     "depends": ["mass_mailing"],
     "data": ["data/ir_mail_server.xml"],
     "qweb": [],
