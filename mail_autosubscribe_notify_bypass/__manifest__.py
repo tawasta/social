@@ -27,9 +27,9 @@
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
-    "installable": False,
+    "installable": True,
     "external_dependencies": {"python": [], "bin": []},
     "depends": ["mail"],
-    "data": ["views/base_config_settings.xml"],
+    "data": ["views/res_config_settings.xml"],
     "demo": [],
 }
