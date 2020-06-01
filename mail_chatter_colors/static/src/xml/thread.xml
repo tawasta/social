@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <templates xml:space="preserve"> -->
+   <!-- Extend thread to have identification of message types:
+       o_message_type_comment = comments and portal messages
+       o_message_type_note = notes / internal messages
+       o_message_type_email = emails
+   -->
+<!--     <t t-extend="mail.ChatThread.Message"> -->
+<!--         <t t-jquery="div[t-att-class='\'o_thread_message.o_mail_not_discussion\' + (message.expanded ? \' o_message_expanded \'  : \' \') + (message.is_selected ? \'o_thread_selected_message\' : \'\')']"> -->
+<!--         <t t-jquery="div[t-attf-class=o_thread_message.o_mail_not_discussion]" t-operation="after"> -->
+<!--         <t t-jquery="div[class='o_thread_message o_mail_not_discussion']" t-operation="replace"> -->
+<!--         <t t-jquery=".o_thread_message" t-operation="after"> -->
+<!--        <t t-jquery=".o_thread_message_core"> -->
+<!--        <t t-jquery=".o_thread_message"> -->
+
+<templates>
+   <t t-extend="mail.widget.Thread.Message">
+       <t t-jquery=".o_thread_message_core">
+            if (this._type == 'comment') {
+                this.addClass("message_is_note");
+            }
+        </t>
+   </t>
+</templates>
+
+
+<!--This also worked but to all messages-->
+<!--         <t t-jquery=".o_thread_message_core" t-operation="attributes"> -->
+
+<!--             <t t-foreach="message" t-as="mes"> -->
+<!--             <t t-if="mes.getType() == 'comment'"> -->
+<!--                 <attribute name="class">o_thread_message_core message_is_note</attribute> -->
+<!--             </t> -->
+<!--             </t> -->
+<!--         </t> -->
+
+
+<!--Previous junk, maybe usable-->
+<!--             this.addClass($mess1); -->
+<!--             </t> -->
+<!--             <t t-jquery="div[t-att-class='o_thread_message o_mail_not_discussion']"> -->
+<!--                 this.attr('t-att-class', '\'o_thread_message o_mail_not_discussion\' + \' o_message_type_\' + message.getType()'); -->
+<!--             </t> -->
+
+<!--         <t t-jquery=".o_thread_message_core" t-operation="after"> -->
+<!--             <t t-if="message.getType() == 'comment'"> -->
+<!--             if (this._type == 'comment') -->
+<!--             var junk = this.getType(); -->
+
+<!--                 <span class="message_type"/> -->
+<!--             </t> -->
+<!--             <t t-else=""> -->
+<!--                 <attribute name="class">o_thread_message_core</attribute> -->
+<!--             </t> -->
+
+<!--             <t t-esc="message.getType()" class="message_is_note"/> -->
+<!--             <t t-if="message.getType() == 'comment'"> -->
+<!--                 <span class="is_comment">testirtrej</span> -->
+<!--             </t> -->
+
+<!--             <t t-jquery="div[t-att-class='\'o_thread_message o_mail_not_discussion\' + (message.expanded ? \' o_message_expanded \'  : \' \')']"> -->
+<!--             <t t-jquery="div[t-att-class='o_thread_message o_mail_not_discussion']"> -->
+<!--                 this.attr('t-att-class', '\'o_thread_message o_mail_not_discussion\' + \' o_message_type_\' + (message.is_note ? \'note\' : message.getType())'); -->
+
+<!--             <t t-jquery="div[t-att-class='\'o_thread_message\' + (message.expanded ? \' o_message_expanded \'  : \' \') + (message.is_selected ? \'o_thread_selected_message\' : \'\')']"> -->
+<!--                 this.attr('t-att-class', '\'o_thread_message\' + (message.expanded ? \' o_message_expanded \'  : \' \') + (message.is_selected ? \'o_thread_selected_message\' : \'\') + \' o_message_type_\' + (message.is_note ? \'note\' : message.message_type)'); -->
