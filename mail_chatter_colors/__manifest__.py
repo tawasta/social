@@ -34,7 +34,5 @@
     "data": [
         "views/assets.xml",
     ],
-    "qweb": [
-        "static/src/xml/thread.xml",
-    ],
+    "qweb": [],
 }
