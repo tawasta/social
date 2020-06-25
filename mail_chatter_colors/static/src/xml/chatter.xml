@@ -8,6 +8,7 @@
             this.attr('t-att-data-message-is-system-notification', "message.isSystemNotification()");
             this.attr('t-att-data-message-is-note', "message._isNote");
             this.attr('t-att-data-message-is-transient', "message._isTransient()");
+            this.attr('t-att-data-message-has-tracking-values', "message.hasTrackingValues()");
             this.attr('t-att-data-oe-id', "message.shouldRedirectToAuthor() ? message.getAuthorID() : ''");
         </t>
     </t>

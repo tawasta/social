@@ -2,7 +2,7 @@
 @message-user-message-color: dodgerblue;
 
 .o_chatter {
-    .o_thread_message[data-message-is-note="true"]:not([data-oe-id=""]) {
+    .o_thread_message[data-message-is-note="true"][data-message-has-tracking-values='false']:not([data-oe-id=""]) {
         border-left: 5px solid @message-user-note-color;
     }
 
