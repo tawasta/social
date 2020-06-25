@@ -31,8 +31,6 @@
     "depends": [
         "mail",
     ],
-    "data": [
-        "views/assets.xml",
-    ],
-    "qweb": [],
+    "data": ["views/assets.xml"],
+    "qweb": ["static/src/xml/chatter.xml"],
 }
