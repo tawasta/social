@@ -1,13 +1,12 @@
-@message-user-color: #D1D1E8;
-@message-system-color: #E4E4E4;
-
+@message-user-note-color: salmon;
+@message-user-message-color: dodgerblue;
 
 .o_chatter {
-    .o_thread_message.o_mail_not_discussion {
-        background-color: @message-system-color;
+    .o_thread_message[data-message-is-note="true"][data-message-has-tracking-values='false']:not([data-oe-id=""]) {
+        border-left: 5px solid @message-user-note-color;
     }
 
-    .o_thread_message.o_mail_discussion {
-        background-color: @message-user-color;
+    .o_thread_message.o_mail_discussion:not([data-oe-id=""]) {
+        border-left: 5px solid @message-user-message-color;
     }
 }
