@@ -2,22 +2,26 @@
 <templates>
     <t t-extend="mail.widget.Thread.Message">
         <t t-jquery="div[t-att-data-message-id='message.getID()']">
+            <!--
             this.attr('t-att-data-message-system-subtype',
             "message.getSubtypeDescription ? message.getSubtypeDescription() : ''");
+            -->
+            this.attr('t-att-data-message-system-subtype',
+            "message ? message.getSubtypeDescription() : ''");
             this.attr('t-att-data-message-from-current-user',
-            "message.isMyselfAuthor ? message.isMyselfAuthor() : ''");
+            "message ? message.isMyselfAuthor() : ''");
             this.attr('t-att-data-message-is-starred',
-            "message.isStarred ? message.isStarred() : ''");
+            "message ? message.isStarred() : ''");
             this.attr('t-att-data-message-is-system-notification',
-            "message.isSystemNotification ? message.isSystemNotification() : ''");
+            "message ? message.isSystemNotification() : ''");
             this.attr('t-att-data-message-is-note',
             "message._isNote ? 'true' : 'false'");
             this.attr('t-att-data-message-is-transient',
-            "message._isTransient ? message._isTransient() : ''");
+            "message ? message._isTransient() : ''");
             this.attr('t-att-data-message-has-tracking-values',
-            "message.hasTrackingValues ? message.hasTrackingValues() : ''");
+            "message ? message.hasTrackingValues() : ''");
             this.attr('t-att-data-oe-id',
-            "message.shouldRedirectToAuthor ? message.shouldRedirectToAuthor() ? message.getAuthorID() : '' : ''");
+            "message ? message.shouldRedirectToAuthor() ? message.getAuthorID() : '' : ''");
         </t>
     </t>
 </templates>
