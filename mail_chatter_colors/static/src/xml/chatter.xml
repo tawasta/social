@@ -2,26 +2,50 @@
 <templates>
     <t t-extend="mail.widget.Thread.Message">
         <t t-jquery="div[t-att-data-message-id='message.getID()']">
-            <!--
-            this.attr('t-att-data-message-system-subtype',
-            "message.getSubtypeDescription ? message.getSubtypeDescription() : ''");
-            -->
-            this.attr('t-att-data-message-system-subtype',
-            "message ? message.getSubtypeDescription() : ''");
-            this.attr('t-att-data-message-from-current-user',
-            "message ? message.isMyselfAuthor() : ''");
-            this.attr('t-att-data-message-is-starred',
-            "message ? message.isStarred() : ''");
-            this.attr('t-att-data-message-is-system-notification',
-            "message ? message.isSystemNotification() : ''");
-            this.attr('t-att-data-message-is-note',
-            "message._isNote ? 'true' : 'false'");
-            this.attr('t-att-data-message-is-transient',
-            "message ? message._isTransient() : ''");
-            this.attr('t-att-data-message-has-tracking-values',
-            "message ? message.hasTrackingValues() : ''");
-            this.attr('t-att-data-oe-id',
-            "message ? message.shouldRedirectToAuthor() ? message.getAuthorID() : '' : ''");
+            this.attr(
+            't-att-data-message-system-subtype',
+            "(typeof message.getSubtypeDescription === 'function')  ? message.getSubtypeDescription() : ''"
+            );
+
+            this.attr(
+            't-att-data-message-from-current-user',
+            "(typeof message.isMyselfAuthor === 'function') ? message.isMyselfAuthor() : ''"
+            );
+
+            this.attr(
+            't-att-data-message-is-starred',
+            "(typeof message.isStarred === 'function') ? message.isStarred() : ''"
+            );
+
+            this.attr(
+            't-att-data-message-is-system-notification',
+            "(typeof message.isSystemNotification === 'function') ? message.isSystemNotification() : ''"
+            );
+
+            this.attr(
+            't-att-data-message-is-note',
+            "message._isNote ? 'true' : 'false'"
+            );
+
+            this.attr(
+            't-att-data-message-is-transient',
+            "(typeof message._isTransient === 'function') ? message._isTransient() : ''"
+            );
+
+            this.attr(
+            't-att-data-message-has-tracking-values',
+            "(typeof message.hasTrackingValues === 'function') ? message.hasTrackingValues() : ''"
+            );
+
+            this.attr(
+            't-att-data-oe-id',
+            "(typeof message.getAuthorID === 'function') ? message.getAuthorID() : ''"
+            );
+
+            this.attr(
+            't-att-data-author-is-odoobot',
+            "(typeof message._isOdoobotAuthor === 'function') ? message._isOdoobotAuthor() : ''"
+            );
         </t>
     </t>
 </templates>
