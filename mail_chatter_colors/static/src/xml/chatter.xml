@@ -8,6 +8,11 @@
             );
 
             this.attr(
+            't-att-data-message-system-subtype',
+            "message.hasSubtypeDescription() ? message.getSubtypeDescription() : ''"
+            );
+
+            this.attr(
             't-att-data-message-from-current-user',
             "(typeof message.isMyselfAuthor === 'function') ? message.isMyselfAuthor() : ''"
             );
