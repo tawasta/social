@@ -46,6 +46,11 @@
             't-att-data-author-is-odoobot',
             "(typeof message._isOdoobotAuthor === 'function') ? message._isOdoobotAuthor() : ''"
             );
+
+            this.attr(
+            't-att-data-info',
+            "message._info"
+            );
         </t>
     </t>
 </templates>
