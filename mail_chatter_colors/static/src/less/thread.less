@@ -11,11 +11,11 @@
 
 
 .o_chatter {
-    .o_thread_message.o_mail_not_discussion[data-message-is-note="true"][data-message-has-tracking-values='false']:not([data-oe-id=""])[data-procountor-message="false"][data-created-message="false"] {
+    .o_thread_message.o_mail_not_discussion[data-message-is-note="true"][data-message-has-tracking-values='false']:not([data-oe-id=""])[data-message-type="comment"] {
         border-left: 5px solid @message-user-note-color;
     }
 
-    .o_thread_message.o_mail_discussion:not([data-oe-id=""]) {
+    .o_thread_message.o_mail_discussion:not([data-oe-id=""])[data-message-type="comment"] {
         border-left: 5px solid @message-user-message-color;
     }
 
