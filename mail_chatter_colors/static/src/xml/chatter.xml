@@ -4,7 +4,7 @@
         <t t-jquery="div[t-att-data-message-id='message.getID()']">
             this.attr(
             "t-att-data-message-type",
-            "(typeof message.getType === 'function) ? message.getType() : ''"
+            "(typeof message.getType === 'function') ? message.getType() : ''"
             );
 
             this.attr(
