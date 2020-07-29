@@ -3,6 +3,11 @@
     <t t-extend="mail.widget.Thread.Message">
         <t t-jquery="div[t-att-data-message-id='message.getID()']">
             this.attr(
+            "t-att-data-procountor-message",
+            "(message._body === '<p>Sent to Procountor with transmit method 'eInvoice'</p>'"
+            );
+
+            this.attr(
             't-att-data-message-system-subtype',
             "(typeof message.getSubtypeDescription === 'function')  ? message.getSubtypeDescription() : ''"
             );
