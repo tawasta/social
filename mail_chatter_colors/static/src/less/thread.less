@@ -2,20 +2,20 @@
 @message-user-message-color: dodgerblue;
 
 .user-note {
-    border-left: 5px solid @message-user-note-color;
+    border-left: 10px solid @message-user-note-color;
 }
 
 .user-message {
-    border-left: 5px solid @message-user-message-color;
+    border-left: 10px solid @message-user-message-color;
 }
 
 
 .o_chatter {
-    .o_thread_message.o_mail_not_discussion[data-message-is-note="true"][data-message-has-tracking-values='false']:not([data-oe-id=""]) {
+    .o_thread_message.o_mail_not_discussion[data-message-is-note="true"][data-message-has-tracking-values='false']:not([data-oe-id=""])[data-message-type="comment"] {
         border-left: 5px solid @message-user-note-color;
     }
 
-    .o_thread_message.o_mail_discussion:not([data-oe-id=""]) {
+    .o_thread_message.o_mail_discussion:not([data-oe-id=""])[data-message-type="comment"] {
         border-left: 5px solid @message-user-message-color;
     }
 

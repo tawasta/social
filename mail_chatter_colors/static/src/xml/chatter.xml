@@ -3,33 +3,13 @@
     <t t-extend="mail.widget.Thread.Message">
         <t t-jquery="div[t-att-data-message-id='message.getID()']">
             this.attr(
-            't-att-data-message-system-subtype',
-            "(typeof message.getSubtypeDescription === 'function')  ? message.getSubtypeDescription() : ''"
-            );
-
-            this.attr(
-            't-att-data-message-from-current-user',
-            "(typeof message.isMyselfAuthor === 'function') ? message.isMyselfAuthor() : ''"
-            );
-
-            this.attr(
-            't-att-data-message-is-starred',
-            "(typeof message.isStarred === 'function') ? message.isStarred() : ''"
-            );
-
-            this.attr(
-            't-att-data-message-is-system-notification',
-            "(typeof message.isSystemNotification === 'function') ? message.isSystemNotification() : ''"
+            "t-att-data-message-type",
+            "message.getType()"
             );
 
             this.attr(
             't-att-data-message-is-note',
             "message._isNote ? 'true' : 'false'"
-            );
-
-            this.attr(
-            't-att-data-message-is-transient',
-            "(typeof message._isTransient === 'function') ? message._isTransient() : ''"
             );
 
             this.attr(
@@ -40,11 +20,6 @@
             this.attr(
             't-att-data-oe-id',
             "(typeof message.getAuthorID === 'function') ? message.getAuthorID() : ''"
-            );
-
-            this.attr(
-            't-att-data-author-is-odoobot',
-            "(typeof message._isOdoobotAuthor === 'function') ? message._isOdoobotAuthor() : ''"
             );
         </t>
     </t>
