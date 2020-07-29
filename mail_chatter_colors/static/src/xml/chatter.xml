@@ -3,6 +3,11 @@
     <t t-extend="mail.widget.Thread.Message">
         <t t-jquery="div[t-att-data-message-id='message.getID()']">
             this.attr(
+            "t-att-data-created-message",
+            "(message._body.indexOf('data-oe-model=\"sale.order\"') != -1)"
+            );
+
+            this.attr(
             "t-att-data-procountor-message",
             "(message._body.indexOf('Sent to Procountor with transmit method') != -1)"
             );
