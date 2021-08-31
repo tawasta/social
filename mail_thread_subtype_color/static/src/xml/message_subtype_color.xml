@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<template>
-    <t t-extend="mail.ChatThread.Message">
-        <t t-jquery='div[t-att-data-message-id="message.id"]' t-operation="prepend">
-            <div t-att-class="'o_thread_message_subtype_' + message.message_type" />
-        </t>
-    </t>
-</template>
