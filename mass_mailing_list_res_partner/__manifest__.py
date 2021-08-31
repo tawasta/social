@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,16 +19,16 @@
 ##############################################################################
 
 {
-    "name": "Force outgoing mail server",
-    "summary": "Use secondary mail server for outgoing mass mail",
-    "category": "Sale",
+    "name": "Mass Mailing List res partner",
+    "summary": "Create mass mailing list from res.partner view.",
+    "category": "Social",
     "version": "12.0.1.0.0",
-    "website": "https://github.com/Tawasta/social",
+    "website": "",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["mass_mailing"],
-    "data": ["data/ir_mail_server.xml"],
+    "depends": ["mass_mailing_partner"],
+    "data": [],
     "qweb": [],
 }
