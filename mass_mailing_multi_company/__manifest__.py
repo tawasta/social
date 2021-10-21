@@ -22,7 +22,7 @@
     "name": "Mass mailing multi company",
     "summary": "Mass mailing multi company",
     "version": "14.0.1.0.0",
-    "category": "Tools",
+    "category": "Social",
     "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
     "license": "AGPL-3",
