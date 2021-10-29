@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2021 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,16 +19,19 @@
 ##############################################################################
 
 {
-    "name": "Force outgoing mail server",
-    "summary": "Use secondary mail server for outgoing mass mail",
-    "category": "Sale",
+    "name": "Mail custom headers",
+    "summary": "Allow using custom headers when sending email",
     "version": "12.0.1.0.0",
-    "website": "https://github.com/Tawasta/social",
+    "category": "Tools",
+    "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["mass_mailing"],
-    "data": ["data/ir_mail_server.xml"],
-    "qweb": [],
+    "depends": [
+        "base", "mail",
+    ],
+    "data": [
+        "views/mail_server.xml",
+    ],
 }
