@@ -84,30 +84,33 @@ class MassMailingList(models.Model):
                 # or contact_to_list (mass mailing contacts)
                 if (
                     any(
-                        old_contact.email == partner.email
+                        old_contact.email.lower() == partner.email.lower()
                         for old_contact in current_partners
                     )
                     or any(
-                        old_contact.email == partner.email
+                        old_contact.email.lower() == partner.email.lower()
                         for old_contact in vals_partners
                     )
                     or any(
-                        old_contact.email == partner.email
+                        old_contact.email.lower() == partner.email.lower()
                         for old_contact in contact_to_list
                     )
                     or (
                         contacts_in_partner
                         and (
                             any(
-                                old_contact.email == contacts_in_partner[0].email
+                                old_contact.email.lower()
+                                == contacts_in_partner[0].email.lower()
                                 for old_contact in contact_to_list
                             )
                             or any(
-                                old_contact.email == contacts_in_partner[0].email
+                                old_contact.email.lower()
+                                == contacts_in_partner[0].email.lower()
                                 for old_contact in vals_partners
                             )
                             or any(
-                                old_contact.email == contacts_in_partner[0].email
+                                old_contact.email.lower()
+                                == contacts_in_partner[0].email.lower()
                                 for old_contact in current_partners
                             )
                         )
