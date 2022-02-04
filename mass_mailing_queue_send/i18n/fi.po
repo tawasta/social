@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mass_mailing_queue_send
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-04 09:35+0000\n"
+"PO-Revision-Date: 2022-02-04 11:36+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fi\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: mass_mailing_queue_send
+#: model:ir.model.fields,field_description:mass_mailing_queue_send.field_mailing_mailing__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: mass_mailing_queue_send
+#: model:ir.model.fields,field_description:mass_mailing_queue_send.field_mailing_mailing__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: mass_mailing_queue_send
+#: model:ir.model.fields,field_description:mass_mailing_queue_send.field_mailing_mailing____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: mass_mailing_queue_send
+#: model:ir.model,name:mass_mailing_queue_send.model_mailing_mailing
+msgid "Mass Mailing"
+msgstr "Massapostitus"
+
+#. module: mass_mailing_queue_send
+#: code:addons/mass_mailing_queue_send/models/mailing.py:0
+#, python-format
+msgid "Mass mailing: Sending {} to {} recipients"
+msgstr "Massapostitus: Lähetetään {} massaposti {}:lle vastaanottajalle"
+
+#. module: mass_mailing_queue_send
+#: code:addons/mass_mailing_queue_send/models/mailing.py:0
+#, python-format
+msgid "There are no recipients selected."
+msgstr "Vastaanottajia ei ole valittu."
