@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * mass_mailing_template_footer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-22 09:22+0000\n"
+"PO-Revision-Date: 2021-12-22 09:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mass_mailing_template_footer
+#: model_terms:ir.ui.view,arch_db:mass_mailing_template_footer.s_mail_block_footer_social_left
+msgid "You received this email because you are on"
+msgstr "Olet saanut tämän sähköpostin, koska olet"
+
+#. module: mass_mailing_template_footer
+#: model_terms:ir.ui.view,arch_db:mass_mailing_template_footer.s_mail_block_footer_social_left
+msgid "company mailing list."
+msgstr "yrityksen postituslistalla."
