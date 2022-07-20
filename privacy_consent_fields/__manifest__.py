@@ -31,6 +31,5 @@
     "depends": [
         "privacy_consent",
     ],
-    "data": [
-    ],
+    "data": [],
 }

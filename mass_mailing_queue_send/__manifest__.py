@@ -28,8 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "mass_mailing"
-    ],
+    "depends": ["mass_mailing"],
     "data": [],
 }

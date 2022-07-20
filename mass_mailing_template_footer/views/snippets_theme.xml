@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <template id="s_mail_block_footer_social_left_text" inherit_id="mass_mailing.s_mail_block_footer_social_left" name="Footer Left">
+    <template
+        id="s_mail_block_footer_social_left_text"
+        inherit_id="mass_mailing.s_mail_block_footer_social_left"
+        name="Footer Left"
+    >
         <xpath expr="//p[@class='o_mail_footer_copy']" position="replace">
-            <p class="o_mail_footer_copy">You received this email because you are on <t t-esc="res_company.partner_id.name"/> company mailing list.</p>
+            <p class="o_mail_footer_copy">You received this email because you are on <t
+                    t-esc="res_company.partner_id.name"
+                /> company mailing list.</p>
         </xpath>
     </template>
 
@@ -14,10 +20,17 @@
     </template>
 
 
-    <template id="s_mail_block_footer_social_left" inherit_id="website_mass_mailing.s_mail_block_footer_social_left">
+    <template
+        id="s_mail_block_footer_social_left"
+        inherit_id="website_mass_mailing.s_mail_block_footer_social_left"
+    >
         <xpath expr="//div[hasclass('o_mail_footer_links')]" position="replace">
             <div class="o_mail_footer_links">
-                <a role="button" href="/unsubscribe_from_list" class="btn btn-link">Unsubscribe</a>
+                <a
+                    role="button"
+                    href="/unsubscribe_from_list"
+                    class="btn btn-link"
+                >Unsubscribe</a>
             </div>
         </xpath>
     </template>

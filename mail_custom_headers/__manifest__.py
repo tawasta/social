@@ -29,7 +29,8 @@
     "application": False,
     "installable": True,
     "depends": [
-        "base", "mail",
+        "base",
+        "mail",
     ],
     "data": [
         "views/mail_server.xml",

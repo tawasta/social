@@ -23,7 +23,7 @@
     "summary": "Model-specific way to not send autosubscribe mails",
     "version": "14.0.1.0.1",
     "category": "Administration",
-    "website": "https://github.com/Tawasta/social",
+    "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

@@ -29,8 +29,8 @@
     "application": False,
     "installable": True,
     "depends": [
-        "base", "mass_mailing",
+        "base",
+        "mass_mailing",
     ],
-    "data": [
-    ],
+    "data": [],
 }

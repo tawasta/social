@@ -21,7 +21,7 @@
 # 1. Standard library imports:
 
 # 3. Odoo imports (openerp):
-from odoo import fields, models, api
+from odoo import api, models
 
 # 2. Known third party imports:
 
@@ -50,9 +50,7 @@ class MailingList(models.Model):
     # 7. Action methods
     @api.model
     def _cron_update_dynamic_mailing_lists(self):
-        mailing_lists = self.env["mailing.list"].sudo().search([
-            ('dynamic', '=', True)
-        ])
+        mailing_lists = self.env["mailing.list"].sudo().search([("dynamic", "=", True)])
         for ml in mailing_lists:
             ml.action_sync()
 

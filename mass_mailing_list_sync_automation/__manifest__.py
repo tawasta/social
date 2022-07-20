@@ -31,7 +31,5 @@
     "depends": [
         "mass_mailing_list_dynamic",
     ],
-    "data": [
-        "data/mailing_list_data.xml"
-    ],
+    "data": ["data/mailing_list_data.xml"],
 }

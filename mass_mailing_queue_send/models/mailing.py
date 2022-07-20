@@ -24,7 +24,7 @@ import math
 import threading
 
 # 3. Odoo imports (openerp):
-from odoo import fields, models, _
+from odoo import _, fields, models
 from odoo.exceptions import UserError
 
 # 2. Known third party imports:
@@ -55,7 +55,7 @@ class MassMailing(models.Model):
 
     # 7. Action methods
     def action_send_mail(self, res_ids=None):
-        """ Use queue for sending """
+        """Use queue for sending"""
         start_delay = 30
         for mailing in self:
             if not res_ids:
@@ -65,29 +65,34 @@ class MassMailing(models.Model):
 
             batch_limit = 200
             batch_count = math.ceil(len(res_ids) / batch_limit)
-            for batch in range(0, batch_count):
+            for _batch in range(0, batch_count):
                 if len(res_ids) > batch_limit:
                     recipients = res_ids[:batch_limit]
                 else:
                     recipients = res_ids
 
                 res_ids = list(set(res_ids) - set(recipients))
-                job_desc = _("Mass mailing: Sending {} to {} recipients".format(
-                    mailing.subject,
-                    len(recipients)),
+                job_desc = _(
+                    "Mass mailing: Sending {} to {} recipients".format(
+                        mailing.subject, len(recipients)
+                    ),
                 )
-                mailing.with_delay(description=job_desc, eta=start_delay).action_send_mail_queue(recipients)
+                mailing.with_delay(
+                    description=job_desc, eta=start_delay
+                ).action_send_mail_queue(recipients)
         return True
 
     def action_send_mail_queue(self, res_ids):
-        """ Odoo-core implementation of action_send_mail (with queue) """
+        """Odoo-core implementation of action_send_mail (with queue)"""
         self.ensure_one()
         mailing = self
 
         author_id = self.env.user.partner_id.id
         composer_values = {
             "author_id": author_id,
-            "attachment_ids": [(4, attachment.id) for attachment in mailing.attachment_ids],
+            "attachment_ids": [
+                (4, attachment.id) for attachment in mailing.attachment_ids
+            ],
             "body": mailing._prepend_preview(mailing.body_html, mailing.preview),
             "subject": mailing.subject,
             "model": mailing.mailing_model_real,
@@ -95,7 +100,7 @@ class MassMailing(models.Model):
             "record_name": False,
             "composition_mode": "mass_mail",
             "mass_mailing_id": mailing.id,
-            "mailing_list_ids": [(4, l.id) for l in mailing.contact_list_ids],
+            "mailing_list_ids": [(4, clist.id) for clist in mailing.contact_list_ids],
             "no_auto_thread": mailing.reply_to_mode != "thread",
             "template_id": None,
             "mail_server_id": mailing.mail_server_id.id,
@@ -103,17 +108,23 @@ class MassMailing(models.Model):
         if mailing.reply_to_mode == "email":
             composer_values["reply_to"] = mailing.reply_to
 
-        composer = self.env["mail.compose.message"].with_context(active_ids=res_ids).create(composer_values)
+        composer = (
+            self.env["mail.compose.message"]
+            .with_context(active_ids=res_ids)
+            .create(composer_values)
+        )
         extra_context = mailing._get_mass_mailing_context()
         composer = composer.with_context(active_ids=res_ids, **extra_context)
         # auto-commit except in testing mode
         auto_commit = not getattr(threading.currentThread(), "testing", False)
         composer.send_mail(auto_commit=auto_commit)
-        mailing.write({
-            "state": "done",
-            "sent_date": fields.Datetime.now(),
-            # send the KPI mail only if it"s the first sending
-            "kpi_mail_required": not mailing.sent_date,
-        })
+        mailing.write(
+            {
+                "state": "done",
+                "sent_date": fields.Datetime.now(),
+                # send the KPI mail only if it"s the first sending
+                "kpi_mail_required": not mailing.sent_date,
+            }
+        )
 
     # 8. Business methods

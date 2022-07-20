@@ -20,11 +20,10 @@
 {
     "name": "Mail Disable Notification Pay Now",
     "summary": "Disable Pay Now notification in mail template",
-    "description": "Disable Pay Now notification in mail tempalte",
     "version": "14.0.1.0.0",
     "category": "Mail",
-    "website": "https://gitlab.com/tawasta/odoo",
-    "author": "Miika Nissi",
+    "website": "https://gitlab.com/tawasta/odoo/social",
+    "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
