@@ -23,7 +23,7 @@
     "summary": "Make mail template name a translatable field",
     "version": "14.0.1.0.0",
     "category": "Tools",
-    "website": "https://gitlab.com/tawasta/odoo/social/author",
+    "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

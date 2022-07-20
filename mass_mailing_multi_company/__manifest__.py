@@ -29,7 +29,8 @@
     "application": False,
     "installable": True,
     "depends": [
-        "base", "mass_mailing",
+        "base",
+        "mass_mailing",
     ],
     "data": [
         "security/mass_mailing_security.xml",
