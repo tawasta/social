@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">Partner form Postmark</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="mail_tracking.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="email_bounced" position="after">
+                <label
+                    for="check_email_bounced"
+                    string="Postmark"
+                    attrs="{'invisible': [('email', '=', False)]}"
+                />
+                <div
+                    name="postmark_buttons"
+                    attrs="{'invisible': [('email', '=', False)]}"
+                >
+                    <button
+                        name="check_email_bounced"
+                        type="object"
+                        string="Check Postmark"
+                        class="oe_link"
+                    />
+                    <button
+                        name="check_email_validity"
+                        type="object"
+                        string="Check email validity"
+                        class="oe_link"
+                    />
+                    <button
+                        name="force_set_bounced"
+                        type="object"
+                        string="Set Bounced"
+                        class="oe_link"
+                        attrs="{'invisible': [('email_bounced', '=', True)]}"
+                    />
+                    <button
+                        name="force_unset_bounced"
+                        type="object"
+                        string="Unset Bounced"
+                        class="oe_link"
+                        attrs="{'invisible': [('email_bounced', '=', False)]}"
+                    />
+                </div>
+            </field>
+        </field>
+    </record>
+
+</odoo>

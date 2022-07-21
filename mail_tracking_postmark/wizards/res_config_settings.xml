@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 Tecnativa - Jairo Llopis
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<data>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.postmark</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="mail.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <div id="emails" position="inside">
+                <div id="mail_tracking_postmark" class="col-12 o_setting_box">
+                    <div class="o_setting_left_pane">
+
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="mail_tracking_postmark_api_token" />
+                        <div class="text-muted">
+                            Add API Token to integrate Odoo with <a
+                                href="https://postmarkapp.com/"
+                                target="_blank"
+                            >Postmark</a> for better tracking.
+                        </div>
+                        <field name="mail_tracking_postmark_api_token" />
+                        <div
+                            class="content-group"
+                            attrs="{'invisible': [('mail_tracking_postmark_api_token', '=', False)]}"
+                        >
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="text-muted mt16 mb4">
+                                        You can register and unregister Postmark webhooks here
+                                    </div>
+                                    <button
+                                        type="object"
+                                        name="mail_tracking_postmark_register_webhooks"
+                                        string="Register Postmark webhooks"
+                                        icon="fa-arrow-right"
+                                        class="btn-link"
+                                    />
+                                    <button
+                                        type="object"
+                                        name="mail_tracking_postmark_unregister_webhooks"
+                                        string="Unregister Postmark webhooks"
+                                        icon="fa-arrow-right"
+                                        class="btn-link"
+                                        confirm="This will unregister all Postmark webhooks for this server"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+
+</data>
