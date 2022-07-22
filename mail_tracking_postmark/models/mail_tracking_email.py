@@ -13,7 +13,7 @@ class MailTrackingEmail(models.Model):
     def _postmark_event_process(self, jsonrequest, metadata):
         """Retrieve Postmark event from API data payload."""
 
-        if jsonrequest["Metadata"]["odoo_db"] != self.env.cr.dbname:
+        if jsonrequest["Metadata"].get("odoo_db") != self.env.cr.dbname:
             raise ValidationError(_("Wrong database for event!"))
 
         postmark_message_id = jsonrequest["MessageID"]
