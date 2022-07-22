@@ -10,12 +10,15 @@ _logger = logging.getLogger(__name__)
 class MailTrackingEmail(models.Model):
     _inherit = "mail.tracking.email"
 
-    def _postmark_event_process(self, event_data, metadata):
+    def _postmark_event_process(self, jsonrequest, metadata):
         """Retrieve Postmark event from API data payload."""
-        if event_data["user-variables"]["odoo_db"] != self.env.cr.dbname:
+
+        if jsonrequest["Metadata"]["odoo_db"] != self.env.cr.dbname:
             raise ValidationError(_("Wrong database for event!"))
-        # Do nothing if event was already processed
-        postmark_message_id = event_data["event_data, metadat"]
+
+        postmark_message_id = jsonrequest["MessageID"]
+        mail_tracking_id = jsonrequest["Metadata"]["tracking_email_id"]
+
         db_event = self.env["mail.tracking.event"].search(
             [("postmark_message_id", "=", postmark_message_id)], limit=1
         )
@@ -24,19 +27,36 @@ class MailTrackingEmail(models.Model):
             return db_event
 
         # Do nothing if tracking email for event is not found
-        message_id = event_data["MessageID"]
-        recipient = event_data["Recipient"]
-        tracking_email = self.browse(
-            int(event_data["user-variables"]["tracking_email_id"])
-        )
-        event_type = event_data["RecordType"]
+        recipient = jsonrequest["Recipient"]
+        tracking_email = self.browse(int(mail_tracking_id))
+
         # Process event
-        state = event_type.lower()
-        metadata = self._postmark_metadata(event_type, event_data, metadata)
+        state = self._postmark_event_type(
+            jsonrequest["RecordType"], jsonrequest.get("Type")
+        )
+        metadata = self._postmark_metadata(jsonrequest, metadata)
 
         tracking_email.event_create(state, metadata)
 
-    def _postmark_metadata(self, event_type, event, metadata):
+    def _postmark_event_type(self, record_type, response_type):
+        if record_type == "Delivery":
+            status = "delivered"
+        elif record_type == "Open":
+            status = "open"
+        elif record_type == "Bounce":
+            if response_type and response_type == "HardBounce":
+                status = "hard_bounce"
+            else:
+                status = "soft_bounce"
+
+        return status
+
+    def _postmark_metadata(self, jsonrequest, metadata):
+        if jsonrequest.get("Recipient"):
+            metadata["recipient"] = jsonrequest["recipient"]
+
+        if jsonrequest.get("Details"):
+            metadata["description"] = jsonrequest["Details"]
 
         return metadata
 

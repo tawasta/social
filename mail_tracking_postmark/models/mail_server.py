@@ -8,9 +8,7 @@ class MailServer(models.Model):
     def _tracking_headers_add(self, tracking_email_id, headers):
         headers = super()._tracking_headers_add(tracking_email_id, headers)
         headers = headers or {}
-        metadata = {
-            "odoo_db": self.env.cr.dbname,
-            "tracking_email_id": tracking_email_id,
-        }
-        headers["X-Postmark-Variables"] = json.dumps(metadata)
+        headers["X-PM-Metadata-odoo_db"] = self.env.cr.dbname
+        headers["X-PM-Metadata-tracking_email_id"] = tracking_email_id
+
         return headers
