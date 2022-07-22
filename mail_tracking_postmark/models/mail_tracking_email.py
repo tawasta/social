@@ -27,7 +27,6 @@ class MailTrackingEmail(models.Model):
             return db_event
 
         # Do nothing if tracking email for event is not found
-        recipient = jsonrequest["Recipient"]
         tracking_email = self.browse(int(mail_tracking_id))
 
         # Process event
@@ -53,7 +52,7 @@ class MailTrackingEmail(models.Model):
 
     def _postmark_metadata(self, jsonrequest, metadata):
         if jsonrequest.get("Recipient"):
-            metadata["recipient"] = jsonrequest["recipient"]
+            metadata["recipient"] = jsonrequest["Recipient"]
 
         if jsonrequest.get("Details"):
             metadata["description"] = jsonrequest["Details"]
