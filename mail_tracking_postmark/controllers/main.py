@@ -1,4 +1,5 @@
 import logging
+
 from odoo.http import request, route
 
 from ...mail_tracking.controllers import main

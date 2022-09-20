@@ -1,4 +1,3 @@
-import json
 from odoo import models
 
 
