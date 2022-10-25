@@ -1,0 +1,12 @@
+.o_Message {
+    &.o-highlight {
+        background-color: #fff0f0;
+        border-bottom: 1px solid #e6d7d7;
+        .o_Message_partnerImStatusIcon {
+            color: #fff0f0;
+        }
+        &.o-selected {
+            border-bottom: #e6d7d7;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="mail_highlight.Message" t-inherit="mail.Message" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_Message')]" position="attributes">
+            <attribute name="t-att-class">{
+                'o-clicked': state.isClicked,
+                'o-discussion': message and (message.is_discussion or message.is_notification),
+                'o-mobile': env.messaging.device.isMobile,
+                'o-not-discussion': message and !(message.is_discussion or message.is_notification),
+                'o-notification': message and message.message_type === 'notification',
+                'o-selected': props.isSelected,
+                'o-squashed': props.isSquashed,
+                'o-starred': message and message.isStarred,
+                'o-highlight': message and message.is_highlight,
+            }</attribute>
+        </xpath>
+    </t>
+</templates>
