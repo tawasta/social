@@ -22,7 +22,7 @@
     "version": "14.0.1.0.0",
     "category": "Tools",
     "summary": "Allows highlighting messages based on subtypes",
-    "website": "https://gitlab.com/tawasta/odoo",
+    "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
