@@ -13,8 +13,10 @@ addon | version | maintainers | summary
 [mail_autosubscribe_notify_bypass](mail_autosubscribe_notify_bypass/) | 14.0.1.0.1 |  | Model-specific way to not send autosubscribe mails
 [mail_custom_headers](mail_custom_headers/) | 14.0.1.0.0 |  | Allow using custom headers when sending email
 [mail_disable_notification_paynow](mail_disable_notification_paynow/) | 14.0.1.0.0 |  | Disable Pay Now notification in mail template
+[mail_highlight](mail_highlight/) | 14.0.1.0.0 |  | Allows highlighting messages based on subtypes
 [mail_layout_custom](mail_layout_custom/) | 14.0.1.0.0 |  | Add a custom layout for mail template
 [mail_template_name_translatable](mail_template_name_translatable/) | 14.0.1.0.0 |  | Make mail template name a translatable field
+[mail_tracking_failure_alert](mail_tracking_failure_alert/) | 14.0.1.0.3 |  | Alert user by email if message sending fails
 [mail_tracking_postmark](mail_tracking_postmark/) | 14.0.1.0.0 |  | This module integrates mail_tracking events with Postmark
 [mass_mailing_email_template](mass_mailing_email_template/) | 14.0.1.0.0 |  | Edits mass mailing email template
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 14.0.1.0.0 |  | Mass Mailing List Sync Automation
