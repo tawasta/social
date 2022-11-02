@@ -1,34 +1,44 @@
-from odoo import _, models
+from odoo import _, api, models
 
 
-class MailMail(models.Model):
-    _inherit = "mail.mail"
+class MailTrackingEmail(models.Model):
 
-    def send(self, *args, **kwargs):
-        res = super().send(*args, **kwargs)
+    _inherit = "mail.tracking.email"
 
+    @api.model
+    def create(self, values):
+        res = super().create(values)
+        self.failure_message_send()
+        return res
+
+    def write(self, values):
+        res = super().write(values)
+        self.failure_message_send()
+        return res
+
+    def failure_message_send(self):
         for record in self:
-            if record.state == "exception":
+            if record.state in ["error", "rejected", "soft-bounced", "bounced"]:
                 # Notify the sender about failed message
-                recipients = record.email_to or ", ".join(
-                    r.email or "" for r in record.recipient_ids
-                )
 
                 # Construct the message (we could also use an email template here)
                 subject = _(
                     "Sending message '{}' to '{}' failed".format(
-                        record.subject, recipients
+                        record.name, record.recipient
                     )
                 )
                 body = _(
                     "Sending message '{}' to '{}' failed: {}".format(
-                        record.subject, recipients, record.failure_reason
+                        record.name, record.recipient, record.error_description
                     )
                 )
 
-                if record.res_id and record.model:
+                mail_message = record.mail_message_id
+                if mail_message.res_id and mail_message.model:
                     linked_record = (
-                        self.env[record.model].sudo().browse([record.res_id])
+                        self.env[mail_message.model]
+                        .sudo()
+                        .browse([mail_message.res_id])
                     )
                     url = linked_record.get_base_url()
                     url += "/web#id=%d&view_type=form&model=%s" % (
@@ -42,9 +52,7 @@ class MailMail(models.Model):
                     "subject": subject,
                     "body_html": body,
                     "email_from": self.env.user.company_id.email,
-                    "email_to": record.email_from,
+                    "email_to": record.sender,
                 }
 
                 self.env["mail.mail"].with_context().create(mail_values)
-
-        return res

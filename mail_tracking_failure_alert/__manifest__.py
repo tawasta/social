@@ -30,6 +30,7 @@
     "installable": True,
     "depends": [
         "mail",
+        "mail_tracking",
     ],
     "data": [
         "data/mail_send_exception.xml",
