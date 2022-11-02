@@ -21,7 +21,7 @@
 {
     "name": "Mail tracking failure alert",
     "summary": "Alert user by email if message sending fails",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Tools",
     "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
