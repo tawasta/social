@@ -51,7 +51,7 @@ class MailTrackingEmail(models.Model):
                 mail_values = {
                     "subject": subject,
                     "body_html": body,
-                    "email_from": self.env.ref("base.partnerF_root").email,
+                    "email_from": self.env.ref("base.partner_root").email,
                     "email_to": record.sender,
                 }
 
