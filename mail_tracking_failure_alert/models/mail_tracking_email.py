@@ -23,7 +23,7 @@ class MailTrackingEmail(models.Model):
 
                 # Construct the message (we could also use an email template here)
                 subject = _(
-                    "Sending message <strong>{}</strong> to <strong>{}</strong> failed.".format(
+                    "Sending message '{}' to {} failed.".format(
                         record.name, record.recipient
                     )
                 )
