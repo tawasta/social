@@ -2,11 +2,16 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===================
-Mail custom headers
-===================
+==========================
+Mail tracking for Postmark
+==========================
 
-Allow using custom headers when sending email
+This module integrates mail_tracking events with Postmark
+
+After installing go to General settings and add "Postmark API Token",
+save settings, and click "Register Postmark Webhooks".
+
+To unregister (delete) hooks, press "Unregister Postmark webhooks".
 
 Credits
 =======
@@ -15,7 +20,6 @@ Contributors
 ------------
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
-
 Maintainer
 ----------
 
