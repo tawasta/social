@@ -18,6 +18,8 @@ class MailMessage(models.Model):
             xml_id = "project.open_view_project_all_config"
         elif model == "project.task":
             xml_id = "project.project_task_action_from_partner"
+        elif model == "sale.order":
+            xml_id = "sale.act_res_partner_2_sale_order"
         else:
             # Add missing action handling
             xml_id = False
