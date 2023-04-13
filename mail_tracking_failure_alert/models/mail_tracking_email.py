@@ -18,6 +18,10 @@ class MailTrackingEmail(models.Model):
 
     def failure_message_send(self):
         for record in self:
+            if hasattr(record, "mass_mailing_id") and record.mass_mailing_id:
+                # Skip mass mailing messages to avoid spamming the sender
+                continue
+
             if record.state in ["error", "rejected", "soft-bounced", "bounced"]:
                 # Notify the sender about failed message
 

@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_message_feed_tree">
+        <field name="name">mail.message.feed.tree</field>
+        <field name="model">mail.message</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <tree string="Messages" create="false" edit="false" delete="false">
+                <field name="date" optional="show" />
+                <field name="email_from" optional="hide" />
+                <field name="author_id" optional="show" />
+                <field name="subject" optional="show" />
+                <field name="body" optional="show" />
+                <field name="record_name" optional="show" />
+                <button
+                    name="action_view_related_record"
+                    icon="fa-folder-open"
+                    title="Related document"
+                    context="{'active_id': active_id}"
+                    type="object"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_message_feed_form">
+        <field name="name">mail.message.feed.form</field>
+        <field name="model">mail.message</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <form
+                string="Message"
+                duplicate="false"
+                create="false"
+                edit="false"
+                delete="false"
+            >
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="action_view_related_record"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-folder-open"
+                        >
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Related document</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="subject" readonly="1" />
+                            <field name="date" readonly="1" />
+                            <field name="email_from" readonly="1" />
+                            <field name="author_id" readonly="1" />
+                            <field
+                                name="parent_id"
+                                readonly="1"
+                                attrs="{'invisible': [('parent_id', '=', False)]}"
+                            />
+                        </group>
+                        <group>
+                            <field name="res_id" readonly="1" />
+                            <field name="model" readonly="1" />
+                            <field name="record_name" readonly="1" />
+                        </group>
+                        <field name="body" readonly="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_message_feed_search">
+        <field name="name">mail.message.feed.search</field>
+        <field name="model">mail.message</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <search string="Messages Search">
+                <field
+                    name="body"
+                    string="Content"
+                    filter_domain="['|', ('subject', 'ilike', self), ('body', 'ilike', self)]"
+                />
+                <field name="subject" />
+                <field name="author_id" />
+                <field name="partner_ids" />
+                <field name="parent_id" />
+            </search>
+        </field>
+    </record>
+
+</odoo>
