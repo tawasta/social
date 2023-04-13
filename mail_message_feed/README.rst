@@ -2,16 +2,22 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==========================
-Mail tracking for Postmark
-==========================
+=================
+Mail message feed
+=================
+Add a mail message feed to Messaging
 
-This module integrates mail_tracking events with Postmark
+Configuration
+=============
+\-
 
-After installing go to General settings and add "Postmark API Token",
-save settings, and click "Register Postmark Webhooks".
+Usage
+=====
+\-
 
-To unregister (delete) hooks, press "Unregister Postmark webhooks".
+Known issues / Roadmap
+======================
+\-
 
 Credits
 =======
@@ -19,7 +25,7 @@ Credits
 Contributors
 ------------
 
-* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Miika Nissi <miika.nissi@tawasta.fi>
 
 Maintainer
 ----------
