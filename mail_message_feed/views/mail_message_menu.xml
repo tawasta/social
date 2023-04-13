@@ -1,5 +1,16 @@
 <?xml version="1.0" ?>
 <odoo>
+    <record id="action_view_mail_message_feed" model="ir.actions.act_window">
+        <field name="name">Message feed</field>
+        <field name="res_model">mail.message</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_message_feed_search" />
+        <field name="domain">[
+            ('message_type', 'in', ['email', 'comment']),
+            ('subtype_id', '=', 1),
+            ]</field>
+    </record>
+
     <!-- Simplified views for tree and form -->
     <record id="action_view_mail_message_feed_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="1" />
@@ -13,17 +24,6 @@
         <field name="view_mode">form</field>
         <field name="view_id" ref="view_message_feed_form" />
         <field name="act_window_id" ref="action_view_mail_message_feed" />
-    </record>
-
-    <record id="action_view_mail_message_feed" model="ir.actions.act_window">
-        <field name="name">Message feed</field>
-        <field name="res_model">mail.message</field>
-        <field name="view_mode">tree,form</field>
-        <field name="search_view_id" ref="view_message_feed_search" />
-        <field name="domain">[
-            ('message_type', 'in', ['email', 'comment']),
-            ('subtype_id', '=', 1),
-            ]</field>
     </record>
 
     <!-- Add menu entry in Settings/Email -->
