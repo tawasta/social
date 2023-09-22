@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="mail.widget.Thread.Message">
+        <t t-jquery="div[t-att-data-message-id='message.getID()']">
+            this.attr(
+            "t-att-data-message-type",
+            "(typeof message.getType === 'function') ? message.getType() : ''"
+            );
+
+            this.attr(
+            't-att-data-message-is-note',
+            "message._isNote ? 'true' : 'false'"
+            );
+
+            this.attr(
+            't-att-data-message-has-tracking-values',
+            "(typeof message.hasTrackingValues === 'function') ? message.hasTrackingValues() : ''"
+            );
+
+            this.attr(
+            't-att-data-oe-id',
+            "(typeof message.getAuthorID === 'function') ? message.getAuthorID() : ''"
+            );
+        </t>
+    </t>
+</templates>
+
