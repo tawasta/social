@@ -20,6 +20,7 @@ addon | version | summary
 [mail_tracking_failure_alert](mail_tracking_failure_alert/) | 14.0.1.0.4 | Alert user by email if message sending fails
 [mail_tracking_postmark](mail_tracking_postmark/) | 14.0.1.0.0 | This module integrates mail_tracking events with Postmark
 [mass_mailing_email_template](mass_mailing_email_template/) | 14.0.1.0.0 | Edits mass mailing email template
+[mass_mailing_force_mail_server](mass_mailing_force_mail_server/) | 14.0.1.0.0 | Use secondary mail server for outgoing mass mail
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 14.0.1.0.0 | Mass Mailing List Sync Automation
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 14.0.1.0.0 | Mass mailing multi company
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 14.0.1.0.0 | Mass mailing privacy consent
