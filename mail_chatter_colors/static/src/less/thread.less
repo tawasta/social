@@ -1,10 +1,18 @@
 @message-user-note-color: salmon;
 @message-user-message-color: dodgerblue;
 
-div.o_Chatter > div > div > div > div.o_Message.o-not-discussion.o_MessageList_item.o_MessageList_message[aria-label="Note"] {
+div.o_Chatter
+    > div
+    > div
+    > div
+    > div.o_Message.o-not-discussion.o_MessageList_item.o_MessageList_message[aria-label="Note"] {
     border-left: 5px solid @message-user-note-color;
 }
-div.o_Chatter > div > div > div > div.o_Message.o-discussion.o_MessageList_item.o_MessageList_message[aria-label="Message"] {
+div.o_Chatter
+    > div
+    > div
+    > div
+    > div.o_Message.o-discussion.o_MessageList_item.o_MessageList_message[aria-label="Message"] {
     border-left: 5px solid @message-user-message-color;
 }
 div.o_Chatter > div > div > div > div.o_Message:last-child {

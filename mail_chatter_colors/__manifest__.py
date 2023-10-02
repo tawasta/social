@@ -23,7 +23,7 @@
     "summary": "Chatter colors",
     "version": "14.0.1.0.0",
     "category": "Social",
-    "website": "https://tawasta.fi",
+    "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
