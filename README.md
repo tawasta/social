@@ -11,6 +11,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [mail_autosubscribe_notify_bypass](mail_autosubscribe_notify_bypass/) | 14.0.1.0.1 | Model-specific way to not send autosubscribe mails
+[mail_chatter_colors](mail_chatter_colors/) | 14.0.1.0.0 | Chatter colors
 [mail_custom_headers](mail_custom_headers/) | 14.0.1.0.0 | Allow using custom headers when sending email
 [mail_disable_notification_paynow](mail_disable_notification_paynow/) | 14.0.1.0.0 | Disable Pay Now notification in mail template
 [mail_highlight](mail_highlight/) | 14.0.1.0.0 | Allows highlighting messages based on subtypes
