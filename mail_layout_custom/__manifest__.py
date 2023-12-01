@@ -21,7 +21,7 @@
 {
     "name": "Mail custom layout",
     "summary": "Add a custom layout for mail template",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Tools",
     "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
