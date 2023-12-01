@@ -8,7 +8,7 @@
              <t t-call="mail_layout_custom.custom_email_footer" />
         </xpath>
 
-        <xpath expr="//a[@t-if='has_button_access']" position="attributes">
+        <xpath expr="//td[@t-if='has_button_access']" position="attributes">
             <attribute
                 name="t-attf-style"
             >padding: 8px 12px; font-size: 12px; color: #{company.color_navbar_text or '#FFFFFF'}; text-decoration: none !important; font-weight: 400; background-color: #{company.color_navbar_bg or '#323335'}; border: 0px solid #875A7B; border-radius:3px</attribute>
