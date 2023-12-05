@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,22 +19,18 @@
 ##############################################################################
 
 {
-    "name": "Mail custom layout",
-    "summary": "Add a custom layout for mail template",
-    "version": "14.0.1.0.1",
-    "category": "Tools",
+    "name": "Chatter colors",
+    "summary": "Chatter colors",
+    "version": "14.0.1.0.0",
+    "category": "Social",
     "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": [
-        "base",
         "mail",
-        "web_company_color",
     ],
-    "data": [
-        "data/mail_layout_footer.xml",
-        "views/mail_notification_email.xml",
-    ],
+    "data": ["views/assets.xml"],
+    "qweb": ["static/src/xml/chatter.xml"],
 }
