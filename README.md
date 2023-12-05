@@ -16,11 +16,15 @@ addon | version | summary
 [mail_disable_notification_paynow](mail_disable_notification_paynow/) | 14.0.1.0.0 | Disable Pay Now notification in mail template
 [mail_highlight](mail_highlight/) | 14.0.1.0.0 | Allows highlighting messages based on subtypes
 [mail_layout_custom](mail_layout_custom/) | 14.0.1.0.1 | Add a custom layout for mail template
+[mail_message_activity](mail_message_activity/) | 14.0.1.0.0 | Auto-create activities from chatter messages
+[mail_message_activity_contract](mail_message_activity_contract/) | 14.0.1.0.0 | Auto-create activities from Contract chatter messages
+[mail_message_activity_sale](mail_message_activity_sale/) | 14.0.1.0.0 | Auto-create activities from Sale order chatter messages
 [mail_message_feed](mail_message_feed/) | 14.0.1.0.0 | Add a mail message feed to Messaging
 [mail_template_name_translatable](mail_template_name_translatable/) | 14.0.1.0.0 | Make mail template name a translatable field
 [mail_tracking_failure_alert](mail_tracking_failure_alert/) | 14.0.1.0.4 | Alert user by email if message sending fails
 [mail_tracking_postmark](mail_tracking_postmark/) | 14.0.1.0.0 | This module integrates mail_tracking events with Postmark
 [mass_mailing_email_template](mass_mailing_email_template/) | 14.0.1.0.0 | Edits mass mailing email template
+[mass_mailing_force_mail_server](mass_mailing_force_mail_server/) | 14.0.1.0.0 | Use secondary mail server for outgoing mass mail
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 14.0.1.0.0 | Mass Mailing List Sync Automation
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 14.0.1.0.0 | Mass mailing multi company
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 14.0.1.0.0 | Mass mailing privacy consent
