@@ -15,7 +15,7 @@ addon | version | summary
 [mail_custom_headers](mail_custom_headers/) | 14.0.1.0.0 | Allow using custom headers when sending email
 [mail_disable_notification_paynow](mail_disable_notification_paynow/) | 14.0.1.0.0 | Disable Pay Now notification in mail template
 [mail_highlight](mail_highlight/) | 14.0.1.0.0 | Allows highlighting messages based on subtypes
-[mail_layout_custom](mail_layout_custom/) | 14.0.1.0.0 | Add a custom layout for mail template
+[mail_layout_custom](mail_layout_custom/) | 14.0.1.0.1 | Add a custom layout for mail template
 [mail_message_activity](mail_message_activity/) | 14.0.1.0.0 | Auto-create activities from chatter messages
 [mail_message_activity_contract](mail_message_activity_contract/) | 14.0.1.0.0 | Auto-create activities from Contract chatter messages
 [mail_message_activity_sale](mail_message_activity_sale/) | 14.0.1.0.0 | Auto-create activities from Sale order chatter messages

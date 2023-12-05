@@ -17,16 +17,17 @@ class MailMessage(models.Model):
             and self.subtype_id == subtype_id
         ):
             # Auto-create a new activity
+            model_id = (
+                self.env["ir.model"].sudo().search([("model", "=", record._name)]).id
+            )
             activity_values = {
                 "activity_type_id": self.env.ref("mail.mail_activity_data_todo").id,
                 # TODO: configurable deadline
                 "date_deadline": fields.Datetime.today() + timedelta(2),
                 "summary": _("Check messages from partner"),
+                "note": self.body,
                 "user_id": record.user_id.id,
-                "res_model_id": self.env["ir.model"]
-                .sudo()
-                .search([("model", "=", record._name)])
-                .id,
+                "res_model_id": model_id,
                 "res_id": record.id,
             }
             desc = _("Create activity for {}".format(record.name))
