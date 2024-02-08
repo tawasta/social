@@ -23,6 +23,7 @@ addon | version | summary
 [mail_template_name_translatable](mail_template_name_translatable/) | 14.0.1.0.0 | Make mail template name a translatable field
 [mail_tracking_failure_alert](mail_tracking_failure_alert/) | 14.0.1.0.4 | Alert user by email if message sending fails
 [mail_tracking_postmark](mail_tracking_postmark/) | 14.0.1.0.0 | This module integrates mail_tracking events with Postmark
+[mass_mailing_default_email_from_reply_company](mass_mailing_default_email_from_reply_company/) | 14.0.1.0.0 | Mass Mailing Default Email From and Reply Company
 [mass_mailing_email_template](mass_mailing_email_template/) | 14.0.1.0.0 | Edits mass mailing email template
 [mass_mailing_force_mail_server](mass_mailing_force_mail_server/) | 14.0.1.0.0 | Use secondary mail server for outgoing mass mail
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 14.0.1.0.0 | Mass Mailing List Sync Automation
