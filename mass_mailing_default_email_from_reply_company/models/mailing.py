@@ -20,12 +20,9 @@
 
 # 1. Standard library imports:
 import logging
-import math
-import threading
 
 # 3. Odoo imports (openerp):
-from odoo import _, fields, models, api
-from odoo.exceptions import UserError
+from odoo import api, fields, models
 
 # 2. Known third party imports:
 
@@ -43,26 +40,29 @@ class MassMailing(models.Model):
     # 1. Private attributes
     _inherit = "mailing.mailing"
 
-    email_from = fields.Char(string='Send From', required=True,
-                            default=lambda self: self._get_default_parent_company_email())
+    email_from = fields.Char(
+        string="Send From",
+        required=True,
+        default=lambda self: self._get_default_parent_company_email(),
+    )
 
-    reply_to = fields.Char(string='Reply To', compute='_compute_reply_to',
-                           readonly=False, store=True,
-                           help='Preferred Reply-To Address')
+    reply_to = fields.Char(
+        string="Reply To",
+        compute="_compute_reply_to",
+        readonly=False,
+        store=True,
+        help="Preferred Reply-To Address",
+    )
 
     @api.model
     def _get_default_parent_company_email(self):
-        """Hakee pääyrityksen sähköpostiosoitteen moniyritysympäristössä."""
-        parent_company = self.env['res.company']._get_main_company()
-        return parent_company.email or ''
+        parent_company = self.env["res.company"]._get_main_company()
+        return parent_company.email or ""
 
-    @api.depends('reply_to_mode')
+    @api.depends("reply_to_mode")
     def _compute_reply_to(self):
-        """Asettaa 'reply_to' kentän arvon riippuen 'reply_to_mode' kentän arvosta."""
         for mailing in self:
-            if mailing.reply_to_mode == 'email' and not mailing.reply_to:
-                # Asettaa reply_to kenttään pääyrityksen sähköpostiosoitteen, jos reply_to_mode on 'email'
-                mailing.reply_to = self.env['res.company']._get_main_company().email
-            elif mailing.reply_to_mode == 'thread':
-                # Tyhjentää reply_to kentän, jos reply_to_mode on 'thread'
+            if mailing.reply_to_mode == "email" and not mailing.reply_to:
+                mailing.reply_to = self.env["res.company"]._get_main_company().email
+            elif mailing.reply_to_mode == "thread":
                 mailing.reply_to = False
