@@ -3,7 +3,7 @@
 
 Social
 ======
-Odoo Social Addons.
+Odoo Social Addons
 
 [//]: # (addons)
 
@@ -11,6 +11,8 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[mail_custom_headers](mail_custom_headers/) | 17.0.1.0 |  | Allow using custom headers when sending email
+[mail_template_name_translatable](mail_template_name_translatable/) | 17.0.1.0 |  | Make mail template name a translatable field
 [mass_mailing_queue_send](mass_mailing_queue_send/) | 17.0.1.0.0 |  | Send mass mailing emails with queue
 
 [//]: # (end addons)

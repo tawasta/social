@@ -26,7 +26,6 @@ class MailServer(models.Model):
         smtp_debug=False,
         smtp_session=None,
     ):
-
         if mail_server_id:
             mail_server = self.browse([mail_server_id])
             if mail_server and mail_server.custom_headers:
