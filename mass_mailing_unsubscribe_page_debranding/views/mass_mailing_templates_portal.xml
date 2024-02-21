@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="mass_mailing_layout" inherit_id="mass_mailing.layout">
+        <!-- not great selectors available here... leave the empty
+        divs in place, to avoid any potential inheritance issues -->
+        <xpath expr="//div[hasclass('pull-right')]" position="replace">
+            <div class="pull-right" />
+        </xpath>
+        <xpath expr="//div[hasclass('pull-left')]" position="replace">
+            <div class="pull-left" />
+        </xpath>
+    </template>
+</odoo>
