@@ -20,6 +20,7 @@ addon | version | summary
 [mail_message_activity_contract](mail_message_activity_contract/) | 14.0.1.0.0 | Auto-create activities from Contract chatter messages
 [mail_message_activity_sale](mail_message_activity_sale/) | 14.0.1.0.0 | Auto-create activities from Sale order chatter messages
 [mail_message_feed](mail_message_feed/) | 14.0.1.0.0 | Add a mail message feed to Messaging
+[mail_notification_business_id](mail_notification_business_id/) | 14.0.1.0.0 | Adds Business ID to mail notification
 [mail_template_name_translatable](mail_template_name_translatable/) | 14.0.1.0.0 | Make mail template name a translatable field
 [mail_tracking_failure_alert](mail_tracking_failure_alert/) | 14.0.1.0.4 | Alert user by email if message sending fails
 [mail_tracking_postmark](mail_tracking_postmark/) | 14.0.1.0.0 | This module integrates mail_tracking events with Postmark
