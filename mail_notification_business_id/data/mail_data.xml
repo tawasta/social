@@ -7,4 +7,12 @@
             </t>
         </xpath>
     </template>
+
+    <template id="mail_notification_paynow" inherit_id="mail.mail_notification_paynow">
+        <xpath expr="//t[@t-if='company.email']" position="after">
+            <t t-if="company.vat"> |
+                <t t-esc="company.vat" />
+            </t>
+        </xpath>
+    </template>
 </odoo>
