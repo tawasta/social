@@ -21,7 +21,7 @@
 {
     "name": "Adds Business ID to mail notification",
     "summary": "Adds Business ID to mail notification",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Mail",
     "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
