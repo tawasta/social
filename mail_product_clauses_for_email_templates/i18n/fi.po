@@ -1,0 +1,201 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mail_product_clauses_for_email_templates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20230925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-17 12:50+0000\n"
+"PO-Revision-Date: 2024-04-17 12:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mail_product_clauses_for_email_templates
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_email_product_clause_form
+msgid "Applied to Product Categories"
+msgstr "Käytössä tuotekategorioilla"
+
+#. module: mail_product_clauses_for_email_templates
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_email_product_clause_form
+msgid "Applied to Products"
+msgstr "Käytössä yksittäisillä tuotteilla"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__ir_model_ids
+msgid "Apply to Models"
+msgstr "Koskee tietotyyppejä"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__clause_contents
+msgid "Clause Contents"
+msgstr "Tekstisisältö"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__create_uid
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__create_date
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_account_move__display_name
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__display_name
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_product_category__display_name
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_product_template__display_name
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model,name:mail_product_clauses_for_email_templates.model_email_product_clause
+msgid "E-mail Product Clause"
+msgstr "Sähköpostin tuoteteksti"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_account_bank_statement_line__email_product_clause_contents
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_account_move__email_product_clause_contents
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_account_payment__email_product_clause_contents
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_sale_order__email_product_clause_contents
+msgid "E-mail Product Clause Contents"
+msgstr "Sähköpostin tuotetekstit"
+
+#. module: mail_product_clauses_for_email_templates
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_email_product_clause_form
+msgid "E-mail Product Clause Name"
+msgstr "Sähköpostin tuotetekstin nimi"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.actions.act_window,name:mail_product_clauses_for_email_templates.email_product_clauses_action
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_product_category__email_product_clause_ids
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_product_product__email_product_clause_ids
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_product_template__email_product_clause_ids
+#: model:ir.ui.menu,name:mail_product_clauses_for_email_templates.menu_email_product_clauses
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.product_category_form_view
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.product_template_only_form_view
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_email_product_clause_tree
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_move_form_inherit
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_order_form_inherit
+msgid "E-mail Product Clauses"
+msgstr "Sähköpostin tuotetekstit"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_account_move__id
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__id
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_product_category__id
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_product_template__id
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_sale_order__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: mail_product_clauses_for_email_templates
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_move_form_inherit
+msgid ""
+"If the Invoice e-mail template is configured to include\n"
+"                            product clauses, the following clauses will be appended to the e-mail:"
+msgstr ""
+"Jos laskun viestipohja on konfiguroitu käyttämään tuotetekstejä, seuraavat tekstit liitetään "
+"sähköpostiin mukaan:"
+
+#. module: mail_product_clauses_for_email_templates
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_order_form_inherit
+msgid ""
+"If the Sale Order e-mail template is configured to include\n"
+"                            product clauses, the following clauses will be appended to the e-mail:"
+msgstr ""
+"Jos myyntitilauksen viestipohja on konfiguroitu käyttämään tuotetekstejä, seuraavat tekstit liitetään "
+"sähköpostiin mukaan:"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__internal_notes
+msgid "Internal Notes"
+msgstr "Sisäiset kommentit"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model,name:mail_product_clauses_for_email_templates.model_account_move
+msgid "Journal Entry"
+msgstr "Päiväkirjan kirjaus"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_account_move____last_update
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause____last_update
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_product_category____last_update
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_product_template____last_update
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mail_product_clauses_for_email_templates
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_move_form_inherit
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_order_form_inherit
+msgid "Manage E-Mail Product Clauses"
+msgstr "Hallinnoi sähköpostien tuotetekstejä"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__name
+#: model_terms:ir.ui.view,arch_db:mail_product_clauses_for_email_templates.view_email_product_clause_form
+msgid "Name"
+msgstr "Nimi"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__product_category_ids
+msgid "Product Categories Applied To"
+msgstr "Käytössä tuotekategorioilla"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model,name:mail_product_clauses_for_email_templates.model_product_category
+msgid "Product Category"
+msgstr "Tuotekategoria"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model,name:mail_product_clauses_for_email_templates.model_product_template
+msgid "Product Template"
+msgstr "Tuotemalli"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__product_template_ids
+msgid "Product Templates Applied To"
+msgstr "Käytössä yksittäisillä tuotteilla"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model,name:mail_product_clauses_for_email_templates.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,field_description:mail_product_clauses_for_email_templates.field_email_product_clause__sequence
+msgid "Sequence"
+msgstr "Sekvenssi"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,help:mail_product_clauses_for_email_templates.field_email_product_clause__product_template_ids
+msgid ""
+"The clause will be appended to the e-mail if these products are a part of "
+"the parent record, e.g. invoice"
+msgstr ""
+"Teksti sisällytetään sähköpostiin, jos emotietueella (esim. lasku) on riveillä näitä tuotteita"
+
+#. module: mail_product_clauses_for_email_templates
+#: model:ir.model.fields,help:mail_product_clauses_for_email_templates.field_email_product_clause__product_category_ids
+msgid ""
+"The clause will be appended to the e-mail if these products belonging to "
+"these categories are a part of the parent record, e.g. invoice"
+msgstr ""
+"Teksti sisällytetään sähköpostiin, jos emotietueella (esim. lasku) on riveillä näihin kategorioihin kuuluvia tuotteita"

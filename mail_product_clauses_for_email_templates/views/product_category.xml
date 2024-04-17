@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="product_category_form_view" model="ir.ui.view">
+        <field
+            name="name"
+        >product.category.form.mail.product.clauses.for.email.templates</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view" />
+        <field name="arch" type="xml">
+            <sheet position="inside">
+                <group string="E-mail Product Clauses">
+                    <field name="email_product_clause_ids" nolabel="1" />
+                </group>
+            </sheet>
+        </field>
+    </record>
+</odoo>

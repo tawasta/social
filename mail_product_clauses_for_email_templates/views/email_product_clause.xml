@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_email_product_clause_tree" model="ir.ui.view">
+        <field name="name">email.product.clause.tree</field>
+        <field name="model">email.product.clause</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <tree string="E-mail Product Clauses">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="clause_contents" />
+                <field name="product_template_ids" widget="many2many_tags" />
+                <field name="product_category_ids" widget="many2many_tags" />
+                <field name="ir_model_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_email_product_clause_form" model="ir.ui.view">
+        <field name="name">email.product.clause.form</field>
+        <field name="model">email.product.clause</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <form string="E-mail Product Clause">
+                <sheet>
+
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Name" />
+                        <h1>
+                            <field
+                                name="name"
+                                placeholder="E-mail Product Clause Name"
+                            />
+                        </h1>
+                    </div>
+
+                    <group>
+                        <field
+                            name="ir_model_ids"
+                            widget="many2many_tags"
+                            options="{'no_create': True}"
+                        />
+                        <field name="clause_contents" widget="html" />
+                    </group>
+
+                    <group
+                        string="Applied to Products"
+                        name="group_applied_to_products"
+                    >
+                        <field
+                            name="product_template_ids"
+                            nolabel="1"
+                            options="{'no_create': True}"
+                        >
+                            <tree>
+                                <field name="name" />
+                            </tree>
+                        </field>
+                    </group>
+
+                    <group
+                        string="Applied to Product Categories"
+                        name="group_applied_to_categories"
+                    >
+                        <field
+                            name="product_category_ids"
+                            nolabel="1"
+                            options="{'no_create': True}"
+                        >
+                            <tree>
+                                <field name="name" />
+                            </tree>
+                        </field>
+                    </group>
+
+                    <group>
+                        <field name="internal_notes" />
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="email_product_clauses_action" model="ir.actions.act_window">
+        <field name="name">E-mail Product Clauses</field>
+        <field name="res_model">email.product.clause</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="view_email_product_clause_tree" />
+    </record>
+
+    <menuitem
+        id="menu_email_product_clauses"
+        parent="base.menu_email"
+        sequence="85"
+        action="email_product_clauses_action"
+        groups="sales_team.group_sale_manager"
+    />
+</odoo>
