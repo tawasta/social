@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field
+            name="name"
+        >sale.order.view.form.mail.product.clauses.for.email.templates</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+
+            <notebook position="inside">
+                <page string="E-mail Product Clauses">
+                    <group col="2">
+                        <div class="text-muted">
+                            If the Sale Order e-mail template is configured to include
+                            product clauses, the following clauses will be appended to the e-mail:
+                        </div>
+                    </group>
+                    <group col="2">
+                        <field name="email_product_clause_contents" nolabel="1" />
+                    </group>
+                    <group col="2">
+                        <button
+                            name="mail_product_clauses_for_email_templates.email_product_clauses_action"
+                            icon="fa-arrow-right"
+                            type="action"
+                            string="Manage E-Mail Product Clauses"
+                            class="btn-primary"
+                        />
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
