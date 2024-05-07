@@ -11,6 +11,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[mail_autosubscribe_notify_bypass](mail_autosubscribe_notify_bypass/) | 17.0.1.0.0 |  | Model-specific way to not send autosubscribe mails
 [mail_custom_headers](mail_custom_headers/) | 17.0.1.0 |  | Allow using custom headers when sending email
 [mail_template_name_translatable](mail_template_name_translatable/) | 17.0.1.0 |  | Make mail template name a translatable field
 [mass_mailing_queue_send](mass_mailing_queue_send/) | 17.0.1.0.0 |  | Send mass mailing emails with queue
