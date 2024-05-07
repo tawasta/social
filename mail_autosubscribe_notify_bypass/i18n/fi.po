@@ -1,0 +1,105 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mail_autosubscribe_notify_bypass
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-26 11:55+0000\n"
+"PO-Revision-Date: 2022-04-26 11:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_company__autosubscribe_bypass_all
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_config_settings__autosubscribe_bypass_all
+msgid "Autosubscribe Notification Bypass All"
+msgstr "Ohita kaikki automaattiset tilausten ilmoitukset"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_company__autosubscribe_bypass_model_ids
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_config_settings__autosubscribe_bypass_model_ids
+msgid "Autosubscribe Notification Bypass Models"
+msgstr "Ohita automaattiset tilausten ilmoitukset malleissa"
+
+#. module: mail_autosubscribe_notify_bypass
+#: code:addons/mail_autosubscribe_notify_bypass/models/mail_thread.py:0
+#, python-format
+msgid ""
+"Bypassing the sending of autosubscribe mail regarding %s IDs %s to partners "
+"%s"
+msgstr ""
+"Ohitetaan automaattnen viesti mallille %s ID:t %s kumppaneille "
+"%s"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model,name:mail_autosubscribe_notify_bypass.model_res_company
+msgid "Companies"
+msgstr "Yritykset"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model,name:mail_autosubscribe_notify_bypass.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguraatioasetukset"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model_terms:ir.ui.view,arch_db:mail_autosubscribe_notify_bypass.res_config_settings_view_form
+msgid "Disable autosubcribe notifications for all models"
+msgstr "Poista käytöstä automaattisen tilauksen ilmoitukset kaikissa malleissa"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model_terms:ir.ui.view,arch_db:mail_autosubscribe_notify_bypass.res_config_settings_view_form
+msgid "Disable autosubcribe notifications for selected models"
+msgstr "Poista käytöstä automaattisen tilauksen ilmoitukset valituissa malleissa"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_mail_thread__display_name
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_company__display_name
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model,name:mail_autosubscribe_notify_bypass.model_mail_thread
+msgid "Email Thread"
+msgstr "Sähköpostiviestiketju"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_mail_thread__id
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_company__id
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_config_settings__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_mail_thread____last_update
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_company____last_update
+#: model:ir.model.fields,field_description:mail_autosubscribe_notify_bypass.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model.fields,help:mail_autosubscribe_notify_bypass.field_res_company__autosubscribe_bypass_all
+#: model:ir.model.fields,help:mail_autosubscribe_notify_bypass.field_res_config_settings__autosubscribe_bypass_all
+msgid "No models will send 'You have been assigned...' notifications."
+msgstr "Mikään malli ei lähetä 'Sinulle on määrätty...' -ilmoituksia."
+
+#. module: mail_autosubscribe_notify_bypass
+#: model_terms:ir.ui.view,arch_db:mail_autosubscribe_notify_bypass.res_config_settings_view_form
+msgid "Notification autosubscribe bypass"
+msgstr "Ilmoituksen automaattisen tilauksen ohitus"
+
+#. module: mail_autosubscribe_notify_bypass
+#: model:ir.model.fields,help:mail_autosubscribe_notify_bypass.field_res_company__autosubscribe_bypass_model_ids
+#: model:ir.model.fields,help:mail_autosubscribe_notify_bypass.field_res_config_settings__autosubscribe_bypass_model_ids
+msgid ""
+"The selected models will not send 'You have been assigned...' autosubscribe "
+"notifications"
+msgstr ""
+"Valitut mallit eivät lähetä 'Sinulle on määrätty...' automaattisen tilauksen"
+"ilmoituksia"
