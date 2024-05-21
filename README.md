@@ -36,6 +36,6 @@ addon | version | summary
 [mass_mailing_template_footer](mass_mailing_template_footer/) | 14.0.1.0.0 | Mass mailing template footer
 [mass_mailing_unhide_name_field](mass_mailing_unhide_name_field/) | 14.0.1.0.0 | Show Mailing objects' Name field also for regular users
 [mass_mailing_unsubscribe_page_debranding](mass_mailing_unsubscribe_page_debranding/) | 14.0.1.0.0 | Remove Odoo text and copyright from the page where user lands when unsubscribing from mass mailing
-[privacy_consent_fields](privacy_consent_fields/) | 14.0.1.0.0 | Privacy consent fields
+[privacy_consent_fields](privacy_consent_fields/) | 14.0.1.0.0 | Adds related subject (partner) and activity fields for privacy consent
 
 [//]: # (end addons)

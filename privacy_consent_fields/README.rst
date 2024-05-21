@@ -6,7 +6,7 @@
 Privacy consent fields
 ======================
 
-* pecifies subject and activity fields for editing
+Adds related subject (partner) and activity fields for privacy consent
 
 Credits
 =======
