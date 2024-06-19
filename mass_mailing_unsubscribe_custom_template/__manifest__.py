@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2024 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Privacy consent fields",
-    "summary": "Adds related subject (partner) and activity fields for privacy consent",
+    "name": "Mass mailing: Unsubscribe Custom Template",
+    "summary": "Custom template when unsubscribing from a mass mail",
     "version": "14.0.1.0.0",
     "category": "Social",
     "website": "https://gitlab.com/tawasta/odoo/social",
@@ -28,8 +28,8 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "privacy_consent",
+    "depends": ["mass_mailing"],
+    "data": [
+        "views/mass_mailing_templates_portal.xml",
     ],
-    "data": [],
 }

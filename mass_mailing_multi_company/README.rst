@@ -6,7 +6,7 @@
 Mass mailing multi company
 ==========================
 
-* Added multi company feature to mass mailing module
+Limits mass mailing visibility by user company
 
 Credits
 =======

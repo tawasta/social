@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-======================
-Privacy consent fields
-======================
+=========================================
+Mass mailing: Unsubscribe Custom Template
+=========================================
 
-Adds related subject (partner) and activity fields for privacy consent
+* Use different template for unsubscribe page
 
 Credits
 =======
@@ -14,7 +14,7 @@ Credits
 Contributors
 ------------
 
-* Valtteri Lattu <valtteri.lattu@tawasta.fi>
+* Aleksi Savijoki <aleksi.savijoki@tawasta.fi>
 
 Maintainer
 ----------

@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2019- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,18 +18,17 @@
 #
 ##############################################################################
 
-{
-    "name": "Privacy consent fields",
-    "summary": "Adds related subject (partner) and activity fields for privacy consent",
-    "version": "14.0.1.0.0",
-    "category": "Social",
-    "website": "https://gitlab.com/tawasta/odoo/social",
-    "author": "Tawasta",
-    "license": "AGPL-3",
-    "application": False,
-    "installable": True,
-    "depends": [
-        "privacy_consent",
-    ],
-    "data": [],
-}
+from odoo import http
+from odoo.http import request
+
+from odoo.addons.mass_mailing.controllers.main import MassMailController
+
+
+class MassMailController(MassMailController):
+    @http.route()
+    def mailing(self, mailing_id, email=None, res_id=None, token="", **post):
+        """Use different template to make unsubscribe working"""
+        super().mailing(mailing_id, email, res_id, token, **post)
+        return request.render(
+            "mass_mailing_unsubscribe_custom_template.page_unsubscribe_custom", {}
+        )
