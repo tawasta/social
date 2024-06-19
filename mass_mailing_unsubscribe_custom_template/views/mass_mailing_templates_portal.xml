@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <template id="page_unsubscribe_custom" inherit_id="mass_mailing.page_unsubscribe">
-        <t t-call="mass_mailing.layout" position="replace">
-            <t t-call="website.layout">
-                <t t-set="title">Unsubscribed</t>
-                <div id="wrap">
-                    <div class="oe_structure" />
-                    <div class="container">
-                        <h1 class="mt-3 mb-3 text-center">
-                            You have unsubscribed successfully
-                        </h1>
-                    </div>
+    <template id="page_unsubscribe_custom" name="Mass mailing custom unsubscribe">
+        <t t-call="website.layout">
+            <t t-set="title">Unsubscribed</t>
+            <div id="wrap">
+                <div class="oe_structure" />
+                <div class="container">
+                    <h1 class="mt-3 mb-3 text-center">
+                        You have unsubscribed successfully
+                    </h1>
                 </div>
-            </t>
+            </div>
         </t>
     </template>
 </odoo>
