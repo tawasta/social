@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2024 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Mass mailing privacy consent",
-    "summary": "Mass mailing privacy consent",
+    "name": "Mail: Toggleable Security Setting Update Notification",
+    "summary": "Adds a setting to toggle off notifications about changed user login, email or password",
     "version": "17.0.1.0.0",
     "category": "Social",
     "website": "https://gitlab.com/tawasta/odoo/futural",
@@ -28,9 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "base",
-        "mass_mailing",
-    ],
-    "data": [],
+    "depends": ["mail"],
+    "data": ["views/res_config_settings.xml"],
 }

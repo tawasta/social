@@ -23,7 +23,7 @@
     "summary": "Mass mailing subject not translatable",
     "version": "17.0.1.0.0",
     "category": "Social",
-    "website": "https://gitlab.com/tawasta/odoo/social",
+    "website": "https://gitlab.com/tawasta/odoo/futural",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
