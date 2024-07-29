@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mail_toggleable_security_setting_update_email
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240603\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-26 09:54+0000\n"
+"PO-Revision-Date: 2024-07-26 09:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mail_toggleable_security_setting_update_email
+#: model:ir.model.fields,field_description:mail_toggleable_security_setting_update_email.field_res_config_settings__bypass_security_setting_update_emails
+msgid "Bypass sending Security Update E-mails"
+msgstr "Ohita automaattisten tietoturvaviestien lähetys käyttäjille"
+
+#. module: mail_toggleable_security_setting_update_email
+#: model_terms:ir.ui.view,arch_db:mail_toggleable_security_setting_update_email.res_config_settings_view_form
+msgid ""
+"Bypass the sending of e-mail when user's login, password or email changes"
+msgstr ""
+"Älä lähetä käyttäjälle sähköpostia, kun hänen käyttäjätunnus, salasana tai sähköposti muuttuu"
+
+#. module: mail_toggleable_security_setting_update_email
+#: model:ir.model,name:mail_toggleable_security_setting_update_email.model_res_config_settings
+msgid "Config Settings"
+msgstr "Asetukset"
