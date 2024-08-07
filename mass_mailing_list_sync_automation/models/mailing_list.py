@@ -33,7 +33,6 @@ from odoo import api, models
 
 
 class MailingList(models.Model):
-
     # 1. Private attributes
     _inherit = "mailing.list"
 
