@@ -32,6 +32,7 @@ addon | version | summary
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 14.0.1.0.0 | Mass mailing multi company
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 14.0.1.0.0 | Mass mailing privacy consent
 [mass_mailing_queue_send](mass_mailing_queue_send/) | 14.0.1.0.0 | Send mass mailing emails with queue
+[mass_mailing_social_links_base_fontawesome_compatible](mass_mailing_social_links_base_fontawesome_compatible/) | 14.0.1.0.0 | Replaces mass mailing's social media icon classes to work with OCA's module
 [mass_mailing_social_links_youtube](mass_mailing_social_links_youtube/) | 14.0.1.0.0 | Adds Youtube icon support to mass mailing blocks
 [mass_mailing_subject_not_translatable](mass_mailing_subject_not_translatable/) | 14.0.1.0.0 | Mass mailing subject not translatable
 [mass_mailing_template_footer](mass_mailing_template_footer/) | 14.0.1.0.0 | Mass mailing template footer
