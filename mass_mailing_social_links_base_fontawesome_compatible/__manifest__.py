@@ -21,13 +21,13 @@
 {
     "name": "Mass Mailing: base_fontawesome Compatible Icons",
     "summary": "Replaces mass mailing's social media icon classes to work with OCA's module",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Tools",
     "website": "https://gitlab.com/tawasta/odoo/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
-    "installable": True,
+    "installable": False,
     "depends": [
         "base_fontawesome",
         "mass_mailing",

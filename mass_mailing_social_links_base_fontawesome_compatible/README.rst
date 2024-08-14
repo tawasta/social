@@ -21,7 +21,10 @@ Usage
 
 Known issues / Roadmap
 ======================
-\-
+* Flagged as uninstallable until further development: 
+   
+ * Currently only shows the icons in mass mailing editor view, but they do not 
+   show up in recipient's e-mail or in mass mail preview. 
 
 Credits
 =======
