@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="social_links_core" inherit_id="mass_mailing.social_links">
+
+        <xpath expr="//span[hasclass('fa-facebook')]" position="attributes">
+            <attribute name="class" separator=" " remove="fa" />
+            <attribute name="class" separator=" " add="fab" />
+        </xpath>
+
+        <xpath expr="//span[hasclass('fa-linkedin')]" position="attributes">
+            <attribute name="class" separator=" " remove="fa" />
+            <attribute name="class" separator=" " add="fab" />
+        </xpath>
+
+        <xpath expr="//span[hasclass('fa-twitter')]" position="attributes">
+            <attribute name="class" separator=" " remove="fa" />
+            <attribute name="class" separator=" " add="fab" />
+        </xpath>
+
+        <xpath expr="//span[hasclass('fa-instagram')]" position="attributes">
+            <attribute name="class" separator=" " remove="fa" />
+            <attribute name="class" separator=" " add="fab" />
+        </xpath>
+
+    </template>
+
+    <template
+        id="social_links_youtube"
+        inherit_id="mass_mailing_social_links_youtube.social_links"
+    >
+        <xpath expr="//span[hasclass('fa-youtube-play')]" position="attributes">
+            <attribute name="class" separator=" " remove="fa" />
+            <attribute name="class" separator=" " remove="fa-youtube-play" />
+            <attribute name="class" separator=" " add="fab" />
+            <attribute name="class" separator=" " add="fa-youtube" />
+        </xpath>
+    </template>
+
+
+</odoo>
