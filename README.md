@@ -21,6 +21,7 @@ addon | version | maintainers | summary
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 17.0.1.0.0 |  | Mass mailing privacy consent
 [mass_mailing_queue_send](mass_mailing_queue_send/) | 17.0.1.0.0 |  | Send mass mailing emails with queue
 [mass_mailing_subject_not_translatable](mass_mailing_subject_not_translatable/) | 17.0.1.0.0 |  | Mass mailing subject not translatable
+[mass_mailing_unsubscribe_custom_template](mass_mailing_unsubscribe_custom_template/) | 17.0.1.0.0 |  | Custom template when unsubscribing from a mass mail
 [privacy_consent_fields](privacy_consent_fields/) | 17.0.1.0.0 |  | Privacy consent fields - Activity and Subject
 
 [//]: # (end addons)
