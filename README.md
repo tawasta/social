@@ -29,6 +29,7 @@ addon | version | summary
 [mass_mailing_email_template](mass_mailing_email_template/) | 14.0.1.0.0 | Edits mass mailing email template
 [mass_mailing_force_mail_server](mass_mailing_force_mail_server/) | 14.0.1.0.0 | Use secondary mail server for outgoing mass mail
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 14.0.1.0.0 | Mass Mailing List Sync Automation
+[mass_mailing_mailing_contact_subscription_menuitem](mass_mailing_mailing_contact_subscription_menuitem/) | 14.0.1.0.0 | Adds a missing menuitem to Email Marketing menu
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 14.0.1.0.0 | Mass mailing multi company
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 14.0.1.0.0 | Mass mailing privacy consent
 [mass_mailing_queue_send](mass_mailing_queue_send/) | 14.0.1.0.0 | Send mass mailing emails with queue
