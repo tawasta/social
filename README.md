@@ -15,6 +15,7 @@ addon | version | maintainers | summary
 [mail_autosubscribe_notify_bypass](mail_autosubscribe_notify_bypass/) | 17.0.1.0.0 |  | Model-specific way to not send autosubscribe mails
 [mail_autosubscribe_notify_bypass_project_task](mail_autosubscribe_notify_bypass_project_task/) | 17.0.1.0.0 |  | Avoid sending 'You have been assigned... ' notifications from tasks
 [mail_custom_headers](mail_custom_headers/) | 17.0.1.0 |  | Allow using custom headers when sending email
+[mail_layout_custom](mail_layout_custom/) | 17.0.1.0.0 |  | Add a custom layout for mail template
 [mail_notification_business_id](mail_notification_business_id/) | 17.0.1.0.1 |  | Adds Business ID to mail notification
 [mail_template_name_translatable](mail_template_name_translatable/) | 17.0.1.0 |  | Make mail template name a translatable field
 [mail_toggleable_security_setting_update_email](mail_toggleable_security_setting_update_email/) | 17.0.1.0.0 |  | Adds a setting to toggle off notifications about changed user login, email or password

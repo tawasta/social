@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="mail_notification_layout" inherit_id="mail.mail_notification_layout">
+        <xpath
+            expr="//div[@t-if='email_add_signature and not is_html_empty(signature)']"
+            position="attributes"
+        >
+            <attribute name="t-style">display: none;</attribute>
+        </xpath>
+
+        <xpath
+            expr="//div[@t-if='email_add_signature and not is_html_empty(signature)']"
+            position="after"
+        >
+            <t t-call="mail_layout_custom.custom_email_footer" />
+        </xpath>
+
+        <xpath expr="//td[@t-if='has_button_access'][1]" position="attributes">
+            <attribute
+                name="t-attf-style"
+            >padding: 8px 12px; font-size: 12px; color: #{company.color_navbar_text or '#FFFFFF'}; text-decoration: none !important; font-weight: 400; background-color: #{company.color_navbar_bg or '#323335'}; border: 0px solid #875A7B; border-radius:3px</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="mail_notification_light"
+        inherit_id="mail.mail_notification_light"
+        priority="101"
+    >
+        <xpath expr="//a[@target='_blank']/.." position="replace">
+             <td><t t-call="mail_layout_custom.custom_email_footer" /></td>
+        </xpath>
+    </template>
+</odoo>

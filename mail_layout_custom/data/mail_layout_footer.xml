@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Template for email footer -->
+    <template id="custom_email_footer" name="Custom email footer">
+        <hr />
+        <div
+            id="email-footer"
+            style="text-align:center;padding:1em 2em;color:#b8b8b8;font-size: 13px;"
+            width="100%"
+            cellspacing="0"
+            cellpadding="0"
+            border="0"
+        >
+        <div t-if="object">
+            <span>Copyright © <t t-esc="object.create_date.year" /> <t
+                        t-esc="object.company_id.name"
+                    /></span><br />
+            <span>All rights reserved.</span>
+            <span t-if="object.company_id.website">
+                <br /><a t-att-href="object.company_id.website"><t
+                            t-esc="object.company_id.website"
+                        /></a>
+            </span>
+        </div>
+
+        <div>
+        The information contained in this message and in any attachments is confidential and is
+        intended solely for the attention and use of the named addressee(s). If you are not the
+        intended recipient and / or you have received this message in error, please contact the
+        sender immediately and delete all material you have received in this message. You are hereby
+        notified that any use of the information, which you have received in error in whatsoever
+        form, is strictly prohibited.
+        </div>
+        </div>
+    </template>
+</odoo>
