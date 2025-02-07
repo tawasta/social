@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="s_mail_block_footer_social"
+        inherit_id="mass_mailing.s_mail_block_footer_social"
+    >
+        <xpath
+            expr="//div[contains(@class, 'o_mail_footer_links')]"
+            position="attributes"
+        >
+            <attribute name="class">d-none</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="s_mail_block_footer_social_left"
+        inherit_id="mass_mailing.s_mail_block_footer_social_left"
+    >
+        <xpath expr="//p[@class='o_mail_footer_copy']" position="attributes">
+            <attribute name="class">d-none</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="s_mail_block_footer_social_contact"
+        inherit_id="website_mass_mailing.s_mail_block_footer_social"
+    >
+        <xpath expr="//a[@href='/contactus']/.." position="attributes">
+            <attribute name="class">d-none</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="s_mail_block_footer_social_left_contact"
+        inherit_id="website_mass_mailing.s_mail_block_footer_social_left"
+    >
+        <xpath expr="//a[@href='/contactus']/.." position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+    </template>
+</odoo>
