@@ -24,6 +24,7 @@ addon | version | maintainers | summary
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 17.0.1.0.0 |  | Mass mailing multi company
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 17.0.1.0.0 |  | Mass mailing privacy consent
 [mass_mailing_queue_send](mass_mailing_queue_send/) | 17.0.1.0.0 |  | Send mass mailing emails with queue
+[mass_mailing_social_links_youtube](mass_mailing_social_links_youtube/) | 17.0.1.0.0 |  | Adds Youtube icon support to mass mailing blocks
 [mass_mailing_subject_not_translatable](mass_mailing_subject_not_translatable/) | 17.0.1.0.0 |  | Mass mailing subject not translatable
 [mass_mailing_unhide_name_field](mass_mailing_unhide_name_field/) | 17.0.1.0.0 |  | Show Mailing objects' Name field also for regular users
 [mass_mailing_unsubscribe_custom_template](mass_mailing_unsubscribe_custom_template/) | 17.0.1.0.0 |  | Custom template when unsubscribing from a mass mail
