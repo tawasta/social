@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="social_links" inherit_id="mass_mailing.social_links">
+
+        <xpath expr="//a[last()]" position="after">
+
+            &amp;nbsp;&amp;nbsp;
+
+            <a
+                t-att-href="social_links.get('social_youtube')"
+                style="margin-left:10px"
+                aria-label="YouTube"
+                title="YouTube"
+            >
+                <span class="fa fa-youtube" />
+            </a>
+        </xpath>
+    </template>
+</odoo>
