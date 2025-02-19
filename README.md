@@ -19,6 +19,7 @@ addon | version | maintainers | summary
 [mail_notification_business_id](mail_notification_business_id/) | 17.0.1.0.1 |  | Adds Business ID to mail notification
 [mail_template_name_translatable](mail_template_name_translatable/) | 17.0.1.0 |  | Make mail template name a translatable field
 [mail_toggleable_security_setting_update_email](mail_toggleable_security_setting_update_email/) | 17.0.1.0.0 |  | Adds a setting to toggle off notifications about changed user login, email or password
+[mass_mailing_email_template](mass_mailing_email_template/) | 17.0.1.0.0 |  | Edits mass mailing email template
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 17.0.1.0.0 |  | Mass Mailing List Sync Automation
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 17.0.1.0.0 |  | Mass mailing multi company
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 17.0.1.0.0 |  | Mass mailing privacy consent
