@@ -23,7 +23,7 @@
     "summary": "Custom template when unsubscribing from a mass mail",
     "version": "17.0.1.0.0",
     "category": "Social",
-    "website": "https://gitlab.com/tawasta/odoo/futural",
+    "website": "https://github.com/tawasta/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

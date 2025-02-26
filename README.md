@@ -11,6 +11,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[mail_access_link_account_move_internal_users_only](mail_access_link_account_move_internal_users_only/) | 17.0.1.0.0 |  | Hide the 'View invoice' link in emails from other recipients
 [mail_attach_product_attachment](mail_attach_product_attachment/) | 17.0.1.0.0 |  | Use SO/PO line product attachments in mail compose
 [mail_autosubscribe_notify_bypass](mail_autosubscribe_notify_bypass/) | 17.0.1.0.0 |  | Model-specific way to not send autosubscribe mails
 [mail_autosubscribe_notify_bypass_project_task](mail_autosubscribe_notify_bypass_project_task/) | 17.0.1.0.0 |  | Avoid sending 'You have been assigned... ' notifications from tasks

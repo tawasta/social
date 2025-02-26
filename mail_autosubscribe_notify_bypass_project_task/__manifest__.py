@@ -23,7 +23,7 @@
     "summary": "Avoid sending 'You have been assigned... ' notifications from tasks",
     "version": "17.0.1.0.0",
     "category": "Administration",
-    "website": "https://gitlab.com/tawasta/odoo/futural",
+    "website": "https://github.com/tawasta/social",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,

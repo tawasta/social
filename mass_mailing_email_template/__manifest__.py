@@ -23,7 +23,7 @@
     "summary": "Edits mass mailing email template",
     "version": "17.0.1.0.0",
     "category": "Marketing",
-    "website": "https://gitlab.com/tawasta/odoo/futural",
+    "website": "https://github.com/tawasta/social",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
