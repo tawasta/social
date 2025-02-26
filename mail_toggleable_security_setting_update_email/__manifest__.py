@@ -23,7 +23,7 @@
     "summary": "Adds a setting to toggle off notifications about changed user login, email or password",
     "version": "17.0.1.0.0",
     "category": "Social",
-    "website": "https://gitlab.com/tawasta/odoo/futural",
+    "website": "https://github.com/tawasta/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

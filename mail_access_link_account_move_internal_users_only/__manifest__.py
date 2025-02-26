@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2025 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Privacy consent fields",
-    "summary": "Privacy consent fields - Activity and Subject",
+    "name": "Mail: Access Link for Invoices for Internal Users Only",
+    "summary": "Hide the 'View invoice' link in emails from other recipients",
     "version": "17.0.1.0.0",
     "category": "Social",
     "website": "https://github.com/tawasta/social",
@@ -28,8 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "privacy_consent",
-    ],
+    "depends": ["account"],
     "data": [],
 }

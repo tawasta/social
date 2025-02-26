@@ -23,7 +23,7 @@
     "summary": "Adds Business ID to mail notification",
     "version": "17.0.1.0.1",
     "category": "Mail",
-    "website": "https://gitlab.com/tawasta/odoo/futural",
+    "website": "https://github.com/tawasta/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
