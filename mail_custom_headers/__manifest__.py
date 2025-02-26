@@ -23,7 +23,7 @@
     "summary": "Allow using custom headers when sending email",
     "version": "17.0.1.0",
     "category": "Tools",
-    "website": "https://gitlab.com/tawasta/odoo/futural",
+    "website": "https://github.com/tawasta/social",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
