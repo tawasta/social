@@ -22,6 +22,7 @@ addon | version | maintainers | summary
 [mail_toggleable_security_setting_update_email](mail_toggleable_security_setting_update_email/) | 17.0.1.0.0 |  | Adds a setting to toggle off notifications about changed user login, email or password
 [mass_mailing_email_template](mass_mailing_email_template/) | 17.0.1.0.0 |  | Edits mass mailing email template
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 17.0.1.0.0 |  | Mass Mailing List Sync Automation
+[mass_mailing_mailing_subscription_menuitem](mass_mailing_mailing_subscription_menuitem/) | 17.0.1.0.0 |  | Adds a missing menuitem to Email Marketing menu
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 17.0.1.0.0 |  | Mass mailing multi company
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 17.0.1.0.0 |  | Mass mailing privacy consent
 [mass_mailing_queue_send](mass_mailing_queue_send/) | 17.0.1.0.0 |  | Send mass mailing emails with queue
