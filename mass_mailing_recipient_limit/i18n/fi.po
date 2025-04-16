@@ -1,0 +1,78 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mass_mailing_recipient_limit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240924\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-16 11:48+0000\n"
+"PO-Revision-Date: 2025-04-16 14:50+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: mass_mailing_recipient_limit
+#: model_terms:ir.ui.view,arch_db:mass_mailing_recipient_limit.view_mail_mass_mailing_form
+msgid ""
+"<strong>Sending is disabled!</strong><br/>\n"
+"                    <span invisible=\"contact_list_is_synced\">One or more mailing lists are not synced.<br/></span>\n"
+"                    <span invisible=\"contact_list_count &lt;= mass_mailing_recipient_limit\">You are over the maximum recipient limit.<br/></span>"
+msgstr ""
+"<strong>Lähetys on estetty!</strong><br/>\n"
+"                    <span invisible=\"contact_list_is_synced\">Yhtä tai useampaa postituslistaa ei ole synkronoitu.<br/></span>\n"
+"                    <span invisible=\"contact_list_count &lt;= mass_mailing_recipient_limit\">Olet ylittänyt vastaanottajien enimmäismäärän.<br/></span>"
+
+#. module: mass_mailing_recipient_limit
+#: model:ir.model,name:mass_mailing_recipient_limit.model_res_config_settings
+#, fuzzy
+msgid "Config Settings"
+msgstr "Asetukset"
+
+#. module: mass_mailing_recipient_limit
+#: model:ir.model.fields,field_description:mass_mailing_recipient_limit.field_mailing_mailing__contact_list_is_synced
+msgid "Contact lists synced"
+msgstr "Kontaktilista on synkronoitu"
+
+#. module: mass_mailing_recipient_limit
+#: model_terms:ir.ui.view,arch_db:mass_mailing_recipient_limit.res_config_settings_view_form
+msgid "Don't allow a single mailing to have more recipients"
+msgstr "Älä salli yksittäiselle massapostitukselle enempää vastaanottajia"
+
+#. module: mass_mailing_recipient_limit
+#: model:ir.model,name:mass_mailing_recipient_limit.model_mailing_mailing
+msgid "Mass Mailing"
+msgstr "Massapostitus"
+
+#. module: mass_mailing_recipient_limit
+#: model:ir.model.fields,field_description:mass_mailing_recipient_limit.field_mailing_mailing__mass_mailing_recipient_limit
+msgid "Recipient limit"
+msgstr "Vastaanottajien rajoitus"
+
+#. module: mass_mailing_recipient_limit
+#: model:ir.model.fields,field_description:mass_mailing_recipient_limit.field_res_config_settings__mass_mailing_recipient_limit
+#, fuzzy
+msgid "Recipient limit for mass mailing"
+msgstr "Massapostituksen vastaanottajarajoitus"
+
+#. module: mass_mailing_recipient_limit
+#: model:ir.model.fields,field_description:mass_mailing_recipient_limit.field_mailing_mailing__disable_sending
+msgid "Sending disabled"
+msgstr "Lähetys on estetty"
+
+#. module: mass_mailing_recipient_limit
+#. odoo-python
+#: code:addons/mass_mailing_recipient_limit/models/mailing.py:0
+#, python-format
+msgid "Sending is disabled!"
+msgstr "Lähetys on estetty!"
+
+#. module: mass_mailing_recipient_limit
+#: model:ir.model.fields,field_description:mass_mailing_recipient_limit.field_mailing_mailing__contact_list_count
+msgid "Total recipients"
+msgstr "Vastaanottajia yhteensä"

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_mail_mass_mailing_form" model="ir.ui.view">
+        <field name="name">mailing.mailing.form</field>
+        <field name="model">mailing.mailing</field>
+        <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='alert alert-info']" position="after">
+                <div
+                    class="alert alert-danger"
+                    role="alert"
+                    invisible="not disable_sending"
+                ><strong>Sending is disabled!</strong><br />
+                    <span
+                        invisible="contact_list_is_synced"
+                    >One or more mailing lists are not synced.<br /></span>
+                    <span
+                        invisible="contact_list_count &lt;= mass_mailing_recipient_limit"
+                    >You are over the maximum recipient limit.<br /></span>
+                </div>
+
+            </xpath>
+
+            <xpath expr="///div[@name='mailing_model_id_container']" position="after">
+                <field name="disable_sending" invisible="1" />
+                <field name="contact_list_is_synced" invisible="1" />
+                <field
+                    name="contact_list_count"
+                    decoration-danger="disable_sending"
+                    invisible="not contact_list_ids"
+                />
+                <field
+                    name="mass_mailing_recipient_limit"
+                    decoration-danger="disable_sending"
+                    invisible="contact_list_count &lt;= mass_mailing_recipient_limit"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
