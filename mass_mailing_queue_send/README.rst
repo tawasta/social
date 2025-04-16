@@ -28,7 +28,7 @@ Credits
 Contributors
 ------------
 
-* Jarmo Kortetjärvi <jarmo.kortetjarvi@futural.fi>
+* Aleksi Savijoki <aleksi.savijoki@tawasta.fi>
 
 Maintainer
 ----------

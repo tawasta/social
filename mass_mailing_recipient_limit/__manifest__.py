@@ -20,7 +20,7 @@
 
 {
     "name": "Limit mass mailing recipient amount",
-    "summary": "Send mass mailing emails with queue",
+    "summary": "Disable mass mail sending for too many recipients",
     "version": "17.0.1.0.0",
     "category": "Social",
     "website": "https://github.com/tawasta/social",
