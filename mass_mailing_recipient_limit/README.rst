@@ -2,21 +2,21 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=======================
-Mass Mailing Queue Send
-=======================
+===================================
+Limit mass mailing recipient amount
+===================================
 
-Send mass mailing emails with queue.
+Disable mass mail sending for too many recipients
 
 
 Configuration
 =============
-\-
-
+Set the limit in "Email Marketing"-configuraition.
+Default is 2000.
 
 Usage
 =====
-\-
+When sending mass mails, the sending will be disabled if recipient count goes over the limit, or if one or more of the contact lists are not synced.
 
 Known issues / Roadmap
 ======================
@@ -28,13 +28,13 @@ Credits
 Contributors
 ------------
 
-* Aleksi Savijoki <aleksi.savijoki@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@futural.fi>
 
 Maintainer
 ----------
 
-.. image:: https://tawasta.fi/templates/tawastrap/images/logo.png
-   :alt: Oy Tawasta OS Technologies Ltd.
-   :target: https://tawasta.fi/
+.. image:: https://futural.fi/templates/tawastrap/images/logo.png
+   :alt: Futural Oy
+   :target: https://futural.fi/
 
-This module is maintained by Oy Tawasta OS Technologies Ltd.
+This module is maintained by Futural Oy
