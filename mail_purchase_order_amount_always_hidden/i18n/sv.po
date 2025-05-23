@@ -1,0 +1,30 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mail_purchase_order_amount_always_hidden
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20250131\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-23 10:27+0000\n"
+"PO-Revision-Date: 2025-05-23 13:27+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: mail_purchase_order_amount_always_hidden
+#. odoo-python
+#: code:addons/mail_purchase_order_amount_always_hidden/models/purchase_order.py:0
+#, python-format
+msgid "Due %(date)s"
+msgstr "Förfaller %(date)s"
+
+#. module: mail_purchase_order_amount_always_hidden
+#: model:ir.model,name:mail_purchase_order_amount_always_hidden.model_purchase_order
+msgid "Purchase Order"
+msgstr "Inköpsorder"
