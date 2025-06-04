@@ -1,4 +1,5 @@
 import logging
+
 from odoo import _, fields, models
 from odoo.exceptions import ValidationError
 
@@ -12,7 +13,7 @@ class MassMailing(models.Model):
         "Total recipients", compute="_compute_recipient_count"
     )
     contact_list_is_synced = fields.Boolean(
-        "Contact lists synced", compute="_contact_list_is_synced"
+        "Contact lists synced", compute="_compute_contact_list_is_synced"
     )
     mass_mailing_recipient_limit = fields.Integer(
         "Recipient limit", compute="_compute_mass_mailing_recipient_limit"
@@ -28,7 +29,7 @@ class MassMailing(models.Model):
                 record.contact_list_ids.mapped("contact_count")
             )
 
-    def _contact_list_is_synced(self):
+    def _compute_contact_list_is_synced(self):
         for record in self:
             record.contact_list_is_synced = all(
                 record.contact_list_ids.mapped("is_synced")

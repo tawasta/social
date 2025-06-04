@@ -28,7 +28,7 @@ Credits
 Contributors
 ------------
 
-* Aleksi Savijoki <aleksi.savijoki@tawasta.fi>
+* Aleksi Savijoki <aleksi.savijoki@futural.fi>
 
 Maintainer
 ----------
