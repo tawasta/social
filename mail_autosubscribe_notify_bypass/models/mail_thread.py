@@ -24,13 +24,11 @@ class MailThread(models.AbstractModel):
             records = self.mapped("id")
             partners = self.env["res.partner"].browse(partner_ids).mapped("name")
             msg = _(
-                "Bypassing the sending of autosubscribe mail regarding %s "
-                "IDs %s to partners %s" % (self._name, records, partners)
+                f"Bypassing the sending of autosubscribe mail regarding {self._name} "
+                f"IDs {records} to partners {partners}"
             )
             _logger.debug(msg)
             return
         else:
             # If no bypass, fall back to core functionality
-            return super(MailThread, self)._message_auto_subscribe_notify(
-                partner_ids, template
-            )
+            return super()._message_auto_subscribe_notify(partner_ids, template)

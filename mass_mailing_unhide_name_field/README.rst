@@ -6,9 +6,9 @@
 Mass Mailing: Unhide Mailing's Name Field
 =========================================
 
-* Shows the Name field for Mailings for regular users, not just members 
+* Shows the Name field for Mailings for regular users, not just members
   of "Extra Rights / Technical Features" group
-* Prevents the Name field getting silently littered with names like 
+* Prevents the Name field getting silently littered with names like
   "Old wrong name (copy)" since the users can see and fix the field contents.
 
 Configuration
@@ -29,13 +29,13 @@ Credits
 Contributors
 ------------
 
-* Timo Talvitie <timo.talvitie@tawasta.fi>
+* Timo Talvitie <timo.talvitie@futural.fi>
 
 Maintainer
 ----------
 
-.. image:: https://tawasta.fi/templates/tawastrap/images/logo.png
-   :alt: Oy Tawasta OS Technologies Ltd.
-   :target: https://tawasta.fi/
+.. image:: https://futural.fi/templates/tawastrap/images/logo.png
+   :alt: Futural Oy
+   :target: https://futural.fi/
 
-This module is maintained by Oy Tawasta OS Technologies Ltd.
+This module is maintained by Futural Oy
