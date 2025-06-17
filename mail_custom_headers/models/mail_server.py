@@ -7,7 +7,8 @@ class MailServer(models.Model):
 
     custom_headers = fields.Char(
         string="Custom headers",
-        help="Custom headers to use with all messages. Separate different keys with comma: "
+        help="Custom headers to use with all messages. "
+        "Separate different keys with comma: "
         "'X-Example1: value1, X-Example2: value2'",
     )
 

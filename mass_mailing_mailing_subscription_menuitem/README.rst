@@ -6,7 +6,7 @@
 Mass Mailing: Mailing Subscription Menuitem
 ===========================================
 
-* Adds a missing menuitem to Email Marketing menu. Enables viewing subscriptions 
+* Adds a missing menuitem to Email Marketing menu. Enables viewing subscriptions
   from a separate view instead of just from Mailing Contact form's o2m list.
 * Successor to 14.0's mass_mailing_mailing_contact_subscription_menuitem, due to
   model changes in core.
@@ -34,8 +34,8 @@ Contributors
 Maintainer
 ----------
 
-.. image:: https://tawasta.fi/templates/tawastrap/images/logo.png
-   :alt: Oy Tawasta OS Technologies Ltd.
-   :target: https://tawasta.fi/
+.. image:: https://futural.fi/templates/tawastrap/images/logo.png
+   :alt: Futural Oy
+   :target: https://futural.fi/
 
-This module is maintained by Oy Tawasta OS Technologies Ltd.
+This module is maintained by Futural Oy

@@ -26,11 +26,9 @@ class MailTrackingEmail(models.Model):
 
                 # Construct the message (we could also use an email template here)
                 subject = _(
-                    "Sending message '{}' to {} failed.".format(
-                        record.name, record.recipient
-                    )
+                    f"Sending message '{record.name}' to {record.recipient} failed."
                 )
-                body = "<p>{}</p><p>{}</p>".format(subject, record.error_description)
+                body = f"<p>{subject}</p><p>{record.error_description}</p>"
 
                 mail_message = record.mail_message_id
                 if mail_message.res_id and mail_message.model:
@@ -45,7 +43,7 @@ class MailTrackingEmail(models.Model):
                         linked_record._name,
                     )
 
-                    body += "<p><a href='{}'>{}</a></p>".format(url, url)
+                    body += f"<p><a href='{url}'>{url}</a></p>"
 
                 mail_values = {
                     "subject": subject,

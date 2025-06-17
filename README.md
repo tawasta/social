@@ -1,5 +1,6 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Pipeline Status](https://gitlab.com/tawasta/odoo/social/badges/17.0-dev/pipeline.svg)](https://gitlab.com/tawasta/odoo/social/-/pipelines/)
+[![Pre-commit Status](https://github.com/tawasta/social/actions/workflows/pre-commit.yml/badge.svg?branch=17.0)](https://github.com/tawasta/social/actions/workflows/pre-commit.yml?query=branch%3A17.0)
+[![Build Status](https://github.com/tawasta/social/actions/workflows/test.yml/badge.svg?branch=17.0)](https://github.com/tawasta/social/actions/workflows/test.yml?query=branch%3A17.0)
 
 Social
 ======
@@ -30,6 +31,7 @@ addon | version | maintainers | summary
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 17.0.1.0.0 |  | Mass mailing multi company
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 17.0.1.0.0 |  | Mass mailing privacy consent
 [mass_mailing_queue_send](mass_mailing_queue_send/) | 17.0.1.0.0 |  | Send mass mailing emails with queue
+[mass_mailing_recipient_limit](mass_mailing_recipient_limit/) | 17.0.1.0.0 |  | Send mass mailing emails with queue
 [mass_mailing_social_links_youtube](mass_mailing_social_links_youtube/) | 17.0.1.0.0 |  | Adds Youtube icon support to mass mailing blocks
 [mass_mailing_subject_not_translatable](mass_mailing_subject_not_translatable/) | 17.0.1.0.0 |  | Mass mailing subject not translatable
 [mass_mailing_unhide_name_field](mass_mailing_unhide_name_field/) | 17.0.1.0.0 |  | Show Mailing objects' Name field also for regular users
