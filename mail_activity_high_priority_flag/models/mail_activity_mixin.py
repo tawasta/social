@@ -9,8 +9,7 @@ class MailActivity(models.AbstractModel):
     _inherit = "mail.activity.mixin"
 
     contains_high_priority_activities = fields.Boolean(
-        compute="_compute_contains_high_priority_activities",
-        store=True,
+        compute="_compute_contains_high_priority_activities", store=True, default=False
     )
 
     @api.depends("activity_ids", "activity_ids.high_priority")
