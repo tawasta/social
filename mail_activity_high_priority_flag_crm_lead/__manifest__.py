@@ -27,7 +27,7 @@
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
-    "installable": True,
+    "installable": False,
     "depends": ["mail_activity_high_priority_flag", "crm"],
     "data": ["views/crm_lead.xml"],
 }
