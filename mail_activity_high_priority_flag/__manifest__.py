@@ -28,7 +28,7 @@
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
-    "installable": True,
+    "installable": False,
     "depends": ["mail"],
     "data": ["views/mail_activity.xml", "wizards/mail_activity_schedule.xml"],
 }
