@@ -12,6 +12,9 @@ Activity: High Priority Flag
   (leads, tasks...) have a new stored field "Contains High 
   Priority Activities" that can be used for filtering 
   records.
+* Currently flagged as uninstallable due to issues with 
+  initializing values causing a crash. See crm repository
+  for a lead-specific version of this functionality.
 
 Configuration
 =============

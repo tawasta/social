@@ -9,6 +9,9 @@ Activity: High Priority Flag - Show Column in Lead Views
 * Extend the "Activity: High Priority Flag" module so that
   the 'Contains High Priority Activities' field is shown in
   opportunity tree/form/kanban views
+* Extended module is currently flagged as uninstallable due to 
+  issues with initializing values causing a crash. See crm repository
+  for a lead-specific version of this functionality.
 
 Configuration
 =============
