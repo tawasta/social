@@ -11,30 +11,24 @@ _logger = logging.getLogger(__name__)
 class MassMailing(models.Model):
     _inherit = "mailing.mailing"
 
-    mail_queue_created = fields.Boolean(
-        default=False,
-        copy=False,
-        help="This mailing is being processed by queue jobs.",
+    mail_queue_created = fields.Boolean(default=False, copy=False)
+
+    """
+    queue_job_ids = fields.One2many(
+        'queue.job',
+        'related_action_id',
+        string='Queue Jobs',
+        domain=[('related_action', '=', 'mailing.mailing')],
     )
+    """
 
     def action_send_mail(self, res_ids=None):
         """Use queue for sending"""
-        if self.mail_queue_created:
-            # This mailing is already being processed by queue jobs
-            _logger.warning(
-                "Mailing '%s' (%s) is already being processed by queue jobs.",
-                self.name,
-                self.id,
-            )
-            return
-
         start_delay = 30
-        queue_job = self.env["queue.job"].sudo()
 
         # Tell the mailing that queue has already been created to prevent multiple
         # queue jobs from being created for the same mailing.
-        self.mail_queue_created = True
-
+        self.mail_queue_created = True        
         for mailing in self:
             context_user = mailing.user_id or mailing.write_uid or self.env.user
             mailing = mailing.with_context(
@@ -52,26 +46,13 @@ class MassMailing(models.Model):
                 else:
                     recipients = mailing_res_ids
 
-                # Construct the queue job function string to check for existing jobs
-                func_string = f"{str(self)}.action_send_mail_queue({recipients})"
-                existing_job = queue_job.search([("func_string", "=", func_string)])
-                if existing_job:
-                    _logger.warning(
-                        "Queue job for mailing '%s' (%s) "
-                        "with recipients '%s' already exists. "
-                        "Skipping creation of duplicate job.",
-                        mailing.name,
-                        mailing.id,
-                        recipients,
-                    )
-                    continue
-
                 mailing_res_ids = list(set(mailing_res_ids) - set(recipients))
                 job_desc = "Mass mailing: Sending '{}' to {} recipients".format(
                     mailing.subject, len(recipients)
                 )
                 mailing.with_delay(
-                    description=job_desc, eta=start_delay
+                    description=job_desc,
+                    eta=start_delay
                 ).action_send_mail_queue(recipients)
         return True
 
