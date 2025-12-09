@@ -17,6 +17,49 @@ class MassMailing(models.Model):
         help="This mailing is being processed by queue jobs.",
     )
 
+    queue_job_status = fields.Html(
+        compute="_compute_queue_job_status",
+        string="Mailing status",
+    )
+
+    queue_job_ids = fields.One2many(
+        comodel_name="queue.job",
+        compute="_compute_queue_job_ids",
+        string="Queue Jobs",
+    )
+
+    def _compute_queue_job_status(self):
+        for record in self:
+            parts = []
+
+            for job in record.queue_job_ids:
+                state = (
+                    "success"
+                    if job.state == "done"
+                    else "warning"
+                    if job.state == "started"
+                    else "danger"
+                    if job.state == "failed"
+                    else "info"
+                )
+                html_class = f"badge rounded-pill bg-{state}"
+                parts.append(
+                    f"<div>{job.name} <span class='{html_class}'>{state}</span></div>"
+                )
+
+            record.queue_job_status = "".join(parts)
+
+    def _compute_queue_job_ids(self):
+        QueueJob = self.env["queue.job"].sudo()
+
+        # Pre-fetch all jobs for mass.mailing model
+        jobs = QueueJob.search([("model_name", "=", self._name)])
+
+        for mailing in self:
+            # Filter: job.records is a recordset; check if mailing is in it
+            related = jobs.filtered(lambda j, mailing=mailing: mailing in j.records)
+            mailing.queue_job_ids = related
+
     def action_send_mail(self, res_ids=None):
         """Use queue for sending"""
         if self.mail_queue_created:
@@ -67,7 +110,7 @@ class MassMailing(models.Model):
                     continue
 
                 mailing_res_ids = list(set(mailing_res_ids) - set(recipients))
-                job_desc = "Mass mailing: Sending '{}' to {} recipients".format(
+                job_desc = "Send mailing '{}' to {} recipients".format(
                     mailing.subject, len(recipients)
                 )
                 mailing.with_delay(

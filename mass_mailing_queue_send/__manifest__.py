@@ -21,7 +21,7 @@
 {
     "name": "Mass Mailing Queue Send",
     "summary": "Send mass mailing emails with queue",
-    "version": "17.0.1.1.0",
+    "version": "17.0.1.2.0",
     "category": "Social",
     "website": "https://github.com/tawasta/social",
     "author": "Futural",
