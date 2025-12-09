@@ -11,9 +11,73 @@ _logger = logging.getLogger(__name__)
 class MassMailing(models.Model):
     _inherit = "mailing.mailing"
 
+    mail_queue_created = fields.Boolean(
+        default=False,
+        copy=False,
+        help="This mailing is being processed by queue jobs.",
+    )
+
+    queue_job_status = fields.Html(
+        compute="_compute_queue_job_status",
+        string="Mailing status",
+    )
+
+    queue_job_ids = fields.One2many(
+        comodel_name="queue.job",
+        compute="_compute_queue_job_ids",
+        string="Queue Jobs",
+    )
+
+    def _compute_queue_job_status(self):
+        for record in self:
+            parts = []
+
+            for job in record.queue_job_ids:
+                state = (
+                    "success"
+                    if job.state == "done"
+                    else "warning"
+                    if job.state == "started"
+                    else "danger"
+                    if job.state == "failed"
+                    else "info"
+                )
+                html_class = f"badge rounded-pill bg-{state}"
+                parts.append(
+                    f"<div>{job.name} <span class='{html_class}'>{state}</span></div>"
+                )
+
+            record.queue_job_status = "".join(parts)
+
+    def _compute_queue_job_ids(self):
+        QueueJob = self.env["queue.job"].sudo()
+
+        # Pre-fetch all jobs for mass.mailing model
+        jobs = QueueJob.search([("model_name", "=", self._name)])
+
+        for mailing in self:
+            # Filter: job.records is a recordset; check if mailing is in it
+            related = jobs.filtered(lambda j, mailing=mailing: mailing in j.records)
+            mailing.queue_job_ids = related
+
     def action_send_mail(self, res_ids=None):
         """Use queue for sending"""
+        if self.mail_queue_created:
+            # This mailing is already being processed by queue jobs
+            _logger.warning(
+                "Mailing '%s' (%s) is already being processed by queue jobs.",
+                self.name,
+                self.id,
+            )
+            return
+
         start_delay = 30
+        queue_job = self.env["queue.job"].sudo()
+
+        # Tell the mailing that queue has already been created to prevent multiple
+        # queue jobs from being created for the same mailing.
+        self.mail_queue_created = True
+
         for mailing in self:
             context_user = mailing.user_id or mailing.write_uid or self.env.user
             mailing = mailing.with_context(
@@ -31,8 +95,22 @@ class MassMailing(models.Model):
                 else:
                     recipients = mailing_res_ids
 
+                # Construct the queue job function string to check for existing jobs
+                func_string = f"{str(self)}.action_send_mail_queue({recipients})"
+                existing_job = queue_job.search([("func_string", "=", func_string)])
+                if existing_job:
+                    _logger.warning(
+                        "Queue job for mailing '%s' (%s) "
+                        "with recipients '%s' already exists. "
+                        "Skipping creation of duplicate job.",
+                        mailing.name,
+                        mailing.id,
+                        recipients,
+                    )
+                    continue
+
                 mailing_res_ids = list(set(mailing_res_ids) - set(recipients))
-                job_desc = "Mass mailing: Sending {} to {} recipients".format(
+                job_desc = "Send mailing '{}' to {} recipients".format(
                     mailing.subject, len(recipients)
                 )
                 mailing.with_delay(
