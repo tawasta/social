@@ -14,15 +14,17 @@ WEBHOOK_EVENTS = (
     "Open",
 )
 
+timeout = 600
+
 
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
-    timeout = 600
 
     mail_tracking_postmark_api_token = fields.Char(
         string="Postmark API Token",
         config_parameter="postmark.apitoken",
-        help="This token can be found from the API Tokens tab under your Postmark server.",
+        help="""This token can be found from the API Tokens tab under your
+        Postmark server.""",
     )
 
     def mail_tracking_postmark_register_webhooks(self):
