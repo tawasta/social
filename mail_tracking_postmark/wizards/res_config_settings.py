@@ -17,6 +17,7 @@ WEBHOOK_EVENTS = (
 
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
+    timeout = 600
 
     mail_tracking_postmark_api_token = fields.Char(
         string="Postmark API Token",
@@ -30,13 +31,14 @@ class ResConfigSettings(models.TransientModel):
         headers = mail_tracking._postmark_headers()
 
         for event in WEBHOOK_EVENTS:
-            _logger.info("Registering Postmark webhook for {}".format(event))
+            _logger.info(f"Registering Postmark webhook for {event}")
             values = mail_tracking._postmark_hook_data(event)
 
             response = requests.post(
                 API_URL,
                 headers=headers,
                 json=values,
+                timeout=timeout,
             )
             # Assert correct registration
             response.raise_for_status()
@@ -48,11 +50,20 @@ class ResConfigSettings(models.TransientModel):
         _logger.info("Getting current webhooks")
         payload = {"MessageStream": "outbound"}
 
-        webhooks = requests.get(API_URL, headers=headers, params=payload)
+        webhooks = requests.get(
+            API_URL,
+            headers=headers,
+            params=payload,
+            timeout=timeout,
+        )
         webhooks.raise_for_status()
 
         for webhook in webhooks.json()["Webhooks"]:
             delete_url = "{}/{}".format(API_URL, webhook.get("ID"))
-            response = requests.delete(delete_url, headers=headers)
+            response = requests.delete(
+                delete_url,
+                headers=headers,
+                timeout=timeout,
+            )
 
             response.raise_for_status()

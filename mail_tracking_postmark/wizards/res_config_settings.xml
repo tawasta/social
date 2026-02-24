@@ -9,7 +9,10 @@
         <field name="inherit_id" ref="mass_mailing.res_config_settings_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//app[@name='mass_mailing']" position="inside">
-                <block title="Postmark Tracking" name="manage_postmark_tracking_setting_container">
+                <block
+                    title="Postmark Tracking"
+                    name="manage_postmark_tracking_setting_container"
+                >
                 <div id="mail_tracking_postmark" class="col-12 o_setting_box">
                     <div class="o_setting_left_pane">
 
@@ -18,9 +21,9 @@
                         <label for="mail_tracking_postmark_api_token" />
                         <div class="text-muted">
                             Add API Token to integrate Odoo with <a
-                                href="https://postmarkapp.com/"
-                                target="_blank"
-                            >Postmark</a> for better tracking.
+                                    href="https://postmarkapp.com/"
+                                    target="_blank"
+                                >Postmark</a> for better tracking.
                         </div>
                         <field name="mail_tracking_postmark_api_token" />
                             <div class="row">

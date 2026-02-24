@@ -60,7 +60,7 @@ class MailTrackingEmail(models.Model):
 
     def _postmark_hook_data(self, event):
         base_url = self.env["ir.config_parameter"].sudo().get_param("web.base.url")
-        url = "{}/mail/tracking/postmark".format(base_url)
+        url = f"{base_url}/mail/tracking/postmark"
 
         trigger = False
         if event == "Bounce":
@@ -71,7 +71,7 @@ class MailTrackingEmail(models.Model):
             trigger = {event: {"Enabled": True, "PostFirstOpenOnly": True}}
 
         if not trigger:
-            raise ValidationError(_("Unsupported event: {}".format(event)))
+            raise ValidationError(_(f"Unsupported event: {event}"))
 
         hook = {"Url": url, "MessageStream": "outbound", "Triggers": trigger}
 

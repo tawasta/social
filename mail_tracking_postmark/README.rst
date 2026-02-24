@@ -8,8 +8,14 @@ Mail tracking for Postmark
 
 This module integrates mail_tracking events with Postmark
 
+Configuration
+=============
+
 After installing go to General settings and add "Postmark API Token",
 save settings, and click "Register Postmark Webhooks".
+
+Usage
+=====
 
 To unregister (delete) hooks, press "Unregister Postmark webhooks".
 
@@ -19,13 +25,14 @@ Credits
 Contributors
 ------------
 
-* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@futural.fi>
+* Joona Isoaho <joona.isoaho@futural.fi>
 
 Maintainer
 ----------
 
-.. image:: https://tawasta.fi/templates/tawastrap/images/logo.png
-   :alt: Oy Tawasta OS Technologies Ltd.
-   :target: https://tawasta.fi/
+.. image:: https://futural.fi/templates/tawastrap/images/logo.png
+   :alt: Futural Oy
+   :target: https://futural.fi/
 
-This module is maintained by Oy Tawasta OS Technologies Ltd.
+This module is maintained by Futural Oy
