@@ -34,28 +34,31 @@ class ResConfigSettings(models.TransientModel):
 
         for event in WEBHOOK_EVENTS:
             _logger.info(f"Registering Postmark webhook for {event}")
-            values = mail_tracking._postmark_hook_data(event)
 
-            response = requests.post(
-                API_URL,
-                headers=headers,
-                json=values,
-                timeout=timeout,
-            )
-            # Assert correct registration
-            response.raise_for_status()
+            # Default transaction stream
+            outbound_values = mail_tracking._postmark_hook_data(event, "outbound")
+            # Default broadcast stream
+            broadcast_values = mail_tracking._postmark_hook_data(event, "broadcast")
+
+            for values in [outbound_values, broadcast_values]:
+                response = requests.post(
+                    API_URL,
+                    headers=headers,
+                    json=values,
+                    timeout=timeout,
+                )
+                # Assert correct registration
+                response.raise_for_status()
 
     def mail_tracking_postmark_unregister_webhooks(self):
         """Remove existing Postmark webhooks."""
         mail_tracking = self.env["mail.tracking.email"].sudo()
         headers = mail_tracking._postmark_headers()
         _logger.info("Getting current webhooks")
-        payload = {"MessageStream": "outbound"}
 
         webhooks = requests.get(
             API_URL,
             headers=headers,
-            params=payload,
             timeout=timeout,
         )
         webhooks.raise_for_status()
