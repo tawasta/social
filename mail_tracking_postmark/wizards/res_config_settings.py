@@ -50,7 +50,6 @@ class ResConfigSettings(models.TransientModel):
                 # Assert correct registration
                 response.raise_for_status()
 
-
     def mail_tracking_postmark_unregister_webhooks(self):
         """Remove existing Postmark webhooks."""
         mail_tracking = self.env["mail.tracking.email"].sudo()
