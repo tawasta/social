@@ -58,7 +58,7 @@ class MailTrackingEmail(models.Model):
 
         return metadata
 
-    def _postmark_hook_data(self, event):
+    def _postmark_hook_data(self, event, messageStream):
         base_url = self.env["ir.config_parameter"].sudo().get_param("web.base.url")
         url = f"{base_url}/mail/tracking/postmark"
 
@@ -73,7 +73,7 @@ class MailTrackingEmail(models.Model):
         if not trigger:
             raise ValidationError(_(f"Unsupported event: {event}"))
 
-        hook = {"Url": url, "MessageStream": "outbound", "Triggers": trigger}
+        hook = {"Url": url, "MessageStream": messageStream, "Triggers": trigger}
 
         return hook
 
