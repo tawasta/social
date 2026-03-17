@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record id="view_mass_mailing_form" model="ir.ui.view">
+    <field name="name">mailing.mailing.form.queue.job</field>
+    <field name="model">mailing.mailing</field>
+    <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_form" />
+    <field name="arch" type="xml">
+      <field name="user_id" position="after">
+        <field name="mail_queue_created" readonly="1" />
+      </field>
+
+      <xpath expr="//div[@name='mailing_model_id_container']" position="after">
+        <field
+          name="queue_job_status"
+          invisible="not mail_queue_created"
+          readonly="1"
+        />
+      </xpath>
+
+      <page name="settings" position="after">
+        <page
+          string="Sending queue"
+          name="queue_jobs"
+          invisible="not queue_job_ids"
+          groups="queue_job.group_queue_job_manager"
+        >
+          <field name="queue_job_ids">
+            <list>
+              <field name="uuid" optional="hide" />
+              <field name="name" optional="show" />
+              <field name="date_created" optional="show" />
+              <field name="eta" optional="show" />
+              <field name="date_done" optional="show" />
+              <field
+                name="state"
+                optional="show"
+                decoration-success="state=='done'"
+                decoration-info="state=='pending'"
+                decoration-danger="state=='failed'"
+              />
+            </list>
+          </field>
+        </page>
+      </page>
+    </field>
+  </record>
+</odoo>
