@@ -28,11 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "mass_mailing",
-        "website"
-    ],
-    "data": [
-        "views/mailing_mailing_views.xml"
-    ],
+    "depends": ["mass_mailing", "website"],
+    "data": ["views/mailing_mailing_views.xml"],
 }
