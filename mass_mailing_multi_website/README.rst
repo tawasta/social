@@ -2,14 +2,24 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-====================
-Mass mailing website
-====================
+==========================
+Mass mailing multi website
+==========================
 
-Choose the website used for mass_mailing.
+Add website_id field to mailing.mailing
 
-- Can fix local links in mail in the case where they get web.base.url and not
-  correct website url
+
+Configuration
+=============
+\-
+
+Usage
+=====
+Install module, set mass mailing website from the form view
+
+Known issues / Roadmap
+======================
+\-
 
 Credits
 =======
