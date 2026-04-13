@@ -6,7 +6,8 @@
 Mass mailing multi website
 ==========================
 
-Add website_id field to mailing.mailing
+Add website_id field to mailing.mailing, fix issues with multi company multi
+website mass mailing relative links.
 
 
 Configuration
@@ -15,7 +16,7 @@ Configuration
 
 Usage
 =====
-Install module, set mass mailing website from the form view
+Install module, set mass mailing website from the form view.
 
 Known issues / Roadmap
 ======================

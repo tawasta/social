@@ -5,12 +5,12 @@
         <field name="model">mailing.mailing</field>
         <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_form" />
         <field name="arch" type="xml">
-            <xpath
-                expr="//div[@class='o_mass_mailing_subject d-flex flex-row align-items-baseline']"
-                position="after"
+        <xpath
+            expr="//div[@class='o_mass_mailing_subject d-flex flex-row align-items-baseline']"
+            position="after"
             >
-                <field name="website_id" />
-            </xpath>
-        </field>
+        <field name="website_id" />
+    </xpath>
+</field>
     </record>
 </odoo>
