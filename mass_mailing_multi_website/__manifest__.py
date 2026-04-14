@@ -32,6 +32,6 @@
     "data": [
         "views/mailing_mailing.xml",
         "views/res_company.xml",
-        "views/res_partner.xml"
+        "views/res_partner.xml",
     ],
 }
