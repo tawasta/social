@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_form" />
         <field name="arch" type="xml">
         <xpath
-            expr="//div[@class='o_mass_mailing_subject d-flex flex-row align-items-baseline']"
-            position="after"
+                expr="//div[@class='o_mass_mailing_subject d-flex flex-row align-items-baseline']"
+                position="after"
             >
         <field name="website_id" />
     </xpath>
