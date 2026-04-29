@@ -21,7 +21,7 @@
 {
     "name": "Mass mailing multi website",
     "summary": "",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.1.0",
     "category": "Social",
     "website": "https://github.com/tawasta/social",
     "author": "Futural",
@@ -31,7 +31,5 @@
     "depends": ["mass_mailing", "website"],
     "data": [
         "views/mailing_mailing.xml",
-        "views/res_company.xml",
-        "views/res_partner.xml",
     ],
 }

@@ -10,6 +10,12 @@ class MassMailing(models.Model):
 
     website_id = fields.Many2one(comodel_name="website", string="Website")
 
+    def get_base_url(self):
+        if self.website_id and self.website_id.domain:
+            return self.website_id.domain
+        else:
+            return super().get_base_url()
+
     @api.model_create_multi
     def create(self, values):
         mailing = super().create(values)
