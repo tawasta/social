@@ -13,6 +13,8 @@ class Website(Website):
     def get_suggested_link(self, needle, limit=10):
         current_website = request.website
         result = super().get_suggested_link(needle, limit)
+        _logger.error("HERE: current_website ")
+        _logger.error(current_website)
         # Add the website url to the beginning of urls so later it can not be set wrong
         if "matching_pages" in result:
             for item in result["matching_pages"]:
