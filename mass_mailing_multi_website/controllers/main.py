@@ -20,21 +20,17 @@ class Website(Website):
             _logger.error("HERE: result ")
             _logger.error(result)
             for item in result["matching_pages"]:
-                _logger.error("HERE: item ")
-                _logger.error(result)
-                if current_website["domain"]:
-                    _logger.error("HERE: domain ")
-                    _logger.error(current_website["domain"])
+                if "domain" in current_website:
                     item["value"] = current_website["domain"] + item["value"]
-                    if item["label"].startswith("/"):
+                    if "label" in item and item["label"].startswith("/"):
                         item["label"] = current_website["domain"] + item["label"]
         if "others" in result:
             for pages in result["others"]:
                 for item in pages["values"]:
-                    if current_website["domain"]:
+                    if "domain" in current_website:
                         item["value"] = current_website["domain"] + item["value"]
-                        if item["icon"].startswith("/"):
-                            item["icon"] = current_website["domain"] + item["icon"]
-                        if item["label"].startswith("/"):
-                            item["label"] = current_website["domain"] + item["label"]
+                    if "icon" in item and item["icon"].startswith("/"):
+                        item["icon"] = current_website["domain"] + item["icon"]
+                    if "label" in item and item["label"].startswith("/"):
+                        item["label"] = current_website["domain"] + item["label"]
         return result
