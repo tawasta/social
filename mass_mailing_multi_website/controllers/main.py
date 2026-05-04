@@ -17,8 +17,14 @@ class Website(Website):
         _logger.error(current_website)
         # Add the website url to the beginning of urls so later it can not be set wrong
         if "matching_pages" in result:
+            _logger.error("HERE: result ")
+            _logger.error(result)
             for item in result["matching_pages"]:
+                _logger.error("HERE: item ")
+                _logger.error(result)
                 if current_website["domain"]:
+                    _logger.error("HERE: domain ")
+                    _logger.error(current_website["domain"])
                     item["value"] = current_website["domain"] + item["value"]
                     if item["label"].startswith("/"):
                         item["label"] = current_website["domain"] + item["label"]
