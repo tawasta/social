@@ -21,7 +21,7 @@
 {
     "name": "Mass mailing multi website",
     "summary": "",
-    "version": "17.0.1.1.0",
+    "version": "17.0.2.0.0",
     "category": "Social",
     "website": "https://github.com/tawasta/social",
     "author": "Futural",
