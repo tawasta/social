@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
 <t
-    t-name="mass_mailing_multi_website.LinkDialog"
-    t-inherit="web_editor.LinkDialog"
-    t-inherit-mode="extension"
-  >
-    <xpath expr="//input[@id='o_link_dialog_url_strip_domain']/parent::div" position="attributes">
+        t-name="mass_mailing_multi_website.LinkDialog"
+        t-inherit="web_editor.LinkDialog"
+        t-inherit-mode="extension"
+    >
+    <xpath
+            expr="//input[@id='o_link_dialog_url_strip_domain']/parent::div"
+            position="attributes"
+        >
         <attribute name="style">display:none;</attribute>
     </xpath>
   </t>

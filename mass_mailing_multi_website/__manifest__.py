@@ -31,8 +31,8 @@
     "depends": ["mass_mailing", "website"],
     "assets": {
         "web_editor.assets_wysiwyg": [
-            "mass_mailing_multi_website/static/src/js/wysiwyg/widgets/link.js",
-            "mass_mailing_multi_website/static/src/xml/wysiwyg.xml"
+            "mass_mailing_multi_website/static/src/js/wysiwyg/widgets/link.em.js",
+            "mass_mailing_multi_website/static/src/xml/wysiwyg.xml",
         ]
     },
 }
