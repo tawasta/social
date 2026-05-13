@@ -22,7 +22,7 @@ class Website(Website):
             for item in result["matching_pages"]:
                 _logger.error("HERE: pages item ")
                 _logger.error(item)
-                if "domain" in current_website:
+                if "domain" in current_website and item["value"]:
                     item["value"] = current_website["domain"] + item["value"]
                     if "label" in item and item["label"].startswith("/"):
                         item["label"] = current_website["domain"] + item["label"]
@@ -31,7 +31,7 @@ class Website(Website):
                 for item in pages["values"]:
                     _logger.error("HERE: others item ")
                     _logger.error(item)
-                    if "domain" in current_website:
+                    if "domain" in current_website and item["value"]:
                         item["value"] = current_website["domain"] + item["value"]
                         if "icon" in item and item["icon"].startswith("/"):
                             item["icon"] = current_website["domain"] + item["icon"]
