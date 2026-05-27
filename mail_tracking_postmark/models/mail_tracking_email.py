@@ -1,6 +1,6 @@
 import logging
 
-from odoo import _, models
+from odoo import models
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -13,7 +13,7 @@ class MailTrackingEmail(models.Model):
         """Retrieve Postmark event from API data payload."""
 
         if jsonrequest["Metadata"].get("odoo_db") != self.env.cr.dbname:
-            raise ValidationError(_("Wrong database for event!"))
+            raise ValidationError(self.env._("Wrong database for event!"))
 
         postmark_message_id = jsonrequest["MessageID"]
         mail_tracking_id = jsonrequest["Metadata"]["tracking_email_id"]
@@ -71,7 +71,7 @@ class MailTrackingEmail(models.Model):
             trigger = {event: {"Enabled": True, "PostFirstOpenOnly": True}}
 
         if not trigger:
-            raise ValidationError(_(f"Unsupported event: {event}"))
+            raise ValidationError(self.env._("Unsupported event: %s", event))
 
         hook = {"Url": url, "MessageStream": messageStream, "Triggers": trigger}
 
@@ -83,7 +83,7 @@ class MailTrackingEmail(models.Model):
         )
 
         if not postmark_token:
-            raise ValidationError(_("There is no Postmark API token!"))
+            raise ValidationError(self.env._("There is no Postmark API token!"))
 
         headers = {
             "Accept": "application/json",
