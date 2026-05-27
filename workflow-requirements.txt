@@ -1,0 +1,1 @@
+https://github.com/komit-consulting/mail/archive/refs/heads/19.0-mig-mail_tracking.zip#subdirectory=mail_tracking
