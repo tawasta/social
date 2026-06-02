@@ -35,7 +35,7 @@ addon | version | maintainers | summary
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 17.0.1.0.0 |  | Mass Mailing List Sync Automation
 [mass_mailing_mailing_subscription_menuitem](mass_mailing_mailing_subscription_menuitem/) | 17.0.1.0.0 |  | Adds a missing menuitem to Email Marketing menu
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 17.0.1.0.0 |  | Mass mailing multi company
-[mass_mailing_multi_website](mass_mailing_multi_website/) | 17.0.1.0.0 |  | Mass mailing multi website
+[mass_mailing_multi_website](mass_mailing_multi_website/) | 17.0.2.0.0 |  | Mass mailing multi website
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 17.0.1.0.0 |  | Mass mailing privacy consent
 [mass_mailing_queue_send](mass_mailing_queue_send/) | 17.0.1.2.0 |  | Send mass mailing emails with queue
 [mass_mailing_recipient_limit](mass_mailing_recipient_limit/) | 17.0.1.0.0 |  | Disable mass mail sending for too many recipients

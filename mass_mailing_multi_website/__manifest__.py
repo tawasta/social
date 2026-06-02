@@ -21,7 +21,7 @@
 {
     "name": "Mass mailing multi website",
     "summary": "",
-    "version": "17.0.1.0.0",
+    "version": "17.0.2.0.0",
     "category": "Social",
     "website": "https://github.com/tawasta/social",
     "author": "Futural",
@@ -29,9 +29,10 @@
     "application": False,
     "installable": True,
     "depends": ["mass_mailing", "website"],
-    "data": [
-        "views/mailing_mailing.xml",
-        "views/res_company.xml",
-        "views/res_partner.xml",
-    ],
+    "assets": {
+        "web_editor.assets_wysiwyg": [
+            "mass_mailing_multi_website/static/src/js/wysiwyg/widgets/link.esm.js",
+            "mass_mailing_multi_website/static/src/xml/wysiwyg.xml",
+        ]
+    },
 }
