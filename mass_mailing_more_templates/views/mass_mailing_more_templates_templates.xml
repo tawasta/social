@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add themes in editor -->
+    <template id="email_designer_snippets" inherit_id="mass_mailing.email_designer_snippets">
+        <xpath expr="//div[@id='email_designer_themes']" position="inside">
+            <div data-name="custom_template1" title="Custom Newsletter" data-img="/mass_mailing_more_templates/static/src/img/theme_imgs/custom_template1_thumb" data-images-info='{"logo": {"format": "png"}, "all": {"module": "mass_mailing_more_templates"}}'>
+                <t t-call="mass_mailing_more_templates.custom_dynamic_template1"/>
+            </div>
+            <div data-name="custom_template2" title="Custom Welcome" data-img="/mass_mailing_more_templates/static/src/img/theme_imgs/custom_template2_thumb" data-images-info='{"logo": {"format": "png"}, "all": {"module": "mass_mailing_more_templates"}}'>
+                <t t-call="mass_mailing_more_templates.custom_dynamic_template2"/>
+            </div>
+            <div data-name="custom_template3" title="Custom Promotion" data-img="/mass_mailing_more_templates/static/src/img/theme_imgs/custom_template3_thumb" data-images-info='{"logo": {"format": "png"}, "all": {"module": "mass_mailing_more_templates"}}'>
+                <t t-call="mass_mailing_more_templates.custom_dynamic_template3"/>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Theme dynamic event / campaign / notification template -->
+    <template id="custom_dynamic_template1">
+        <style id="design-element">
+            h1 {
+                font-size: 36px;
+                font-weight: bolder;
+                color: #000000ff;
+            }
+            h2 {
+                font-size: 40px;
+                font-weight: bolder;
+                font-family: 'Space Grotesk', sans-serif;
+                font-weight: 600;
+                letter-spacing: 0.03em;
+
+            }
+            h3 {
+                font-size: 18px;
+                font-weight: bolder;
+                color: #000000ff;
+            }
+            p, p > *, li, li > * {
+                color: #6c757d;
+            }
+            a:not(.btn), a.btn.btn-link{
+                color: #BA0013;
+            }
+            a.btn.btn-primary, a.btn.btn-outline-primary, a.btn.btn-fill-primary {
+                background-color: #BA0013;
+                border-color: #BA0013;
+            }
+            .bg_container {
+                height: 200px;
+                background-image: url('/mass_mailing_more_templates/static/src/img/theme_newtemplate/bg2_custom.jpg');
+                background-size: cover;
+                background-position: center;
+                margin-top: 25px;
+                margin-bottom: 25px;
+ 
+            }
+            .white_bg {
+                background-color: #ffffff;
+            }
+            .flex_center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 25px;
+            }
+        </style>
+        <t t-set="now" t-value="datetime.datetime.now()"/>
+        <t t-set="future_date" t-value="(datetime.date.today() + datetime.timedelta(days=30))"/>
+        <div class="white_bg">
+            <div class="flex_center">
+                <h2><span t-esc="env.company.name"/></h2>
+                <img t-att-src="'/web/image/res.company/%s/logo' % env.company.id" style="width: 120px; height: auto;"/>
+            </div>
+            <div class="bg_container">
+            </div>
+            <div>
+                <div class="container s_allow_columns">
+                    <h1 style="text-align: center;"><span t-esc="env.company.name"/> on the move again!</h1>
+                    <p style="text-align: center;">Or any other title you want to add here to grab the reader's attention.</p>
+                </div>
+            </div>
+            <div class="s_cover o_mail_snippet_general pt0" data-snippet="s_cover" data-name="Cover">
+                <img src="/mass_mailing_more_templates/static/src/img/theme_newtemplate/conimg.jpg" alt="Cover image" class="img-fluid w-100 mx-auto" style="padding: 15px;"/>
+            </div>
+            <div class="s_text_block o_mail_snippet_general pt32 pb32" data-snippet="s_text_block" data-name="Text" style="padding-left: 15px; padding-right: 15px;">
+                <div class="container s_allow_columns">
+                    <h3>A subtitle can go here</h3>
+                    <p>You can write <b>/chatgpt</b> to open a prompt window and ask ChatGPT to write your email content.</p>
+                    <p>Alternatively, you can write your own content here to inform your customers about the latest news, offers, or updates from your company.</p>
+                    <p>You can change the images, titles, text and other elements as you wish using this editor.</p>
+                    <br/>
+                    <p>Best regards,</p>
+                    <p><b><span t-esc="env.company.name"/></b></p>
+                </div>
+            </div>
+        </div>
+        <div class="s_footer_social o_mail_block_footer_social o_mail_footer_social_center o_mail_snippet_general bg-200 pt16 pb16" data-snippet="s_mail_block_footer_social" data-name="Footer Center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="text-align: center;" t-translation="off">
+                        <t t-if="env.company.social_twitter">
+                            <a t-att-href="env.company.social_twitter" target="_blank">
+                                <span class="fa fa-twitter" style="color: rgb(186, 0, 19) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_facebook">
+                            <a t-att-href="env.company.social_facebook" target="_blank">
+                                <span class="fa fa-facebook" style="color: rgb(186, 0, 19) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_linkedin">
+                            <a t-att-href="env.company.social_linkedin" target="_blank">
+                                <span class="fa fa-linkedin" style="color: rgb(186, 0, 19) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_youtube">
+                            <a t-att-href="env.company.social_youtube" target="_blank">
+                                <span class="fa fa-youtube" style="color: rgb(186, 0, 19) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_github">
+                            <a t-att-href="env.company.social_github" target="_blank">
+                                <span class="fa fa-github" style="color: rgb(186, 0, 19) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_instagram">
+                            <a t-att-href="env.company.social_instagram" target="_blank">
+                                <span class="fa fa-instagram" style="color: rgb(186, 0, 19) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_tiktok">
+                            <a t-att-href="env.company.social_tiktok" target="_blank">
+                                <span class="fa fa-tiktok" style="color: rgb(186, 0, 19) !important;"/>
+                            </a>
+                        </t>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 o_mail_footer_links pt8 pb8" style="text-align: center;">
+                        <a role="button" href="/unsubscribe_from_list" class="btn btn-link">Unsubscribe</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p style="text-align: center;">
+                            © <t t-out="now.strftime('%Y')" /> All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Simple welcome message template -->
+    <template id="custom_dynamic_template2">
+        <style id="design-element">
+            h1 {
+                font-size: 36px;
+                font-weight: bolder;
+                color: #000000ff;
+            }
+            h2 {
+                font-size: 40px;
+                font-weight: bolder;
+                font-family: 'Space Grotesk', sans-serif;
+                font-weight: 600;
+                letter-spacing: 0.03em;
+
+            }
+            h3 {
+                font-size: 18px;
+                font-weight: bolder;
+                color: #000000ff;
+            }
+            p, p > *, li, li > * {
+                color: #6c757d;
+            }
+            a:not(.btn), a.btn.btn-link{
+                color: #BA0013;
+            }
+            a.btn.btn-primary, a.btn.btn-outline-primary, a.btn.btn-fill-primary {
+                background-color: #BA0013;
+                border-color: #BA0013;
+            }
+            .bg_container {
+                height: 200px;
+                background-image: url('/mass_mailing_more_templates/static/src/img/theme_newtemplate/bg2_custom.jpg');
+                background-size: cover;
+                background-position: center;
+                margin-top: 25px;
+                margin-bottom: 25px;
+ 
+            }
+            .white_bg {
+                background-color: #ffffff;
+            }
+            .company_logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 25px;
+            }
+        </style>
+        <t t-set="now" t-value="datetime.datetime.now()"/>
+        <t t-set="future_date" t-value="(datetime.date.today() + datetime.timedelta(days=30))"/>
+        <div class="white_bg">
+            <div class="company_logo">
+                <img t-att-src="'/web/image/res.company/%s/logo' % env.company.id" style="width: 80px; "/>
+                <h2><span t-esc="env.company.name"/></h2> 
+            </div>
+            <div style="margin-top: 25px;">
+                <img src="/mass_mailing_more_templates/static/src/img/theme_newtemplate2/welcome.jpg" alt="Cover image" class="img-fluid w-100 mx-auto" />  
+            </div>
+            <div class="s_text_block o_mail_snippet_general pt32 pb32" data-snippet="s_text_block" data-name="Text" style="padding-left: 15px; padding-right: 15px;">
+                <div class="container s_allow_columns">
+                    <h3>Welcome aboard!</h3>
+                    <p>You can write <b>/chatgpt</b> to open a prompt window and ask ChatGPT to write your email content.</p>
+                    <p><i>For example prompt "give me a one paragraph welcome letter to new gym member":</i></p>
+                    <p>Welcome to [Gym Name]! We are thrilled to have you join our fitness community.
+                    Whether you’re here to build strength, improve your endurance, or simply enjoy a healthier lifestyle, our dedicated team is here to support you every step of the way.
+                    We encourage you to explore our wide range of classes, state-of-the-art equipment, and various amenities designed to help you achieve your fitness goals.
+                    Remember, every journey begins with a single step, and we’re excited to be part of yours.
+                    If you have any questions or need assistance, don’t hesitate to reach out to our staff.</p>
+                    
+                    <p>Here’s to your health and success!</p>
+
+                    <br/>
+                    <p>Best wishes,</p>
+                    <p><b><span t-esc="env.company.name"/></b></p>
+                </div>
+            </div>
+        </div>
+        <div class="s_footer_social o_mail_block_footer_social o_mail_footer_social_center o_mail_snippet_general bg-200 pt16 pb16" data-snippet="s_mail_block_footer_social" data-name="Footer Center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="text-align: center;" t-translation="off">
+                        <t t-if="env.company.social_twitter">
+                            <a t-att-href="env.company.social_twitter" target="_blank">
+                                <span class="fa fa-twitter" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_facebook">
+                            <a t-att-href="env.company.social_facebook" target="_blank">
+                                <span class="fa fa-facebook" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_linkedin">
+                            <a t-att-href="env.company.social_linkedin" target="_blank">
+                                <span class="fa fa-linkedin" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_youtube">
+                            <a t-att-href="env.company.social_youtube" target="_blank">
+                                <span class="fa fa-youtube" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_github">
+                            <a t-att-href="env.company.social_github" target="_blank">
+                                <span class="fa fa-github" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_instagram">
+                            <a t-att-href="env.company.social_instagram" target="_blank">
+                                <span class="fa fa-instagram" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_tiktok">
+                            <a t-att-href="env.company.social_tiktok" target="_blank">
+                                <span class="fa fa-tiktok" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 o_mail_footer_links pt8 pb8" style="text-align: center;">
+                        <a role="button" href="/unsubscribe_from_list" class="btn btn-link">Unsubscribe</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p style="text-align: center;">
+                            © <t t-out="now.strftime('%Y')" /> All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Dynamic promotion template -->
+    <template id="custom_dynamic_template3">
+        <style id="design-element">
+            h1 {
+                font-weight: bolder;
+            }
+            h2 {
+                font-weight: bolder;
+            }
+            h3 {
+                font-size: 18px;
+                font-weight: bolder;
+            }
+            a:not(.btn), a.btn.btn-link {
+                color: #000000;
+            }
+            a.btn.btn-primary, a.btn.btn-outline-primary, a.btn.btn-fill-primary {
+                background-color: #000000;
+                border-color: #000000;
+            }
+            hr {
+                width: 75%;
+            }
+            .box {
+                border: 1px solid #ddd;
+                padding: 8px 12px;
+                border-radius: 4px;
+            }
+            .box:hover {
+                background-color: #32a2e2ff;
+            }
+        </style>
+        <t t-set="now" t-value="datetime.datetime.now()"/>
+        <div class="s_header_text_social o_mail_block_header_text_social o_mail_snippet_general pt16 pb16" data-snippet="s_mail_block_header_text_social" data-name="Left Text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 pt16 pb16">
+                        <h1 style="display: flex; align-items: center; gap: 8px;">
+                            <a t-att-href="(company_id.website) or '#'" target="_blank">
+                                <img t-att-src="'/web/image/res.company/%s/logo' % env.company.id" style="width: auto; height: 60px;"/>
+                            </a><font style="font-weight: bolder; color: rgb(255, 255, 255); background-color: rgb(0,123,255);"><span t-esc="env.company.name" style="font-size: 32px;"></span></font>
+                        </h1>
+                    </div>
+                    <div class="col-lg-4 o_mail_header_social" style="text-align:right;">
+                        <t t-if="env.company.social_twitter">
+                            <a t-att-href="env.company.social_twitter" target="_blank">
+                                <span class="fa fa-twitter" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_facebook">
+                            <a t-att-href="env.company.social_facebook" target="_blank">
+                                <span class="fa fa-facebook" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_linkedin">
+                            <a t-att-href="env.company.social_linkedin" target="_blank">
+                                <span class="fa fa-linkedin" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_youtube">
+                            <a t-att-href="env.company.social_youtube" target="_blank">
+                                <span class="fa fa-youtube" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_github">
+                            <a t-att-href="env.company.social_github" target="_blank">
+                                <span class="fa fa-github" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_instagram">
+                            <a t-att-href="env.company.social_instagram" target="_blank">
+                                <span class="fa fa-instagram" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                        <t t-if="env.company.social_tiktok">
+                            <a t-att-href="env.company.social_tiktok" target="_blank">
+                                <span class="fa fa-tiktok" style="color: rgba(0, 0, 0, 1) !important;"/>
+                            </a>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="s_title o_mail_snippet_general pt72 pb80" data-snippet="s_title" data-name="Title" style="background-color: rgb(0,123,255); !important;">
+            <div class="container s_allow_columns">
+                <h1 style="text-align:center">
+                        <font style="font-size: 62px; background-color: rgb(255, 255, 255);">&amp;nbsp;10% OFF&amp;nbsp;</font>
+                    <br/>
+                        <font style="font-size: 62px; background-color: rgb(255, 255, 255);">&amp;nbsp;SALES&amp;nbsp;</font>
+                </h1>
+            </div>
+        </div>
+        <div class="s_discount2 o_mail_block_discount2 o_mail_snippet_general pt32 pb32" data-name="Promo Code" style="padding-left: 15px; padding-right: 15px;">
+            <h2 style="text-align: center;">GET 10%&amp;nbsp;OFF</h2>
+            <p style="text-align: center;">
+                Valid on all sales prices in our webshop.
+            </p>
+            <table border="0" cellpadding="0" cellspacing="0" align="center" class="border" style="border-collapse: collapse; border-color: rgb(0,123,255) !important; border-width: 3px !important; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                <tr>
+                    <td width="50" height="50" align="center" class="o_mail_no_resize o_cc" style="width:50px!important; min-width: 50px; max-width:5.6rem; text-align: center"><i class="fa fa-2x fa-ticket" style="color: rgb(0,123,255) !important;"></i></td>
+                    <td width="200" height="50" align="center" class="o_cc" style="min-width: 150px; width: 200px; text-align: center;"><p class="mb0">MEGASALE2026</p></td>
+                </tr>
+            </table>
+            <br/>
+            <p style="text-align:center;">
+                <a role="button" class="btn btn-primary btn-lg" href="http://">Visit the website</a>
+            </p>
+        </div>
+        <div class="s_hr pt16 pb16" data-snippet="s_hr" data-name="Separator">
+            <hr class="s_hr_1px s_hr_solid"/>
+        </div>
+        <div class="s_features o_mail_snippet_general" data-snippet="s_features" data-name="Features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>Here you can add more information about your promotion, products, or services.
+                        Highlight the key features and benefits to entice your customers to take advantage of the offer.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p>Maybe an image or additional info here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="s_footer_social o_mail_block_footer_social o_mail_footer_social_left o_mail_snippet_general pt16 pb16" data-snippet="s_mail_block_footer_social_left" data-name="Footer Left" style="background-color: rgb(0,123,255) !important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <p>
+                            <span style="font-weight: bolder;">
+                                <font style="background-color: rgb(255, 255, 255); color: rgb(0,123,255);"><span t-esc="env.company.name"/></font>
+                            </span>
+                        </p>
+                        <div class="o_mail_footer_links">
+                            <a role="button" href="/unsubscribe_from_list" class="btn btn-link ">
+                                <div class="box">
+                                    Unsubscribe
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <p style="text-align: left">
+                            <font style="color: rgb(255, 255, 255);">© <t t-out="now.strftime('%Y')" /> All Rights Reserved</font>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>
