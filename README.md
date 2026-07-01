@@ -44,6 +44,8 @@ addon | version | maintainers | summary
 [mass_mailing_unhide_name_field](mass_mailing_unhide_name_field/) | 17.0.1.0.0 |  | Show Mailing objects' Name field also for regular users
 [mass_mailing_unsubscribe_custom_template](mass_mailing_unsubscribe_custom_template/) | 17.0.1.0.0 |  | Custom template when unsubscribing from a mass mail
 [privacy_consent_fields](privacy_consent_fields/) | 17.0.1.0.0 |  | Privacy consent fields - Activity and Subject
+[social_pinterest](social_pinterest/) | 17.0.1.0.0 |  | Adds Pinterest social media service to Odoo
+[social_vimeo](social_vimeo/) | 17.0.1.0.1 |  | Adds Vimeo social media service to Odoo
 
 
 Unported addons

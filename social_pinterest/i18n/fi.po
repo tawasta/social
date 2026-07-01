@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* social_pinterest
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260630\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 10:34+0000\n"
+"PO-Revision-Date: 2026-07-01 10:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: social_pinterest
+#: model:ir.model,name:social_pinterest.model_res_company
+msgid "Companies"
+msgstr "Yritykset"
+
+#. module: social_pinterest
+#: model:ir.model.fields,field_description:social_pinterest.field_res_company__social_pinterest
+msgid "Pinterest Account"
+msgstr "Pinterest-tili"
