@@ -1,15 +1,12 @@
 name: CI
 
 on:
-  workflow_dispatch:
-  workflow_call:
   pull_request:
-  push:
     branches:
-      - '17*'
+      - "**"
 
 jobs:
   pre-commit:
     uses: tawasta/github-workflows/.github/workflows/odoo-pre-commit.yml@main
     with:
-      python-version: '3.11'
+      python-version: "3.11"
