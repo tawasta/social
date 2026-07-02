@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* social_vimeo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260630\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 04:38+0000\n"
+"PO-Revision-Date: 2026-07-02 04:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: social_vimeo
+#: model:ir.model,name:social_vimeo.model_res_company
+msgid "Companies"
+msgstr "Yritykset"
+
+#. module: social_vimeo
+#: model:ir.model.fields,field_description:social_vimeo.field_res_company__social_vimeo
+msgid "Vimeo Account"
+msgstr "Vimeo-tili"

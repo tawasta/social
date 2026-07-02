@@ -34,6 +34,7 @@ addon | version | maintainers | summary
 [mass_mailing_email_template](mass_mailing_email_template/) | 17.0.1.0.0 |  | Edits mass mailing email template
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 17.0.1.0.0 |  | Mass Mailing List Sync Automation
 [mass_mailing_mailing_subscription_menuitem](mass_mailing_mailing_subscription_menuitem/) | 17.0.1.0.0 |  | Adds a missing menuitem to Email Marketing menu
+[mass_mailing_more_templates](mass_mailing_more_templates/) | 17.0.1.0.0 |  | Adds company themed dynamic templates to mass mailing
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 17.0.1.0.0 |  | Mass mailing multi company
 [mass_mailing_multi_website](mass_mailing_multi_website/) | 17.0.2.0.0 |  | Mass mailing multi website
 [mass_mailing_privacy_consent](mass_mailing_privacy_consent/) | 17.0.1.0.0 |  | Mass mailing privacy consent
@@ -44,6 +45,8 @@ addon | version | maintainers | summary
 [mass_mailing_unhide_name_field](mass_mailing_unhide_name_field/) | 17.0.1.0.0 |  | Show Mailing objects' Name field also for regular users
 [mass_mailing_unsubscribe_custom_template](mass_mailing_unsubscribe_custom_template/) | 17.0.1.0.0 |  | Custom template when unsubscribing from a mass mail
 [privacy_consent_fields](privacy_consent_fields/) | 17.0.1.0.0 |  | Privacy consent fields - Activity and Subject
+[social_pinterest](social_pinterest/) | 17.0.1.0.0 |  | Adds Pinterest social media service to Odoo
+[social_vimeo](social_vimeo/) | 17.0.1.0.1 |  | Adds Vimeo social media service to Odoo
 
 
 Unported addons
