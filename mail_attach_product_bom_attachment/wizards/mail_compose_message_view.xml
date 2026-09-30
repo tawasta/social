@@ -8,7 +8,7 @@
             <xpath expr="//field[@name='attachment_ids']" position="after">
                 <field
                     name="attachment_file_type"
-                    widget="radio"
+                    widget="selection_badge"
                     invisible="not attachment_file_type_exist"
                 />
                 <field name="attachment_file_type_exist" invisible="1" />
