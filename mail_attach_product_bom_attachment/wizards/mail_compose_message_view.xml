@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="email_compose_message_wizard_form" model="ir.ui.view">
+        <field name="name">mail.compose.message.form.attachment.recursive</field>
+        <field name="model">mail.compose.message</field>
+        <field name="inherit_id" ref="mail.email_compose_message_wizard_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='attachment_ids']" position="after">
+                <field
+                    name="attachment_file_type"
+                    widget="radio"
+                    invisible="not attachment_file_type_exist"
+                />
+                <field name="attachment_file_type_exist" invisible="1" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
