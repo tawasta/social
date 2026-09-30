@@ -1,6 +1,6 @@
 import ast
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.tools.mimetypes import guess_mimetype
 
 
@@ -29,10 +29,12 @@ class MailComposeMessage(models.TransientModel):
                 return False
 
         if not value_list:
-            return [("all", "All")]
+            return []
 
         if check_is_list(value_list):
             value_list = ast.literal_eval(value_list)
+
+        value_list.insert(0, ("all", _("All")))
 
         return value_list
 
