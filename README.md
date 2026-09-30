@@ -18,6 +18,7 @@ addon | version | maintainers | summary
 [mail_always_enable_log_note_in_chatter](mail_always_enable_log_note_in_chatter/) | 17.0.1.0.0 |  | Enable to Log note in chatter even if a user has only readonly access rights
 [mail_attach_product_attachment](mail_attach_product_attachment/) | 17.0.1.0.0 |  | Use SO/PO line product attachments in mail compose
 [mail_attach_product_bom_attachment](mail_attach_product_bom_attachment/) | 17.0.1.0.1 |  | Add attachment from order line product BoMs recursively
+[mail_attach_product_bom_attachment_workorder](mail_attach_product_bom_attachment_workorder/) | 17.0.1.0.0 |  | Combine purchase workorders and BoM attachment fetching
 [mail_autosubscribe_notify_bypass](mail_autosubscribe_notify_bypass/) | 17.0.1.0.0 |  | Model-specific way to not send autosubscribe mails
 [mail_autosubscribe_notify_bypass_project_task](mail_autosubscribe_notify_bypass_project_task/) | 17.0.1.0.0 |  | Avoid sending 'You have been assigned... ' notifications from tasks
 [mail_custom_headers](mail_custom_headers/) | 17.0.1.0.0 |  | Allow using custom headers when sending email
