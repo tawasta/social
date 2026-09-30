@@ -123,7 +123,7 @@ class MailComposeMessage(models.TransientModel):
 
                 file_type = composer.attachment_file_type
 
-                if file_type != "all":
+                if file_type and file_type != "all":
                     for attachment in attachment_ids:
                         if guess_mimetype(attachment.raw).endswith(
                             file_type
