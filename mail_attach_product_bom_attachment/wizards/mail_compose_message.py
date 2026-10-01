@@ -11,6 +11,8 @@ class MailComposeMessage(models.TransientModel):
         selection=lambda self: self._get_attachment_file_type(), default="all"
     )
 
+    display_object_attachment_ids = fields.One2many(compute_sudo=True)
+
     attachment_file_type_exist = fields.Boolean(
         default=lambda self: self._get_attachment_file_type_exist()
     )
@@ -95,8 +97,8 @@ class MailComposeMessage(models.TransientModel):
             company = self.record_company_id
             company_models = (
                 company
-                and company.recursive_attachment_model_ids
-                and company.recursive_attachment_model_ids.mapped("model")
+                and company.sudo().recursive_attachment_model_ids
+                and company.sudo().recursive_attachment_model_ids.mapped("model")
                 or []
             )
 
