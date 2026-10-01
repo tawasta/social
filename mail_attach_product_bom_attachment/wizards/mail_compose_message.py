@@ -125,8 +125,9 @@ class MailComposeMessage(models.TransientModel):
 
                 if file_type and file_type != "all":
                     for attachment in attachment_ids:
-                        if guess_mimetype(attachment.raw).endswith(
-                            file_type
+                        if (
+                            attachment.raw
+                            and guess_mimetype(attachment.raw).endswith(file_type)
                         ) or attachment.name.endswith(file_type):
                             filtered_attachment_ids |= attachment
                 else:
