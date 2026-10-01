@@ -15,6 +15,10 @@ class MailComposeMessage(models.TransientModel):
         default=lambda self: self._get_attachment_file_type_exist()
     )
 
+    @api.onchange("attachment_file_type")
+    def onchange_attachment_file_type(self):
+        self.object_attachment_ids = self.display_object_attachment_ids
+
     @api.model
     def _get_attachment_file_type(self):
         value_list = self.env["ir.config_parameter"].get_param(
@@ -106,10 +110,6 @@ class MailComposeMessage(models.TransientModel):
 
                 domain = [
                     "|",
-                    "|",
-                    "&",
-                    ("res_model", "=", model),
-                    ("res_id", "in", res_ids),
                     "&",
                     ("res_model", "=", "product.product"),
                     ("res_id", "in", all_product_ids),
@@ -140,6 +140,7 @@ class MailComposeMessage(models.TransientModel):
                         ("res_id", "in", res_ids),
                     ]
                 )
+                attachments = list(dict.fromkeys(attachments))
                 composer.display_object_attachment_ids = attachments
             else:
                 composer.display_object_attachment_ids = False
