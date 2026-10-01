@@ -21,10 +21,12 @@ class MailComposeMessage(models.TransientModel):
 
     @api.model
     def _get_attachment_file_type(self):
-        value_list = self.env["ir.config_parameter"].get_param(
-            "attachment_file_type_list", False
+        value_list = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("attachment_file_type_list", False)
         )
-        # Use for example this parameter: [("all", "All"), ("pdf", "PDF")]
+        # Use for example this parameter: [("pdf", "PDF")]
 
         def check_is_list(string):
             try:
@@ -43,8 +45,10 @@ class MailComposeMessage(models.TransientModel):
         return value_list
 
     def _get_attachment_file_type_exist(self):
-        value = self.env["ir.config_parameter"].get_param(
-            "attachment_file_type_list", False
+        value = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("attachment_file_type_list", False)
         )
 
         return value
