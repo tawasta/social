@@ -12,3 +12,5 @@ class ResCompany(models.Model):
     )
 
     recursive_level = fields.Integer()
+
+    attachment_size_limit = fields.Integer()
