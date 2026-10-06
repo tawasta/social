@@ -11,3 +11,7 @@ class ResConfigSettings(models.TransientModel):
     recursive_level = fields.Integer(
         related="company_id.recursive_level", readonly=False
     )
+
+    attachment_size_limit = fields.Integer(
+        related="company_id.attachment_size_limit", readonly=False
+    )

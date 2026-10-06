@@ -21,7 +21,7 @@
 {
     "name": "Add attachment from order line product BoMs recursively",
     "summary": "Add attachment from order line product BoMs recursively",
-    "version": "17.0.1.0.6",
+    "version": "17.0.2.0.6",
     "category": "Social",
     "website": "https://github.com/tawasta/social",
     "author": "Futural",
@@ -33,6 +33,8 @@
         "mrp",
     ],
     "data": [
+        "security/ir.model.access.csv",
+        "views/attachment_view.xml",
         "views/res_config_settings.xml",
         "wizards/mail_compose_message_view.xml",
     ],
