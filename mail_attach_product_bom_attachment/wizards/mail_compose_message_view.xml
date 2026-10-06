@@ -6,12 +6,67 @@
         <field name="inherit_id" ref="mail.email_compose_message_wizard_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='attachment_ids']" position="after">
-                <field
-                    name="attachment_file_type"
-                    widget="selection_badge"
-                    invisible="not attachment_file_type_exist"
-                />
+                <field name="use_bom_attachments" />
                 <field name="attachment_file_type_exist" invisible="1" />
+            </xpath>
+
+            <xpath expr="//field[@name='attachment_ids']/.." position="after">
+                <div
+                    class="alert alert-warning col-12"
+                    style="display: block; background: purple; color: white;"
+                    name="size_alert"
+                    invisible="not is_large_file_size or not use_bom_attachments"
+                >
+                    <field name="is_large_file_size" invisible="1" />
+                    <strong>Combined attachment size is too large!</strong>
+                </div>
+            </xpath>
+
+            <xpath
+                expr="//button[@class='btn-primary o_mail_send']"
+                position="attributes"
+            >
+                <attribute name="invisible">is_large_file_size</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='object_attachment_ids']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='attachment_ids']/.." position="after">
+                <field
+                    name="attachment_file_type_ids"
+                    widget="many2many_checkboxes"
+                    invisible="not use_bom_attachments"
+                    domain="[('active', '=', True)]"
+                />
+
+                <field
+                    name="selectable_attachment_ids"
+                    widget="many2many"
+                    invisible="not can_attach_attachment or not use_bom_attachments"
+                    readonly="True"
+                    mode="list"
+                >
+                    <tree name="email_tree" default_order="product_level asc">
+                        <field name="is_selected_to_send" widget="boolean_toggle" />
+                        <field name="file_type_display_name" />
+                        <field name="attachment_id" />
+                        <field name="product_level" column_invisible="1" />
+                        <field name="file_product_display_name" />
+                        <field name="file_size_display_name" />
+                    </tree>
+
+                    <form name="email_form">
+                        <group>
+                            <field name="is_selected_to_send" readonly="True" />
+                            <field name="file_type_display_name" />
+                            <field name="attachment_id" />
+                            <field name="file_product_display_name" />
+                            <field name="file_size_display_name" />
+                        </group>
+                    </form>
+                </field>
             </xpath>
         </field>
     </record>

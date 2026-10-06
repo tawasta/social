@@ -27,6 +27,13 @@
                         >
                             <field name="recursive_level" />
                         </setting>
+
+                        <setting
+                            id="recursive_search_size_limit"
+                            help="Set size limit for e-mail attachments which are searched recursively from BoM"
+                        >
+                            <field name="attachment_size_limit" />
+                        </setting>
                     </block>
                 </div>
             </xpath>
