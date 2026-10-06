@@ -38,6 +38,7 @@
                     name="attachment_file_type_ids"
                     widget="many2many_checkboxes"
                     invisible="not use_bom_attachments"
+                    domain="[('active', '=', True)]"
                 />
 
                 <field

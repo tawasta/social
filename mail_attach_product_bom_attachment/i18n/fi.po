@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0-20250131\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-30 17:04+0000\n"
-"PO-Revision-Date: 2026-09-30 20:05+0300\n"
+"POT-Creation-Date: 2026-10-06 18:05+0000\n"
+"PO-Revision-Date: 2026-10-06 21:10+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -18,6 +18,16 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 
 #. module: mail_attach_product_bom_attachment
+#: model_terms:ir.ui.view,arch_db:mail_attach_product_bom_attachment.email_compose_message_wizard_form
+msgid "<strong>Combined attachment size is too large!</strong>"
+msgstr "<strong>Yhteenlaskettu liitteiden koko on liian suuri!</strong>"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mail_compose_message__use_bom_attachments
+msgid "Add attachments from BoM components"
+msgstr "Lisää liitteet osaluettelon osista"
+
+#. module: mail_attach_product_bom_attachment
 #. odoo-python
 #: code:addons/mail_attach_product_bom_attachment/wizards/mail_compose_message.py:0
 #, python-format
@@ -25,7 +35,20 @@ msgid "All"
 msgstr "Kaikki"
 
 #. module: mail_attach_product_bom_attachment
+#: model:ir.model,name:mail_attach_product_bom_attachment.model_ir_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__attachment_id
+msgid "Attachment"
+msgstr "Liite"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model,name:mail_attach_product_bom_attachment.model_ir_attachment_data_line
+msgid "Attachment Data Line"
+msgstr "Liitteen tietorivi"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model,name:mail_attach_product_bom_attachment.model_ir_attachment_file_type
 #: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mail_compose_message__attachment_file_type
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mail_compose_message__attachment_file_type_ids
 msgid "Attachment File Type"
 msgstr "Liitteen tiedostotyyppi"
 
@@ -35,14 +58,48 @@ msgid "Attachment File Type Exist"
 msgstr "Liitteen tiedostotyyppi on olemassa"
 
 #. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_res_company__attachment_size_limit
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_res_config_settings__attachment_size_limit
+msgid "Attachment Size Limit"
+msgstr "Liitteen kokoraja"
+
+#. module: mail_attach_product_bom_attachment
 #: model:ir.model,name:mail_attach_product_bom_attachment.model_res_company
 msgid "Companies"
 msgstr "Yritykset"
 
 #. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__create_uid
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_file_type__create_uid
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__create_date
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_file_type__create_date
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_file_type__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mail_compose_message__display_object_attachment_ids
+msgid "Display Object Attachment"
+msgstr ""
+
+#. module: mail_attach_product_bom_attachment
 #: model:ir.model,name:mail_attach_product_bom_attachment.model_mail_compose_message
 msgid "Email composition wizard"
 msgstr "Sähköpostin ohjattu koostaminen"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_file_type__file_type
+msgid "File Type"
+msgstr "Tiedostotyyppi"
 
 #. module: mail_attach_product_bom_attachment
 #: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_res_company__recursive_attachment_model_ids
@@ -51,9 +108,63 @@ msgid "Get attachments recursively for Models"
 msgstr "Hae liitteet rekursiivisesti malleille"
 
 #. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__id
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_file_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_file_type__is_filter
+msgid "Is Filter"
+msgstr "On suodatin"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mail_compose_message__is_large_file_size
+msgid "Is Large File Size"
+msgstr "On suurikokoinen tiedosto"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__write_uid
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_file_type__write_uid
+msgid "Last Updated by"
+msgstr "Viimeksi päivittänyt"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__write_date
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_file_type__write_date
+msgid "Last Updated on"
+msgstr "Viimeksi päivitetty"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_file_type__name
+msgid "Name"
+msgstr "Nimi"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mail_compose_message__selectable_attachment_ids
+msgid "Object Attachments"
+msgstr ""
+
+#. module: mail_attach_product_bom_attachment
 #: model:ir.model,name:mail_attach_product_bom_attachment.model_res_config_settings
 msgid "Procurement purchase grouping settings"
 msgstr "Asetukset"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment__file_product_display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__file_product_display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mrp_document__file_product_display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_product_document__file_product_display_name
+msgid "Product"
+msgstr "Tuote"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment__product_level
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__product_level
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mrp_document__product_level
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_product_document__product_level
+msgid "Product Level"
+msgstr "Tuotetaso"
 
 #. module: mail_attach_product_bom_attachment
 #: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_res_company__recursive_level
@@ -79,9 +190,42 @@ msgid "Set Recursive BoM search level for e-mail attachments"
 msgstr "Aseta rekursiivinen osaluettelon hakutaso sähköpostien liitteille"
 
 #. module: mail_attach_product_bom_attachment
+#: model_terms:ir.ui.view,arch_db:mail_attach_product_bom_attachment.res_config_settings_view_form
+msgid ""
+"Set size limit for e-mail attachments which are searched recursively from "
+"BoM"
+msgstr ""
+"Aseta kokoraja sähköpostien liitteille, jotka haetaan rekursiivisesti "
+"osaluetteloilta"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment__file_size_display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__file_size_display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mrp_document__file_size_display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_product_document__file_size_display_name
+msgid "Size"
+msgstr "Koko"
+
+#. module: mail_attach_product_bom_attachment
 #: model:ir.model.fields,help:mail_attach_product_bom_attachment.field_res_company__recursive_attachment_model_ids
 #: model:ir.model.fields,help:mail_attach_product_bom_attachment.field_res_config_settings__recursive_attachment_model_ids
 msgid ""
 "The selected models use recursive search to get attachments to mail template"
 msgstr ""
 "Valitut mallit käyttävät rekursiivista hakua sähköpostimallin liitteissä"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment__is_selected_to_send
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__is_selected_to_send
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mrp_document__is_selected_to_send
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_product_document__is_selected_to_send
+msgid "To Send"
+msgstr "Lähetettävä"
+
+#. module: mail_attach_product_bom_attachment
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment__file_type_display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_ir_attachment_data_line__file_type_display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_mrp_document__file_type_display_name
+#: model:ir.model.fields,field_description:mail_attach_product_bom_attachment.field_product_document__file_type_display_name
+msgid "Type"
+msgstr "Tyyppi"

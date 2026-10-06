@@ -124,6 +124,26 @@ class MailComposeMessage(models.TransientModel):
         else:
             self.selectable_attachment_ids.unlink()
 
+    def get_product_domain(self, all_product_ids, all_product_template_ids):
+        return [
+            "|",
+            "&",
+            ("res_model", "=", "product.product"),
+            ("res_id", "in", all_product_ids),
+            "&",
+            ("res_model", "=", "product.template"),
+            ("res_id", "in", all_product_template_ids),
+        ]
+
+    def remove_other_types(self, ir_attachment_file_types):
+        other_types = (
+            self.env["ir.attachment.file.type"]
+            .sudo()
+            .search([("file_type", "not in", ir_attachment_file_types)])
+        )
+        for other_type in other_types:
+            other_type.active = False
+
     @api.onchange("attachment_file_type_ids", "use_bom_attachments")
     def _onchange_file_types_and_use_bom(self):
         """Redefined function"""
@@ -166,48 +186,48 @@ class MailComposeMessage(models.TransientModel):
                 all_product_ids = [p.id for p in all_products]
                 all_product_template_ids = [t.id for t in all_product_templates]
 
-                domain = [
-                    "|",
-                    "&",
-                    ("res_model", "=", "product.product"),
-                    ("res_id", "in", all_product_ids),
-                    "&",
-                    ("res_model", "=", "product.template"),
-                    ("res_id", "in", all_product_template_ids),
-                ]
+                domain = self.get_product_domain(
+                    all_product_ids, all_product_template_ids
+                )
 
                 attachment_ids = self.env["ir.attachment"].search(
                     domain, order="product_level desc, id desc"
                 )
 
                 filtered_attachment_ids = self.env["ir.attachment"]
-
                 ir_attachment_file_type = self.env["ir.attachment.file.type"]
+                ir_attachment_file_types = []
 
                 if not composer.attachment_file_type_ids:
                     for attachment in attachment_ids:
                         file_type_name = (
                             attachment.name and attachment.name.split(".")[-1]
                         )
-                        if file_type_name:
+
+                        if file_type_name not in ir_attachment_file_types:
+                            ir_attachment_file_types.append(file_type_name)
+
+                    for file_type_name in ir_attachment_file_types:
+                        ir_attachment_file_type = (
+                            self.env["ir.attachment.file.type"]
+                            .sudo()
+                            .search([("file_type", "=", file_type_name)])
+                        )
+                        if not ir_attachment_file_type:
                             ir_attachment_file_type = (
                                 self.env["ir.attachment.file.type"]
                                 .sudo()
-                                .search([("file_type", "=", file_type_name)])
-                            )
-                            if not ir_attachment_file_type:
-                                ir_attachment_file_type = (
-                                    self.env["ir.attachment.file.type"]
-                                    .sudo()
-                                    .create(
-                                        {
-                                            "name": file_type_name.upper(),
-                                            "file_type": file_type_name,
-                                        }
-                                    )
+                                .create(
+                                    {
+                                        "name": file_type_name.upper(),
+                                        "file_type": file_type_name,
+                                    }
                                 )
+                            )
 
-                            composer.attachment_file_type_ids |= ir_attachment_file_type
+                        composer.attachment_file_type_ids |= ir_attachment_file_type
+
+                    self.remove_other_types(ir_attachment_file_types)
 
                 for file_type_id in composer.attachment_file_type_ids:
                     file_type = file_type_id.file_type
@@ -225,8 +245,8 @@ class MailComposeMessage(models.TransientModel):
                 datas = []
 
                 for attach in filtered_attachment_ids:
-                    if attach.datas not in datas:
-                        datas.append(attach.datas)
+                    if (attach.name, attach.datas) not in datas:
+                        datas.append((attach.name, attach.datas))
                         deduplicate_attachments |= attach
 
                 composer.display_object_attachment_ids = deduplicate_attachments
