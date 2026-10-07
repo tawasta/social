@@ -21,7 +21,7 @@
 {
     "name": "Add attachment from order line product BoMs recursively",
     "summary": "Add attachment from order line product BoMs recursively",
-    "version": "17.0.2.0.6",
+    "version": "17.0.2.0.7",
     "category": "Social",
     "website": "https://github.com/tawasta/social",
     "author": "Futural",
