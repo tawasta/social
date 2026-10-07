@@ -66,3 +66,14 @@ class IrAttachment(models.Model):
                     attachment.file_product_display_name = ""
             else:
                 attachment.file_product_display_name = ""
+
+    def unlink(self):
+        mail_messages = self.env["mail.message"].search(
+            [("attachment_ids", "in", self.ids)]
+        )
+        if mail_messages:
+            for mail in mail_messages:
+                mail.attachment_ids -= self
+            return True
+
+        return super().unlink()
