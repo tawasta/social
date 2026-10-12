@@ -17,6 +17,8 @@ addon | version | maintainers | summary
 [mail_access_link_sale_order_always_hidden](mail_access_link_sale_order_always_hidden/) | 17.0.1.0.0 |  | Hide the access link in SO emails from all recipients
 [mail_always_enable_log_note_in_chatter](mail_always_enable_log_note_in_chatter/) | 17.0.1.0.0 |  | Enable to Log note in chatter even if a user has only readonly access rights
 [mail_attach_product_attachment](mail_attach_product_attachment/) | 17.0.1.0.0 |  | Use SO/PO line product attachments in mail compose
+[mail_attach_product_bom_attachment](mail_attach_product_bom_attachment/) | 17.0.2.0.7 |  | Add attachment from order line product BoMs recursively
+[mail_attach_product_bom_attachment_workorder](mail_attach_product_bom_attachment_workorder/) | 17.0.1.0.0 |  | Combine purchase workorders and BoM attachment fetching
 [mail_autosubscribe_notify_bypass](mail_autosubscribe_notify_bypass/) | 17.0.1.0.0 |  | Model-specific way to not send autosubscribe mails
 [mail_autosubscribe_notify_bypass_project_task](mail_autosubscribe_notify_bypass_project_task/) | 17.0.1.0.0 |  | Avoid sending 'You have been assigned... ' notifications from tasks
 [mail_compose_attachment_preview](mail_compose_attachment_preview/) | 17.0.1.0.0 |  | Enable previewing mail composing attachments in browser
@@ -34,6 +36,7 @@ addon | version | maintainers | summary
 [mail_tracking_postmark](mail_tracking_postmark/) | 17.0.1.0.0 |  | This module integrates mail_tracking events with Postmark
 [mass_mailing_email_template](mass_mailing_email_template/) | 17.0.1.0.0 |  | Edits mass mailing email template
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 17.0.1.0.0 |  | Mass Mailing List Sync Automation
+[mass_mailing_mailing_contact_subscription_menuitem](mass_mailing_mailing_contact_subscription_menuitem/) | 17.0.1.0.0 |  | Adds a missing menuitem to Email Marketing menu
 [mass_mailing_mailing_subscription_menuitem](mass_mailing_mailing_subscription_menuitem/) | 17.0.1.0.0 |  | Adds a missing menuitem to Email Marketing menu
 [mass_mailing_more_templates](mass_mailing_more_templates/) | 17.0.1.0.0 |  | Adds company themed dynamic templates to mass mailing
 [mass_mailing_multi_company](mass_mailing_multi_company/) | 17.0.1.0.0 |  | Mass mailing multi company

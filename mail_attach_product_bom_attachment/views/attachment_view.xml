@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="attachment_tree_view" model="ir.ui.view">
+        <field name="name">ir.attachment.tree.view.email</field>
+        <field name="model">ir.attachment</field>
+        <field name="arch" type="xml">
+            <tree name="email_tree">
+                <field name="file_type_display_name" />
+                <field name="name" />
+                <field name="file_product_display_name" />
+                <field name="file_size_display_name" />
+            </tree>
+        </field>
+    </record>
+</odoo>
