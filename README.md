@@ -21,6 +21,7 @@ addon | version | maintainers | summary
 [mail_attach_product_bom_attachment_workorder](mail_attach_product_bom_attachment_workorder/) | 17.0.1.0.0 |  | Combine purchase workorders and BoM attachment fetching
 [mail_autosubscribe_notify_bypass](mail_autosubscribe_notify_bypass/) | 17.0.1.0.0 |  | Model-specific way to not send autosubscribe mails
 [mail_autosubscribe_notify_bypass_project_task](mail_autosubscribe_notify_bypass_project_task/) | 17.0.1.0.0 |  | Avoid sending 'You have been assigned... ' notifications from tasks
+[mail_compose_attachment_preview](mail_compose_attachment_preview/) | 17.0.1.0.0 |  | Enable previewing mail composing attachments in browser
 [mail_custom_headers](mail_custom_headers/) | 17.0.1.0.0 |  | Allow using custom headers when sending email
 [mail_layout_custom](mail_layout_custom/) | 17.0.1.0.0 |  | Add a custom layout for mail template
 [mail_layout_footer_company_registry](mail_layout_footer_company_registry/) | 17.0.1.0.0 |  | Add company registry to mail notification layouts' footer
