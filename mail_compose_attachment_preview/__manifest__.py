@@ -31,6 +31,6 @@
     "depends": [
         "mail",
         "web_widget_many2many_binary_url",
-        ],
+    ],
     "data": ["views/mail_compose_message_form.xml"],
 }
