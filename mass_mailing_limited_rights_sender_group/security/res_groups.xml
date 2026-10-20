@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Deliberately not implied by or implying the Email Marketing user group:
+         its record rules would otherwise also restrict full users. -->
+    <record id="group_mass_mailing_limited_sender" model="res.groups">
+        <field name="name">Email Marketing: Limited Sender</field>
+        <field name="category_id" ref="base.module_category_usability" />
+        <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]" />
+        <field
+            name="comment"
+        >Can edit, test and send mailings without changing their recipients or seeing the mailing list contacts or the mailing statistics.</field>
+    </record>
+</odoo>
