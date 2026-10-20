@@ -35,7 +35,7 @@ addon | version | maintainers | summary
 [mail_tracking_failure_alert](mail_tracking_failure_alert/) | 17.0.1.0.0 |  | Alert user by email if message sending fails
 [mail_tracking_postmark](mail_tracking_postmark/) | 17.0.1.0.0 |  | This module integrates mail_tracking events with Postmark
 [mass_mailing_email_template](mass_mailing_email_template/) | 17.0.1.0.0 |  | Edits mass mailing email template
-[mass_mailing_limited_rights_sender_group](mass_mailing_limited_rights_sender_group/) | 17.0.1.0.0 |  | Send mass mailings without seeing recipients or mailing lists
+[mass_mailing_limited_rights_sender_group](mass_mailing_limited_rights_sender_group/) | 17.0.1.0.1 |  | Send mass mailings without seeing recipients or mailing lists
 [mass_mailing_list_sync_automation](mass_mailing_list_sync_automation/) | 17.0.1.0.0 |  | Mass Mailing List Sync Automation
 [mass_mailing_mailing_contact_subscription_menuitem](mass_mailing_mailing_contact_subscription_menuitem/) | 17.0.1.0.0 |  | Adds a missing menuitem to Email Marketing menu
 [mass_mailing_mailing_subscription_menuitem](mass_mailing_mailing_subscription_menuitem/) | 17.0.1.0.0 |  | Adds a missing menuitem to Email Marketing menu

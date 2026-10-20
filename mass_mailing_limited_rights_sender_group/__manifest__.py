@@ -21,7 +21,7 @@
 {
     "name": "Email Marketing: Limited Sender Group",
     "summary": "Send mass mailings without seeing recipients or mailing lists",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Social",
     "website": "https://github.com/tawasta/social",
     "author": "Futural",
