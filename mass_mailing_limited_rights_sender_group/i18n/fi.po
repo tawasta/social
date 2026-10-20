@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mass_mailing_limited_rights_sender_group
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-15 00:00+0000\n"
+"PO-Revision-Date: 2026-10-15 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mass_mailing_limited_rights_sender_group
+#: model:res.groups,comment:mass_mailing_limited_rights_sender_group.group_mass_mailing_limited_sender
+msgid ""
+"Can edit, test and send mailings without changing their recipients or "
+"seeing the mailing list contacts or the mailing statistics."
+msgstr ""
+"Voi muokata, testata ja lähettää postituksia muuttamatta niiden "
+"vastaanottajia tai näkemättä postituslistojen kontakteja tai postitusten "
+"tilastoja."
+
+#. module: mass_mailing_limited_rights_sender_group
+#: model:res.groups,name:mass_mailing_limited_rights_sender_group.group_mass_mailing_limited_sender
+msgid "Email Marketing: Limited Sender"
+msgstr "Sähköpostimarkkinointi: rajoitettu lähettäjä"

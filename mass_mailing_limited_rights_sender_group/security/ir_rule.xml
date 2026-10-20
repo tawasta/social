@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Read access to contacts is granted only so that core code searching
+         recipients as the current user (recipient total, test mailing) finds
+         nothing quietly instead of raising an access error. -->
+    <record id="mailing_contact_rule_limited_sender" model="ir.rule">
+        <field name="name">Mailing contacts: hidden from limited senders</field>
+        <field name="model_id" ref="mass_mailing.model_mailing_contact" />
+        <field name="domain_force">[(0, '=', 1)]</field>
+        <field
+            name="groups"
+            eval="[Command.link(ref('group_mass_mailing_limited_sender'))]"
+        />
+    </record>
+</odoo>
