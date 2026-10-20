@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mailing_mailing_limited_sender,mailing.mailing.limited.sender,mass_mailing.model_mailing_mailing,group_mass_mailing_limited_sender,1,1,0,0
+access_mailing_list_limited_sender,mailing.list.limited.sender,mass_mailing.model_mailing_list,group_mass_mailing_limited_sender,1,0,0,0
+access_mailing_contact_limited_sender,mailing.contact.limited.sender,mass_mailing.model_mailing_contact,group_mass_mailing_limited_sender,1,0,0,0
+access_mailing_mailing_test_limited_sender,mailing.mailing.test.limited.sender,mass_mailing.model_mailing_mailing_test,group_mass_mailing_limited_sender,1,1,1,0
+access_mailing_mailing_schedule_date_limited_sender,mailing.mailing.schedule.date.limited.sender,mass_mailing.model_mailing_mailing_schedule_date,group_mass_mailing_limited_sender,1,1,1,0
+access_ir_mail_server_limited_sender,ir.mail_server.limited.sender,base.model_ir_mail_server,group_mass_mailing_limited_sender,1,0,0,0
+access_ir_model_limited_sender,ir.model.limited.sender,base.model_ir_model,group_mass_mailing_limited_sender,1,0,0,0

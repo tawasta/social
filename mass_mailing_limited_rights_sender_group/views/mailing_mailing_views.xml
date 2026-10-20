@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Finetune visibility so that the new groups' users see less fields and
+     menu items, without affecting the core's full mass mailing users. -->
+    <record id="view_mail_mass_mailing_form" model="ir.ui.view">
+        <field name="name">mailing.mailing.form.limited.sender</field>
+        <field name="model">mailing.mailing</field>
+        <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_form" />
+        <field name="arch" type="xml">
+            <!-- Trace counts and statistics are only for full users -->
+            <xpath expr="//div[hasclass('alert-info')]" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </xpath>
+            <div name="button_box" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </div>
+            <!-- Still needed in modifiers outside the restricted nodes (e.g. the
+                 Retry button, mass_mailing_resend) -->
+            <field name="active" position="after">
+                <field name="failed" invisible="1" />
+                <field name="sent" invisible="1" />
+            </field>
+
+            <button name="action_duplicate" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </button>
+
+            <!-- Limited senders see the recipients set by a full user, but
+                 cannot change them -->
+            <field name="mailing_model_id" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+
+            <field name="mailing_model_id" position="after">
+                <field
+                    name="mailing_model_id"
+                    options="{'no_open': True}"
+                    readonly="1"
+                    groups="!mass_mailing.group_mass_mailing_user"
+                />
+            </field>
+
+            <xpath expr="//label[@for='contact_list_ids']" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </xpath>
+
+            <field name="contact_list_ids" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+
+            <field name="contact_list_ids" position="after">
+                <field
+                    name="contact_list_ids"
+                    widget="many2many_tags"
+                    class="oe_inline mb-0"
+                    readonly="1"
+                    groups="!mass_mailing.group_mass_mailing_user"
+                />
+            </field>
+
+            <button name="action_view_mailing_contacts" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </button>
+
+            <xpath
+                expr="//div[hasclass('o_mailing_filter_width')]"
+                position="attributes"
+            >
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </xpath>
+
+            <field name="mailing_filter_count" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+
+            <field name="mailing_domain" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_mail_mass_mailing_tree" model="ir.ui.view">
+        <field name="name">mailing.mailing.tree.limited.sender</field>
+        <field name="model">mailing.mailing</field>
+        <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_tree" />
+        <field name="arch" type="xml">
+            <field name="sent" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+
+            <field name="received_ratio" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+
+            <field name="opened_ratio" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+
+            <field name="bounced_ratio" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+
+            <field name="clicks_ratio" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+
+            <field name="replied_ratio" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_mail_mass_mailing_kanban" model="ir.ui.view">
+        <field name="name">mailing.mailing.kanban.limited.sender</field>
+        <field name="model">mailing.mailing</field>
+        <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//kanban/field[@name='expected']" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </xpath>
+
+            <xpath expr="//kanban/field[@name='total']" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </xpath>
+
+            <xpath expr="//div[hasclass('progress')]" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </xpath>
+
+            <xpath expr="//div[hasclass('o_kanban_record_body')]" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </xpath>
+
+            <xpath expr="//span[hasclass('clearfix')]" position="attributes">
+                <attribute
+                    name="groups"
+                >mass_mailing.group_mass_mailing_user</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
