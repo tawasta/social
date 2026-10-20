@@ -6,6 +6,18 @@
             eval="[Command.link(ref('group_mass_mailing_limited_sender'))]"
         />
     </record>
+    <!-- Both groups explicitly: other modules (e.g. association_user_role)
+         restrict this menu to their own group, which would hide it, and
+         with it the whole Email Marketing app, from limited senders -->
+    <record id="mass_mailing.mass_mailing_menu" model="ir.ui.menu">
+        <field
+            name="groups_id"
+            eval="[
+                Command.link(ref('mass_mailing.group_mass_mailing_user')),
+                Command.link(ref('group_mass_mailing_limited_sender')),
+            ]"
+        />
+    </record>
     <record id="mass_mailing.mass_mailing_mailing_list_menu" model="ir.ui.menu">
         <field
             name="groups_id"
