@@ -10,6 +10,8 @@ Email Marketing: Limited Sender Group
   schedule and send mass mailings, but they cannot create mailings or change who
   receives them. An Email Marketing user creates the mailing and sets its
   recipients.
+* Limited senders can duplicate sent mailings. The copy keeps the recipients of
+  the original.
 * The restriction is mainly done in the user interface. It is not meant to stop a
   determined user from reading list or statistics data through other means.
 
