@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record id="email_compose_message_wizard_form" model="ir.ui.view">
+    <field name="name">mail.compose.message.form.attachment.recursive</field>
+    <field name="model">mail.compose.message</field>
+    <field name="inherit_id" ref="mail.email_compose_message_wizard_form" />
+    <field name="arch" type="xml">
+      <!-- In 19.0 the parent of attachment_ids is the div that is hidden in
+           mass mailing, so everything is added inside it after the field -->
+      <xpath expr="//field[@name='attachment_ids']" position="after">
+        <!-- A field in a div shows no label by itself -->
+        <div class="d-flex align-items-center gap-2">
+          <field name="use_bom_attachments" nolabel="1" />
+          <label for="use_bom_attachments" />
+        </div>
+        <field name="attachment_file_type_exist" invisible="1" />
+
+        <field
+          name="attachment_file_type_ids"
+          widget="many2many_checkboxes"
+          invisible="not use_bom_attachments"
+          domain="[('active', '=', True)]"
+        />
+
+        <field
+          name="selectable_attachment_ids"
+          widget="many2many"
+          invisible="not can_attach_attachment or not use_bom_attachments"
+          mode="list"
+          options="{'link': False, 'unlink': False}"
+        >
+          <!-- In 19.0 a readonly x2many disables the toggles, so the lines are
+               protected with create and delete instead -->
+          <list
+            name="email_tree"
+            default_order="product_level asc"
+            create="0"
+            delete="0"
+          >
+            <field name="is_selected_to_send" widget="boolean_toggle" />
+            <field name="file_type_display_name" />
+            <field name="attachment_id" readonly="1" />
+            <field name="product_level" column_invisible="1" />
+            <field name="file_product_display_name" />
+            <field name="file_size_display_name" />
+          </list>
+
+          <form name="email_form">
+            <group>
+              <field name="is_selected_to_send" readonly="True" />
+              <field name="file_type_display_name" />
+              <field name="attachment_id" />
+              <field name="file_product_display_name" />
+              <field name="file_size_display_name" />
+            </group>
+          </form>
+        </field>
+
+        <div
+          class="alert alert-warning col-12"
+          role="alert"
+          name="size_alert"
+          invisible="not is_large_file_size or not use_bom_attachments"
+        >
+          <field name="is_large_file_size" invisible="1" />
+          <strong>Combined attachment size is too large!</strong>
+        </div>
+      </xpath>
+
+      <!-- Keep the core conditions (e.g. hidden on log notes) and also hide
+           the active Send and Schedule buttons when the attachments are too
+           large -->
+      <xpath
+        expr="//button[hasclass('o_mail_send')][not(@disabled)]"
+        position="attributes"
+      >
+        <attribute name="invisible" add="is_large_file_size" separator=" or " />
+      </xpath>
+      <xpath
+        expr="//button[@name='action_schedule_message'][not(@disabled)]"
+        position="attributes"
+      >
+        <attribute name="invisible" add="is_large_file_size" separator=" or " />
+      </xpath>
+
+      <xpath expr="//field[@name='object_attachment_ids']" position="attributes">
+        <attribute name="invisible">True</attribute>
+      </xpath>
+    </field>
+  </record>
+</odoo>
