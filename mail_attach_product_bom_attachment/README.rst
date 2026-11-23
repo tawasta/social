@@ -23,6 +23,8 @@ purchase.
   all variants of the product are used
 * An attachment that is on a mail message is not deleted: it is only removed
   from the messages, so that the product keeps its own file
+* Users who cannot edit products, for example purchase users, can send the
+  attachments
 
 Configuration
 =============
