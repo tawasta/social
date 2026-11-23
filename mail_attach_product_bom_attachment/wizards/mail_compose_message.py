@@ -242,7 +242,10 @@ class MailComposeMessage(models.TransientModel):
                                 attachment.raw
                                 and guess_mimetype(attachment.raw).endswith(file_type)
                             ) or attachment.name.endswith(file_type):
-                                attachment._compute_file_display_names()
+                                # sudo: the stored display names are derived
+                                # from the file; senders, e.g. purchase users,
+                                # cannot write product attachments
+                                attachment.sudo()._compute_file_display_names()
                                 filtered_attachment_ids |= attachment
                     else:
                         filtered_attachment_ids = attachment_ids
